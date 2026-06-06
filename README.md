@@ -76,4 +76,4 @@ The supernova inputs are the public **Pantheon+** release (Scolnic et al. 2022; 
 
 ## License
 
-No license is attached yet — all rights reserved by default. The repository is shared for review and reproduction; open an issue if you would like to reuse the code or figures.
+The code, paper, and figures in this repository are released under the [MIT License](LICENSE) © 2026 Viacheslav Zhygulin. The bundled Pantheon+ supernova data under `src/data/` is redistributed from its original public release (Scolnic et al. 2022; Brout et al. 2022) and remains subject to the terms of that release.
