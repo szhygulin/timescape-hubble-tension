@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*Notes.bib
+
+# Third-party reference material (arXiv paper sources read during research — not redistributed)
+*.tar.gz
+src/ws_*/
+.texbin
+
+# OS
+.DS_Store
