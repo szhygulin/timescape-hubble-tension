@@ -1,0 +1,68 @@
+========================================================================
+TIMESCAPE inverse-distance-ladder: DESI BAO + Planck acoustic scale
+========================================================================
+TIMESCAPE best: fv0=0.639  alpha=c/(Hbar0 rd)=38.64  chi2/dof=35.8/11=3.25
+  -> with rd=147.09 Mpc:  Hbar0=52.7  dressed H0=62.7 km/s/Mpc
+  fv0 = 0.639 (+0.007/-0.007)  [BAO+CMB]
+
+Fix fv0=0.85 (SN-preferred): chi2/dof=2012.1/12=167.68  H0=81.2  -> POOR FIT
+
+------------------------------------------------------------------------
+LCDM reference: Om0=0.299  chi2/dof=13.0/11=1.18  H0=69.1 km/s/Mpc (rd=147.09)
+========================================================================
+INTERPRETATION:
+  BAO+CMB prefer fv0=0.639; SN prefer fv0~0.85.  DISAGREE (SN 0.85 outside [0.63,0.65])
+  timescape chi2/dof=3.25 vs LCDM 1.18
+{
+  "P1_fvsplit_S1xB4": {
+    "fv_sn_min": 0.8526,
+    "fv_bao_min": 0.6768,
+    "fv_joint": 0.7121999999999999,
+    "dchi2_join": 19.545,
+    "sigma": 4.421,
+    "json_says": {
+      "dchi2_join": 19.545,
+      "sigma": 4.421,
+      "fv_joint": 0.712,
+      "S1_fv0": 0.853,
+      "B4_fv0": 0.677
+    }
+  },
+  "P2_mocks_TS_truth_dBIC": {
+    "delta_real": 5.14,
+    "n_exceed": 32,
+    "n": 4000,
+    "p_emp": 0.008,
+    "sigma_one_sided": 2.409,
+    "json_says": {
+      "n_exceed": 32,
+      "p_emp": 0.008,
+      "sigma": 2.42
+    }
+  },
+  "P2_mocks_fvsplit": {
+    "dfv_mean": 0.0015,
+    "dfv_sd": 0.0275,
+    "dfv_max": 0.1225,
+    "split_obs": 0.21399999999999997,
+    "n_exceed": 0,
+    "n": 4000,
+    "rule_of_three_sigma": 3.175,
+    "json_says": {
+      "n_exceed": 0,
+      "dfv_sd": 0.0275,
+      "dfv_max": 0.1221
+    }
+  },
+  "P3_evidence_standard_full": {
+    "dchi2": 5.1394,
+    "lnB_LCDM_over_TS": 1.5715,
+    "twolnB": 3.143,
+    "json_says": {
+      "lnB": 1.5715,
+      "twolnB": 3.143,
+      "dchi2": 5.1398,
+      "kass": "positive favours LCDM"
+    }
+  }
+}

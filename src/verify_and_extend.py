@@ -13,9 +13,12 @@ C=299792.458; RD=147.09
 
 # ---- correct CMB acoustic-scale point + error ----
 theta100=1.04109; sig100=0.00030
-DM_zstar_over_rstar=100.0/theta100                  # = 1/theta*  = 96.05
-r_star_over_rd=144.39/147.09                         # standard early physics
-DM_zstar_over_rd=DM_zstar_over_rstar*r_star_over_rd  # = 94.29
+DM_zstar_over_rstar=100.0/theta100                  # = 1/theta*  = 96.053
+# single, consistent Planck 2018 TT,TE,EE+lowE+lensing column for both r_star
+# and r_drag (previously mixed no-lensing r_star=144.39 with +lensing
+# r_drag=147.09, an internally inconsistent pairing)
+r_star_over_rd=144.43/147.09                         # Planck 2018 +lensing
+DM_zstar_over_rd=DM_zstar_over_rstar*r_star_over_rd  # = 94.316 -> 94.32
 sig_cmb=DM_zstar_over_rd*(sig100/theta100)           # propagate theta* error
 sig_cmb=max(sig_cmb,0.05)                             # floor for r*/rd assumption
 print(f"CMB point  D_M(z*)/r_d = {DM_zstar_over_rd:.3f} +/- {sig_cmb:.3f}  (was 94.29 +/- 0.40)")
@@ -37,6 +40,14 @@ def chi2_alpha(model_vec):
 fvg=np.linspace(0.30,0.995,696)
 bestfv=min(fvg,key=lambda fv:chi2_alpha(T.model_vec(fv,rows))[0])
 chi_ts,a_ts=chi2_alpha(T.model_vec(bestfv,rows)); H0_ts=T.g_dress(bestfv)*C/(a_ts*RD)
+# Delta-chi2=1 profile error on fv0 (fine grid around the minimum)
+_fvg_fine=np.linspace(max(0.30,bestfv-0.05),min(0.995,bestfv+0.05),4001)
+_chis=np.array([chi2_alpha(T.model_vec(fv,rows))[0] for fv in _fvg_fine])
+_i=int(np.argmin(_chis)); _dchi=_chis-_chis[_i]
+_lo=np.interp(1.0,_dchi[:_i+1][::-1],_fvg_fine[:_i+1][::-1]) if _i>0 else bestfv
+_hi=np.interp(1.0,_dchi[_i:],_fvg_fine[_i:]) if _i<len(_fvg_fine)-1 else bestfv
+fv0_err_lo=float(bestfv-_lo); fv0_err_hi=float(_hi-bestfv)
+print(f"  timescape fv0 Delta-chi2=1 error: +{fv0_err_hi:.4f} / -{fv0_err_lo:.4f}")
 # ---- LCDM ----
 omg=np.linspace(0.15,0.45,301)
 bestom=min(omg,key=lambda om:chi2_alpha(T.model_vec(om,rows,lcdm=om))[0])
@@ -88,7 +99,7 @@ print(f"  q0(dressed) at SN fv0={fvsn:.2f}: {q0_ts(fvsn):+.3f}   at BAO fv0={fvb
 
 import json
 json.dump(dict(cmb_point=DM_zstar_over_rd,cmb_err=sig_cmb,
-  timescape=dict(fv0=float(bestfv),H0=float(H0_ts),chi2=float(chi_ts),dof=n-2,q0=float(q0_ts(bestfv))),
+  timescape=dict(fv0=float(bestfv),fv0_err=[fv0_err_lo,fv0_err_hi],H0=float(H0_ts),chi2=float(chi_ts),dof=n-2,q0=float(q0_ts(bestfv))),
   lcdm=dict(Om=float(bestom),H0=float(H0_l),chi2=float(chi_l),dof=n-2,q0=float(q0_lcdm(bestom))),
   w0wa=dict(Om=float(Omw),w0=float(w0),wa=float(wa),H0=float(H0_w),chi2=float(chi_w),dof=n-4,q0=float(q0_w0wa(Omw,w0)),dBIC_vs_lcdm=float(bic(chi_w,4)-bic(chi_l,2))),
   core=dict(fv0_SN=float(fvsn),fv0_BAOonly=float(fvbo),SN_dchi2_at_BAOfv=float(sn_at_bo),BAO_dchi2_at_SNfv=float(bo_at_sn))),

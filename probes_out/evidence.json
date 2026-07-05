@@ -1,0 +1,378 @@
+{
+  "meta": {
+    "script": "src/probes/evidence.py",
+    "worktree": "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit",
+    "quick_mode": false,
+    "N_sne": 1580,
+    "grids": {
+      "standard": {
+        "fv0": [
+          0.4,
+          0.99,
+          591
+        ],
+        "Om": [
+          0.05,
+          0.7,
+          651
+        ],
+        "h": 0.001
+      },
+      "tripp": {
+        "fv0": [
+          0.4,
+          0.99,
+          237
+        ],
+        "Om": [
+          0.05,
+          0.7,
+          261
+        ],
+        "h": 0.0025
+      }
+    },
+    "sign_convention": "lnB = ln Z_LCDM - ln Z_TS; positive favours LCDM (same sign as dBIC = BIC_TS - BIC_LCDM)",
+    "offset_marginalisation_constant": {
+      "statement": "chi2_prof differs from the true M-marginalised -2lnL by ln det C + N ln 2pi + ln(s11/2pi), all theta- and model-independent within a covariance case (same C for both models) -> cancels exactly in lnB",
+      "s11_full": 70266.44390333147,
+      "s11_diag": 74330.1122050014,
+      "s11_equal_across_models_assert": "PASSED (exact equality)"
+    },
+    "lnZ_hat_definition": "lnZ_hat = ln int pi(theta) exp(-(chi2_prof-cref)/2) dtheta; true lnZ = lnZ_hat - cref/2 + shared constants; cref recorded per case",
+    "runtime_s": 18.0
+  },
+  "standard_full": {
+    "label": "standard m_b_corr, FULL stat+sys covariance",
+    "chi2_min": {
+      "lcdm": 1386.4052682098463,
+      "ts": 1391.545112385889,
+      "Om_at_min": 0.3326022304094379,
+      "fv0_at_min": 0.8526356115915549,
+      "dchi2_TS_minus_L": 5.139844176042743
+    },
+    "max_likelihood_ratio": {
+      "dchi2_min": 5.139844176042743,
+      "lnLmax_ratio_L_over_TS": 2.5699220880213716,
+      "note": "unit-information / Savage-Dickey-free comparison: ratio of maximised likelihoods, no prior"
+    },
+    "cref": 1386.4052682098463,
+    "lnZ_hat_LCDM": {
+      "Om~U(0.10,0.60)": -2.3918850933621583,
+      "Om~U(0.05,0.70)": -2.6542493578296487
+    },
+    "lnZ_hat_TS": {
+      "fv0~U(0.50,0.95)": -3.963365474810152,
+      "fv0~U(0.40,0.99)": -4.190188690461724
+    },
+    "occam_factor_ln": {
+      "Om~U(0.10,0.60)": -2.3918850933621583,
+      "Om~U(0.05,0.70)": -2.6542493578296487,
+      "fv0~U(0.50,0.95)": -1.3934433867887805,
+      "fv0~U(0.40,0.99)": -1.6202666024403527
+    },
+    "lnB": {
+      "Om~U(0.10,0.60) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": 1.5714803814479938,
+        "twolnB": 3.1429607628959877,
+        "kass_raftery": "positive (favours LCDM)"
+      },
+      "Om~U(0.10,0.60) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": 1.798303597099566,
+        "twolnB": 3.596607194199132,
+        "kass_raftery": "positive (favours LCDM)"
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": 1.3091161169805035,
+        "twolnB": 2.618232233961007,
+        "kass_raftery": "positive (favours LCDM)"
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": 1.5359393326320756,
+        "twolnB": 3.071878665264151,
+        "kass_raftery": "positive (favours LCDM)"
+      }
+    },
+    "quadrature_convergence": {
+      "LCDM Om~U(0.10,0.60) |lnZ(h)-lnZ(2h)|": 1.085398437794538e-11,
+      "LCDM Om~U(0.05,0.70) |lnZ(h)-lnZ(2h)|": 1.085487255636508e-11,
+      "TS fv0~U(0.50,0.95) |lnZ(h)-lnZ(2h)|": 1.2054856084020571e-05,
+      "TS fv0~U(0.40,0.99) |lnZ(h)-lnZ(2h)|": 4.128142473192042e-06
+    },
+    "posterior": {
+      "TS fv0~U(0.50,0.95)": {
+        "mean": 0.8581663681417574,
+        "sd": 0.04190662105052147,
+        "mode": 0.853,
+        "edge_density_over_peak_hi": 0.2057807322495615,
+        "edge_density_over_peak_lo": 5.9257786249366216e-33,
+        "P_gt_0.90": 0.17671853605617144,
+        "P_gt_0.95": 0.0
+      },
+      "TS fv0~U(0.40,0.99)": {
+        "mean": 0.8628312878478843,
+        "sd": 0.046573478637495024,
+        "mode": 0.853,
+        "edge_density_over_peak_hi": 0.06872782013035775,
+        "edge_density_over_peak_lo": 6.071262395953249e-60,
+        "P_gt_0.90": 0.21219830568440998,
+        "P_gt_0.95": 0.04309555259300636
+      },
+      "LCDM Om~U(0.10,0.60)": {
+        "mean": 0.33328742785372173,
+        "sd": 0.01825543192329271,
+        "mode": 0.3329999999999999,
+        "edge_density_over_peak_hi": 7.223649441338173e-35,
+        "edge_density_over_peak_lo": 2.4461197237236575e-53,
+        "P_gt_0.90": 0.0,
+        "P_gt_0.95": 0.0
+      },
+      "LCDM Om~U(0.05,0.70)": {
+        "mean": 0.3332874278537217,
+        "sd": 0.01825543192329271,
+        "mode": 0.3329999999999999,
+        "edge_density_over_peak_hi": 3.065781783285982e-59,
+        "edge_density_over_peak_lo": 1.3681399184639392e-88,
+        "P_gt_0.90": 0.0,
+        "P_gt_0.95": 0.0
+      }
+    },
+    "crosscheck_vs_results_json": {
+      "fv0": 0.8528822055137845,
+      "chi2_TS": 1391.5451414212584,
+      "Om": 0.3332775919732441,
+      "chi2_L": 1386.406638070941,
+      "dBIC": 5.138503350317478
+    }
+  },
+  "standard_diag": {
+    "label": "standard m_b_corr, DIAGONAL covariance",
+    "chi2_min": {
+      "lcdm": 1320.0881315720942,
+      "ts": 1325.0334079487152,
+      "Om_at_min": 0.35027514918713915,
+      "fv0_at_min": 0.843443693453017,
+      "dchi2_TS_minus_L": 4.9452763766209955
+    },
+    "max_likelihood_ratio": {
+      "dchi2_min": 4.9452763766209955,
+      "lnLmax_ratio_L_over_TS": 2.4726381883104978,
+      "note": "unit-information / Savage-Dickey-free comparison: ratio of maximised likelihoods, no prior"
+    },
+    "cref": 1320.0881315720942,
+    "lnZ_hat_LCDM": {
+      "Om~U(0.10,0.60)": -2.6791576204090193,
+      "Om~U(0.05,0.70)": -2.9415218848765106
+    },
+    "lnZ_hat_TS": {
+      "fv0~U(0.50,0.95)": -4.103072462168534,
+      "fv0~U(0.40,0.99)": -4.364795705415568
+    },
+    "occam_factor_ln": {
+      "Om~U(0.10,0.60)": -2.6791576204090193,
+      "Om~U(0.05,0.70)": -2.9415218848765106,
+      "fv0~U(0.50,0.95)": -1.630434273858036,
+      "fv0~U(0.40,0.99)": -1.89215751710507
+    },
+    "lnB": {
+      "Om~U(0.10,0.60) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": 1.4239148417595144,
+        "twolnB": 2.847829683519029,
+        "kass_raftery": "positive (favours LCDM)"
+      },
+      "Om~U(0.10,0.60) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": 1.6856380850065484,
+        "twolnB": 3.371276170013097,
+        "kass_raftery": "positive (favours LCDM)"
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": 1.1615505772920232,
+        "twolnB": 2.3231011545840463,
+        "kass_raftery": "positive (favours LCDM)"
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": 1.4232738205390572,
+        "twolnB": 2.8465476410781143,
+        "kass_raftery": "positive (favours LCDM)"
+      }
+    },
+    "quadrature_convergence": {
+      "LCDM Om~U(0.10,0.60) |lnZ(h)-lnZ(2h)|": 5.423147708683018e-09,
+      "LCDM Om~U(0.05,0.70) |lnZ(h)-lnZ(2h)|": 5.423147264593808e-09,
+      "TS fv0~U(0.50,0.95) |lnZ(h)-lnZ(2h)|": 5.760846407909526e-06,
+      "TS fv0~U(0.40,0.99) |lnZ(h)-lnZ(2h)|": 9.067242672244902e-07
+    },
+    "posterior": {
+      "TS fv0~U(0.50,0.95)": {
+        "mean": 0.849588580632981,
+        "sd": 0.03514802421211286,
+        "mode": 0.843,
+        "edge_density_over_peak_hi": 0.0445605151553592,
+        "edge_density_over_peak_lo": 7.62092100808834e-55,
+        "P_gt_0.90": 0.086921767183836,
+        "P_gt_0.95": 0.0
+      },
+      "TS fv0~U(0.40,0.99)": {
+        "mean": 0.8506317245982447,
+        "sd": 0.036653991739432165,
+        "mode": 0.843,
+        "edge_density_over_peak_hi": 0.006869022186344634,
+        "edge_density_over_peak_lo": 5.667978859344435e-103,
+        "P_gt_0.90": 0.09523987467555818,
+        "P_gt_0.95": 0.00910996143897444
+      },
+      "LCDM Om~U(0.10,0.60)": {
+        "mean": 0.35061954480782254,
+        "sd": 0.013692038789229161,
+        "mode": 0.3499999999999999,
+        "edge_density_over_peak_hi": 4.199996047584198e-56,
+        "edge_density_over_peak_lo": 5.1316821039322156e-107,
+        "P_gt_0.90": 0.0,
+        "P_gt_0.95": 0.0
+      },
+      "LCDM Om~U(0.05,0.70)": {
+        "mean": 0.35061954480782254,
+        "sd": 0.013692038789229161,
+        "mode": 0.3499999999999999,
+        "edge_density_over_peak_hi": 5.537958796369167e-100,
+        "edge_density_over_peak_lo": 3.4820772443917543e-171,
+        "P_gt_0.90": 0.0,
+        "P_gt_0.95": 0.0
+      }
+    },
+    "crosscheck_vs_results_json": {
+      "fv0": 0.843859649122807,
+      "chi2_TS": 1325.0335534214973,
+      "Om": 0.3498327759197324,
+      "chi2_L": 1320.0891762301326,
+      "dBIC": 4.944377191364765
+    }
+  },
+  "tripp_statonly": {
+    "label": "stat-only Tripp (fit_tripp), profile+Laplace over (alpha,beta,ln sig_int), exact M marginalisation",
+    "method_notes": [
+      "Nuisances (alpha,beta,ln sigma_int) are NOT exactly linear-Gaussian (they enter the per-SN variance), so exact analytic marginalisation is unavailable; used profile + Laplace (3x3 finite-difference Hessian of the M-marginalised -2lnL at each grid point).",
+      "M marginalised EXACTLY (Gaussian): contributes +0.5 ln 2pi - 0.5 ln S_w with S_w=sum(1/var); the ln S_w term is included in the objective that is minimised and integrated.",
+      "The ln|C| term (sum ln 2pi var_i, sigma_int-dependent) is already inside fit_tripp's -2lnL.",
+      "Nuisance prior volumes for (alpha,beta,sigma_int,M) are identical for both models and are omitted; they cancel exactly in lnB.",
+      "Expected Laplace accuracy: with N=1580 the conditional likelihood in (alpha,beta,ln sig) is very nearly Gaussian; the residual error largely cancels between models (same nuisance structure). See lnB_profile_only_variant for the size of the whole Laplace det term."
+    ],
+    "n2_min": {
+      "ts": -1380.846109372486,
+      "lcdm": -1371.450871703347,
+      "fv0_at_min": 0.821581067124577,
+      "Om_at_min": 0.3653853730426186,
+      "d_n2_TS_minus_L": -9.39523766913885
+    },
+    "crosscheck_vs_results_json": {
+      "L_TS": -1380.8443668720565,
+      "L_L": -1371.4477925903195,
+      "dBIC": -9.396574281737003,
+      "fv0": 0.82,
+      "Om": 0.36625,
+      "note": "repo used 81-pt grid (h=0.005) and looser NM tolerance"
+    },
+    "lnZ_hat_LCDM": {
+      "Om~U(0.10,0.60)": 669.1532741421429,
+      "Om~U(0.05,0.70)": 668.8909098776754
+    },
+    "lnZ_hat_TS": {
+      "fv0~U(0.50,0.95)": 674.802208373859,
+      "fv0~U(0.40,0.99)": 674.534157664528
+    },
+    "lnB": {
+      "Om~U(0.10,0.60) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": -5.648934231716112,
+        "twolnB": -11.297868463432224,
+        "kass_raftery": "very strong (favours timescape)"
+      },
+      "Om~U(0.10,0.60) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": -5.380883522385147,
+        "twolnB": -10.761767044770295,
+        "kass_raftery": "very strong (favours timescape)"
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": -5.911298496183576,
+        "twolnB": -11.822596992367153,
+        "kass_raftery": "very strong (favours timescape)"
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": -5.643247786852612,
+        "twolnB": -11.286495573705224,
+        "kass_raftery": "very strong (favours timescape)"
+      }
+    },
+    "lnB_profile_only_variant": {
+      "Om~U(0.10,0.60) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": -5.65969598853053
+      },
+      "Om~U(0.10,0.60) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": -5.391625610781034
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.50,0.95)": {
+        "lnB_LCDM_over_TS": -5.922060252997994
+      },
+      "Om~U(0.05,0.70) x fv0~U(0.40,0.99)": {
+        "lnB_LCDM_over_TS": -5.653989875248499
+      }
+    },
+    "laplace_det_spread": {
+      "TS": {
+        "half_lndet_min": 12.08392799898402,
+        "half_lndet_max": 12.094460028201564
+      },
+      "LCDM": {
+        "half_lndet_min": 12.06835883203231,
+        "half_lndet_max": 12.08470231461717
+      }
+    },
+    "non_pd_hessians": {
+      "TS": 0,
+      "LCDM": 0
+    },
+    "quadrature_convergence": {
+      "LCDM Om~U(0.10,0.60) |lnZ(h)-lnZ(2h)|": 3.5925040720030665e-10,
+      "LCDM Om~U(0.05,0.70) |lnZ(h)-lnZ(2h)|": 3.5925040720030665e-10,
+      "TS fv0~U(0.50,0.95) |lnZ(h)-lnZ(2h)|": 1.2294257317080337e-05,
+      "TS fv0~U(0.40,0.99) |lnZ(h)-lnZ(2h)|": 1.7210710439030663e-06
+    },
+    "posterior": {
+      "TS fv0~U(0.50,0.95)": {
+        "mean": 0.8281109941937655,
+        "sd": 0.03585238087282921,
+        "mode": 0.8225,
+        "edge_density_over_peak_hi": 0.014158704174946966,
+        "edge_density_over_peak_lo": 2.7524532906329802e-42,
+        "P_gt_0.90": 0.03272338905830337,
+        "P_gt_0.95": 0.0
+      },
+      "TS fv0~U(0.40,0.99)": {
+        "mean": 0.8284937349030694,
+        "sd": 0.03652233749440964,
+        "mode": 0.8225,
+        "edge_density_over_peak_hi": 0.0020237548893084914,
+        "edge_density_over_peak_lo": 9.65825291062987e-78,
+        "P_gt_0.90": 0.03545136095782375,
+        "P_gt_0.95": 0.0028202603770854586
+      },
+      "LCDM Om~U(0.10,0.60)": {
+        "mean": 0.36574261629056715,
+        "sd": 0.014860231391487967,
+        "mode": 0.36499999999999994,
+        "edge_density_over_peak_hi": 2.737954091520989e-41,
+        "edge_density_over_peak_lo": 1.2470784841665426e-92,
+        "P_gt_0.90": 0.0,
+        "P_gt_0.95": 0.0
+      },
+      "LCDM Om~U(0.05,0.70)": {
+        "mean": 0.3657426162905671,
+        "sd": 0.014860231391487965,
+        "mode": 0.36499999999999994,
+        "edge_density_over_peak_hi": 3.0699613772986555e-73,
+        "edge_density_over_peak_lo": 1.4620129952366295e-137,
+        "P_gt_0.90": 0.0,
+        "P_gt_0.95": 0.0
+      }
+    }
+  }
+}

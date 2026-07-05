@@ -135,7 +135,7 @@ def main():
     print(f"# redshift range: {zHD.min():.4f} .. {zHD.max():.4f}")
     chi2 = make_chi2(zHD, zHEL, mb, C)
 
-    fv_grid = np.linspace(0.500, 0.799, 300)
+    fv_grid = np.linspace(0.500, 0.960, 461)
     om_grid = np.linspace(0.050, 0.600, 300)
 
     fv0, cTS, fvlo, fvhi, g1, ch1 = scan(chi2, lambda fv: D_shape_TS(zHD, fv), fv_grid, "TS")

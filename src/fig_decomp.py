@@ -11,7 +11,7 @@ OUT=".."; A0,B0=0.131,2.663
 with open(F.DATA) as f:
     h=f.readline().split(); idx={n:i for i,n in enumerate(h)}; rows=[l.split() for l in f]
 col=lambda n:np.array([float(r[idx[n]]) for r in rows])
-d={n:col(n) for n in ["zHD","zHEL","m_b_corr","mB","x1","c"]}
+d={n:col(n) for n in ["zHD","zHEL","m_b_corr","mB","x1","c","biasCor_m_b"]}
 iscal=np.array([int(float(r[idx["IS_CALIBRATOR"]])) for r in rows]); m=(iscal==0)&(d["zHD"]>0.01)
 d={k:v[m] for k,v in d.items()}
 with open(F.COV) as f: n=int(f.readline())
@@ -33,7 +33,17 @@ for mname,mag in mags.items():
     for cname,C in [("Full covariance",Cfull),("Diagonal\n(off-diag dropped)",Cdiag)]:
         res[(mname,cname)]=float(dbic(mag,C))
         print(mname,"|",cname.replace("\n"," "),"-> dBIC",round(res[(mname,cname)],2))
-json.dump({f"{a} | {b}":v for (a,b),v in res.items()},open(f"{OUT}/results_decomp.json","w"),indent=2)
+# bias-correction-removed full-covariance cell (m_b_corr + biasCor_m_b undoes the
+# BBC bias correction); reported in Table I / the abstract as +9.0. Written to the
+# JSON only (not shown as a figure bar, which keeps the two main magnitudes).
+_bias_rm=float(dbic(d["m_b_corr"]+d["biasCor_m_b"],Cfull))
+_out={f"{a} | {b}":v for (a,b),v in res.items()}
+_out["bias correction removed | Full covariance"]=_bias_rm
+_out["bias_correction_removed_note"]=("fv0 rails to the fvg grid edge (0.900); "
+    "source: m_b_corr + biasCor_m_b under the full stat+sys covariance -- "
+    "reproduces the abstract's/Table I's +9.0")
+json.dump(_out,open(f"{OUT}/results_decomp.json","w"),indent=2)
+print("bias correction removed | Full covariance -> dBIC",round(_bias_rm,2))
 
 # grouped bar
 covs=["Full covariance","Diagonal\n(off-diag dropped)"]; mnames=list(mags)
