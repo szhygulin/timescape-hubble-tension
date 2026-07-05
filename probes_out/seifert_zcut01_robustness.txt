@@ -1,0 +1,16 @@
+[    0.0s] loading Seifert P+1690 input + 5070x5070 cosmology-independent covariance ...
+[    0.3s] N=1690; zCMB 0.0012..2.2613; covariance sorted by zCMB
+z>=0.01 N=1578; coarse LCDM min=-390.1890, TS min=-390.7153, coarse dBIC=-0.5264
+  Om=0.410: -2lnL=-386.1778
+  Om=0.420: -2lnL=-387.9340
+  Om=0.430: -2lnL=-389.1740
+  Om=0.440: -2lnL=-389.9141
+  Om=0.450: -2lnL=-390.1702
+  Om=0.460: -2lnL=-389.9573
+  Om=0.470: -2lnL=-389.2905
+  Om=0.480: -2lnL=-388.1842
+  Om=0.490: -2lnL=-386.6525
+
+FINE LCDM min: Om=0.4505  -2lnL=-390.1706  (vs coarse -390.1890, delta=+0.0183)
+FINE dBIC(TS-LCDM) = -0.5447  (TIMESCAPE)
+=> sign SURVIVES (still <=0) the z>=0.01 timescape/neutral lean
