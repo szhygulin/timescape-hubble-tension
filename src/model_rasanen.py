@@ -258,7 +258,12 @@ if __name__ == "__main__":
     print(f"LCDM reference (harness): Om={rl.x:.3f} joint chi2={rl.fun:.1f} H0={H.H0_from_alpha(al):.1f}")
     import math
     lnN = math.log(1593)
-    print(f"dBIC(joint late vs LCDM)  = {R['joint'][2]-1402.2:+.1f}   (k equal, dBIC=dchi2)")
-    print(f"dBIC(joint a6   vs LCDM)  = {R6['joint'][2]-1402.2:+.1f}")
+    # BIC penalty: Rasanen joint floats k=2 cosmological params (Om0,OQ0) vs
+    # LCDM's k=1 (Om); same (k-1)*ln(N) convention as model_ltbvoid.py:394 and
+    # joint_w0wa.py (k=2 vs k=1 there too).
+    dBIC_late = (R['joint'][2]-1402.2) + (2-1)*lnN
+    dBIC_a6   = (R6['joint'][2]-1402.2) + (2-1)*lnN
+    print(f"dBIC(joint late vs LCDM)  = {dBIC_late:+.1f}   (k=2 vs k=1, +{lnN:.2f} Occam penalty)")
+    print(f"dBIC(joint a6   vs LCDM)  = {dBIC_a6:+.1f}")
     print(f"SN-only late OQ0={R['sn'][1]:+.3f} vs BAO+CMB late OQ0={R['baocmb'][1]:+.3f}  "
           f"(peak-model ceiling |OQ0|=0.04)")

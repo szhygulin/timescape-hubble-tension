@@ -40,7 +40,7 @@ def load_sn(): return _zHD,_zHEL,_mb,_Cf
 def sn_chi2(Dc): return _SN(np.asarray(Dc,dtype=float))
 
 # BAO+CMB data (DESI DR1 + Planck acoustic scale, correct error)
-_DMz=(100.0/1.04109)*(144.39/147.09); _SIG=max(_DMz*(0.00030/1.04109),0.05)
+_DMz=(100.0/1.04109)*(144.43/147.09); _SIG=max(_DMz*(0.00030/1.04109),0.05)  # Planck 2018 +lensing column (consistent r_star/r_drag; was mixed 144.39/147.09)
 ROWS=[(z,k,v,e,c) for (z,k,v,e,c) in T.BAO]+[(1089.80,"DM",_DMz,_SIG,None)]
 _DV=np.array([r[2] for r in ROWS]); _CINV=np.linalg.inv(T.build_cov(ROWS))
 def bao_cmb_rows(): return list(ROWS)

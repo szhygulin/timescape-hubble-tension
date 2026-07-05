@@ -66,9 +66,12 @@ BAO = [
  (2.330,"DM",39.71,0.94,-0.477),(2.330,"DH",8.52,0.17,-0.477),
 ]
 # Planck 2018 acoustic scale -> D_M(z*)/r_d.  100 theta* = 1.04109(30);
-# D_M(z*)/r_* = 1/theta* = 96.05; r_*/r_drag = 144.39/147.09 = 0.9816
-ZSTAR=1089.80; DM_zstar_over_rd=96.053*0.9816   # = 94.29
-CMB=(ZSTAR,"DM",DM_zstar_over_rd,0.40)
+# D_M(z*)/r_* = 1/theta* = 96.053; r_*/r_drag = 144.43/147.09 = 0.98192
+# (single, consistent Planck 2018 TT,TE,EE+lowE+lensing column for both r_star
+#  and r_drag -- previously this mixed the no-lensing r_star=144.39 with the
+#  +lensing r_drag=147.09, an internally inconsistent pairing)
+ZSTAR=1089.80; DM_zstar_over_rd=96.053*(144.43/147.09)   # = 94.316 -> 94.32
+CMB=(ZSTAR,"DM",DM_zstar_over_rd,0.05)
 RD_STD=147.09   # Planck drag sound horizon (Mpc), standard early physics
 
 def build_data():

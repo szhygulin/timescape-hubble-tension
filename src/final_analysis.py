@@ -16,7 +16,7 @@ OUT = ".."
 # ----------------- (A) standard products -----------------
 zHD,zHEL,mb,Cfull = F.load()
 N=len(zHD)
-fvg=np.linspace(0.500,0.900,400); omg=np.linspace(0.050,0.600,300)
+fvg=np.linspace(0.500,0.960,461); omg=np.linspace(0.050,0.600,300)
 chi2_full = F.make_chi2(zHD,zHEL,mb,Cfull)
 fvA,cTSA,fa,fb,_,_ = F.scan(chi2_full, lambda fv:F.D_shape_TS(zHD,fv), fvg,"")
 omA,cLA ,oa,ob,_,_ = F.scan(chi2_full, lambda om:F.D_shape_LCDM(zHD,om), omg,"")

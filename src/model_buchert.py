@@ -324,3 +324,18 @@ if __name__ == "__main__":
     LCDM_JOINT = 1402.2
     print(f"\nJOINT chi2 = {cj:.1f}  vs LCDM joint {LCDM_JOINT}  -> "
           f"dchi2 = {cj-LCDM_JOINT:+.1f}; dBIC (equal k) = {cj-LCDM_JOINT:+.1f}")
+
+    import json
+    json.dump(dict(
+        model="Buchert scaling-solution backreaction template (Larena, Alimi, Buchert, Kunz & Corasaniti 2009, arXiv:0808.1161)",
+        sn_only=dict(n=float(ns), Om=float(oms), chi2=float(csn), q0=float(q0(ns, oms))),
+        bao_only=dict(n=float(nbo), Om=float(ombo), chi2=float(cbo), H0=float(H.H0_from_alpha(abo)), q0=float(q0(nbo, ombo))),
+        bao_cmb=dict(n=float(nbc), Om=float(ombc), chi2=float(cbc), H0=float(H.H0_from_alpha(abc)), q0=float(q0(nbc, ombc))),
+        joint=dict(n=float(nj), Om=float(omj), chi2=float(cj), sn_chi2=float(c_sn_at_j),
+                   baocmb_chi2=float(c_bc_at_j), H0=float(H.H0_from_alpha(aj)), q0=float(q0(nj, omj))),
+        lcdm_joint_chi2=LCDM_JOINT,
+        dchi2_vs_LCDM=float(cj - LCDM_JOINT),
+        dBIC_vs_LCDM=float(cj - LCDM_JOINT),
+        dBIC_note="equal k (both models: 2 cosmo params + offset/alpha) -> dBIC = dchi2",
+    ), open("../results_buchert.json", "w"), indent=2)
+    print("\nsaved results_buchert.json")

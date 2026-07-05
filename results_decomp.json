@@ -2,5 +2,7 @@
   "m_b_corr (standard) | Full covariance": 5.138503350317478,
   "m_b_corr (standard) | Diagonal\n(off-diag dropped)": 4.944377191364765,
   "raw Tripp (no bias corr.) | Full covariance": 3.89517193287611,
-  "raw Tripp (no bias corr.) | Diagonal\n(off-diag dropped)": -7.850625820457935
+  "raw Tripp (no bias corr.) | Diagonal\n(off-diag dropped)": -7.850625820457935,
+  "bias correction removed | Full covariance": 9.006031818687916,
+  "bias_correction_removed_note": "fv0 rails to the fvg grid edge (0.900); source: m_b_corr + biasCor_m_b under the full stat+sys covariance -- reproduces the abstract's/Table I's +9.0"
 }

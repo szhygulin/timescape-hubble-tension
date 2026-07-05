@@ -16,7 +16,7 @@ C=299792.458; RD=147.09
 # ---- SN data + full covariance ----
 zHD,zHEL,mb,Cf=F.load(); SN_chi2=F.make_chi2(zHD,zHEL,mb,Cf)
 # ---- BAO+CMB data (correct CMB error) ----
-DMz=(100.0/1.04109)*(144.39/147.09); sig=max(DMz*(0.00030/1.04109),0.05)
+DMz=(100.0/1.04109)*(144.43/147.09); sig=max(DMz*(0.00030/1.04109),0.05)  # Planck 2018 +lensing column (consistent r_star/r_drag; was mixed 144.39/147.09)
 rows=[(z,k,v,e,c) for (z,k,v,e,c) in T.BAO]+[(1089.80,"DM",DMz,sig,None)]
 d=np.array([r[2] for r in rows]); Cinv=np.linalg.inv(T.build_cov(rows)); nB=len(rows)
 def bc_chi2(vec):

@@ -1,0 +1,21 @@
+{
+  "tripp_profiled_dBIC": {
+    "fv0": 0.8225,
+    "Om": 0.365,
+    "n2_TS": -1380.8458,
+    "n2_L": -1371.4505,
+    "dBIC": -9.3952,
+    "committed_results_json": -9.3966
+  },
+  "lnB_LCDM_over_TS_profile_only": {
+    "Om~U(0.10,0.60) x fv0~U(0.50,0.95)": -5.66,
+    "Om~U(0.10,0.60) x fv0~U(0.40,0.99)": -5.392,
+    "Om~U(0.05,0.70) x fv0~U(0.50,0.95)": -5.922,
+    "Om~U(0.05,0.70) x fv0~U(0.40,0.99)": -5.654
+  },
+  "json_profile_only_variant": {
+    "Om~U(0.10,0.60) x fv0~U(0.50,0.95)": -5.66,
+    "Om~U(0.05,0.70) x fv0~U(0.50,0.95)": -5.922
+  },
+  "interpretation": "negative lnB => favours timescape; |lnB| 5.4-5.9 reproduces Seifert lnB>5"
+}
