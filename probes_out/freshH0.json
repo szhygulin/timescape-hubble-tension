@@ -1,0 +1,250 @@
+{
+ "probe": "freshH0",
+ "purpose": "fresh SH0ES-style late-time dressed H0 for timescape and LCDM from Pantheon+SH0ES (calibrators anchor M_B; full stat+sys covariance; (MB,q) GLS-profiled; shape gridded)",
+ "data": {
+  "dat_rows": 1701,
+  "cov_dim": 1701,
+  "md5_dat": "2049b142e6aad384470b3364aa10f3fa",
+  "md5_cov": "041bdb6638841794fc2d7caa88dd66eb",
+  "n_calibrators": 77
+ },
+ "conventions": {
+  "H0REF": 70.0,
+  "q_def": "mu = mu(H0REF) + q*w_HF, H0 = H0REF*10^(-q/5)",
+  "calibrator_residual": "m_b_corr - M_B - CEPH_DIST",
+  "hf_residual": "m_b_corr - M_B - mu_model(zHD,zHEL;shape,H0)",
+  "timescape_scale": "Hbar0 = H0_dressed*2(2+fv0)/(4fv0^2+fv0+4); d_L=(c/Hbar0)(1+zHEL)(1+zHD)dA"
+ },
+ "norm_gates": {
+  "TS_lowz_limit": 1.0000000295542197,
+  "LCDM_lowz_limit": 1.0000000490495666
+ },
+ "lcdm_validation_gate": {
+  "passed": true,
+  "H0": 73.5274431482745,
+  "sigma": 1.0170375183817768,
+  "expected": "~73.0 +- 1.0"
+ },
+ "variants": {
+  "main_z001": {
+   "n": 1657,
+   "n_cal": 77,
+   "n_hf": 1580,
+   "lcdm": {
+    "label": "main_z001/LCDM",
+    "n": 1657,
+    "dof": 1654,
+    "shape_best": 0.33250000000000024,
+    "shape_err_lo": 0.018476633715434787,
+    "shape_err_hi": 0.017586109362528135,
+    "shape_railed": false,
+    "H0": 73.5274431482745,
+    "H0_err_lo": 1.0046537008553287,
+    "H0_err_hi": 1.029421335908225,
+    "H0_err_sym": 1.0170375183817768,
+    "H0_err_fixed_shape": 1.0072396230751008,
+    "MB": -19.243994606075375,
+    "MB_err_cond": 0.02950064763433594,
+    "chi2_min": 1452.0173997543752,
+    "chi2_per_dof": 0.8778823456797915,
+    "grid": [
+     0.05,
+     0.6000000000000005,
+     221
+    ]
+   },
+   "timescape": {
+    "label": "main_z001/timescape",
+    "n": 1657,
+    "dof": 1654,
+    "shape_best": 0.8525000000000005,
+    "shape_err_lo": 0.04117449211983881,
+    "shape_err_hi": 0.050214562410825,
+    "shape_railed": false,
+    "H0": 72.99788265971678,
+    "H0_err_lo": 0.9962806313172763,
+    "H0_err_hi": 1.0137679093929108,
+    "H0_err_sym": 1.0050242703550936,
+    "H0_err_fixed_shape": 0.9999852662791666,
+    "MB": -19.240316076048884,
+    "MB_err_cond": 0.02950064763433594,
+    "chi2_min": 1458.0478952303529,
+    "chi2_per_dof": 0.8815283526181094,
+    "grid": [
+     0.35,
+     0.9500000000000005,
+     241
+    ],
+    "Om_dressed_equiv": 0.21037187499999935,
+    "Hbar0": 53.669898682417305
+   },
+   "dchi2_TS_minus_LCDM": 6.030495475977659
+  },
+  "shoes_hf_flag": {
+   "n": 354,
+   "n_cal": 77,
+   "n_hf": 277,
+   "lcdm": {
+    "label": "shoes_hf_flag/LCDM",
+    "n": 354,
+    "dof": 351,
+    "shape_best": 0.36250000000000027,
+    "shape_err_lo": 0.15059193828016468,
+    "shape_err_hi": 0.15832572416094337,
+    "shape_railed": false,
+    "H0": 73.33817591783448,
+    "H0_err_lo": 1.1370931222252665,
+    "H0_err_hi": 1.1550416209726535,
+    "H0_err_sym": 1.14606737159896,
+    "H0_err_fixed_shape": 1.0455417494491503,
+    "MB": -19.246448443378398,
+    "MB_err_cond": 0.029855183954244118,
+    "chi2_min": 299.7450963528827,
+    "chi2_per_dof": 0.8539746334839963,
+    "grid": [
+     0.05,
+     0.6000000000000005,
+     221
+    ]
+   },
+   "timescape": {
+    "label": "shoes_hf_flag/timescape",
+    "n": 354,
+    "dof": 351,
+    "shape_best": 0.9500000000000005,
+    "shape_err_lo": 0.326833335777572,
+    "shape_err_hi": null,
+    "shape_railed": true,
+    "H0": 73.13174268988838,
+    "H0_err_lo": 1.043187611947289,
+    "H0_err_hi": 1.0500618307647471,
+    "H0_err_sym": 1.046624721356018,
+    "H0_err_fixed_shape": 1.0425987452689944,
+    "MB": -19.246036050204083,
+    "MB_err_cond": 0.029855183954244118,
+    "chi2_min": 299.96640280168504,
+    "chi2_per_dof": 0.8546051361871368,
+    "grid": [
+     0.35,
+     0.9500000000000005,
+     241
+    ],
+    "Om_dressed_equiv": 0.07374999999999926,
+    "Hbar0": 50.40622451756324
+   },
+   "dchi2_TS_minus_LCDM": 0.22130644880235195
+  },
+  "hf_z_gt_010": {
+   "n": 1037,
+   "n_cal": 77,
+   "n_hf": 960,
+   "lcdm": {
+    "label": "hf_z_gt_010/LCDM",
+    "n": 1037,
+    "dof": 1034,
+    "shape_best": 0.33000000000000024,
+    "shape_err_lo": 0.02301427257893457,
+    "shape_err_hi": 0.025721304368631903,
+    "shape_railed": false,
+    "H0": 73.59282103343055,
+    "H0_err_lo": 1.10448784152031,
+    "H0_err_hi": 1.0970092106334164,
+    "H0_err_sym": 1.1007485260768632,
+    "H0_err_fixed_shape": 1.0440341457672515,
+    "MB": -19.24533904690054,
+    "MB_err_cond": 0.029698372002784152,
+    "chi2_min": 895.8507535047829,
+    "chi2_per_dof": 0.866393378631318,
+    "grid": [
+     0.05,
+     0.6000000000000005,
+     221
+    ]
+   },
+   "timescape": {
+    "label": "hf_z_gt_010/timescape",
+    "n": 1037,
+    "dof": 1034,
+    "shape_best": 0.7925000000000004,
+    "shape_err_lo": 0.04307474760770902,
+    "shape_err_hi": 0.04786880729945264,
+    "shape_railed": false,
+    "H0": 72.35999342977713,
+    "H0_err_lo": 1.0488964339356812,
+    "H0_err_hi": 1.0594141172040281,
+    "H0_err_sym": 1.0541552755698547,
+    "H0_err_fixed_shape": 1.026544476313299,
+    "MB": -19.243007565235587,
+    "MB_err_cond": 0.029698372002784152,
+    "chi2_min": 900.0748543813825,
+    "chi2_per_dof": 0.8704785825738709,
+    "grid": [
+     0.35,
+     0.9500000000000005,
+     241
+    ],
+    "Om_dressed_equiv": 0.28972187499999946,
+    "Hbar0": 55.32454175965628
+   },
+   "dchi2_TS_minus_LCDM": 4.22410087659955
+  }
+ },
+ "tension": {
+  "fresh_TS_vs_CMB61p0_stat": 9.385458433599576,
+  "fresh_TS_vs_CMB61p0_statsys": 2.378334228022042,
+  "fresh_TS_vs_SN2008_61p7": 7.397404458182159,
+  "fresh_LCDM_vs_Planck": 5.355981560119213,
+  "fresh_TS_zgt010_vs_CMB61p0_stat": 8.623535844336162,
+  "fresh_TS_zgt010_vs_CMB61p0_statsys": 2.247422938743111,
+  "paper_claimA_TS_stat": 0.5,
+  "paper_claimA_TS_statsys": 0.14,
+  "paper_LCDM_reference": 4.85,
+  "shoes_published_vs_Planck": 4.8470939579172
+ },
+ "delta_req": {
+  "paper_ref_73p04_over_61p7": {
+   "delta": 0.18379254457050243,
+   "sigma": 0.027765906384817466,
+   "in_window": true,
+   "nsig_below_17": -0.4967438980506051,
+   "nsig_above_22": -1.3040256971152215
+  },
+  "fresh_over_CMB61p0_stat": {
+   "delta": 0.19668660097896362,
+   "sigma": 0.022619515622805828,
+   "in_window": true,
+   "nsig_below_17": -1.179804263892247,
+   "nsig_above_22": -1.0306763155233507
+  },
+  "fresh_over_CMB61p0_statsys": {
+   "delta": 0.19668660097896362,
+   "sigma": 0.09837082362759246,
+   "in_window": true,
+   "nsig_below_17": -0.27128573285095653,
+   "nsig_above_22": -0.23699505769408952
+  },
+  "fresh_over_SN2008_61p7": {
+   "delta": 0.18310992965505313,
+   "sigma": 0.027415244905038005,
+   "in_window": true,
+   "nsig_below_17": -0.47819852423218545,
+   "nsig_above_22": -1.34560426042985
+  },
+  "fresh_zgt010_over_CMB61p0_stat": {
+   "delta": 0.18622940048814973,
+   "sigma": 0.023122539892991956,
+   "in_window": true,
+   "nsig_below_17": -0.7018865818053394,
+   "nsig_above_22": -1.4605056221390955
+  },
+  "window": [
+   0.17,
+   0.22
+  ],
+  "ladder_H0_range_implied_by_window_on_61p0": [
+   71.36999999999999,
+   74.42
+  ],
+  "note_zgt010": "hf_z_gt_010 restricts Hubble-flow SNe to z>0.10 (>~300/h Mpc), entirely beyond the ~100/h Mpc homogeneity scale and ~30/h Mpc dominant-void scale where the 17-22% apparent-Hubble variance is predicted to act; the calibrator rung (geometric Cepheid distances, M_B) involves no redshift, so a still-high dressed H0 here cannot be attributed to Hubble-flow expansion variance"
+ }
+}

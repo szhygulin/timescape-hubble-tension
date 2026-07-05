@@ -1,0 +1,315 @@
+{
+  "script": "src/probes/mocks.py",
+  "seeds": {
+    "lcdm_truth": 1,
+    "ts_truth": 2,
+    "split_sn": 3,
+    "split_bao": 4
+  },
+  "N_sn": 1580,
+  "J_sn": 4000,
+  "J_split": 4000,
+  "grids": {
+    "fv": [
+      0.3,
+      0.9900000000000007,
+      346
+    ],
+    "om": [
+      0.05,
+      0.6000000000000005,
+      221
+    ]
+  },
+  "real_data_check": {
+    "fv0_SN": 0.852639476087544,
+    "Om": 0.3326061443788711,
+    "chi2_TS": 1391.5451079007482,
+    "chi2_L": 1386.4052641275164,
+    "Delta_mygrid": 5.13984377323186,
+    "Delta_committed": 5.138503350317478,
+    "committed": {
+      "fv0": 0.8528822055137845,
+      "Om": 0.3332775919732441,
+      "chi2_TS": 1391.5451414212584,
+      "chi2_L": 1386.406638070941
+    }
+  },
+  "part1_lcdm_truth": {
+    "truth": {
+      "model": "LCDM",
+      "Om": 0.3332775919732441
+    },
+    "noncentrality_min_profiled_dist_truth_to_TS_family": 9.083053321501211,
+    "Delta_quantiles": {
+      "0.001": -8.303243796259363,
+      "0.01": -4.91436298633256,
+      "0.025": -2.5641543352481637,
+      "0.05": -0.7823483876395635,
+      "0.16": 3.251223676933275,
+      "0.25": 5.107461660529204,
+      "0.5": 9.226085241409312,
+      "0.75": 13.112703709600053,
+      "0.84": 14.95643315364433,
+      "0.95": 19.34615151786089,
+      "0.975": 21.40527283734009,
+      "0.99": 23.736509367443993,
+      "0.999": 27.77712323677223
+    },
+    "Delta_mean": 9.176492514219712,
+    "Delta_sd": 6.038216674187055,
+    "frac_Delta_negative": 0.0645,
+    "railed_frac": {
+      "om": 0.0,
+      "fv": 0.00225
+    },
+    "fv_hat": {
+      "mean": 0.84445942360514,
+      "sd": 0.04138287293097049
+    },
+    "om_hat": {
+      "mean": 0.3338984569699209,
+      "sd": 0.017854051276053
+    },
+    "p_le_obs": {
+      "label": "P(Delta<=+5.14 | LCDM true): is the observed LCDM win unusually WEAK?",
+      "threshold": 5.138503350317478,
+      "side": "le",
+      "n_mocks": 4000,
+      "n_exceed": 1010,
+      "p_emp": 0.2525,
+      "mock_mean": 9.176492514219712,
+      "mock_sd": 6.038216674187055,
+      "z_gauss": 0.6687386991534022,
+      "p_gauss": 0.2518310883283912,
+      "sigma_gauss_one_sided": 0.6687386991534022
+    },
+    "p_ge_obs": {
+      "label": "P(Delta>=+5.14 | LCDM true): is the observed LCDM win unusually STRONG?",
+      "threshold": 5.138503350317478,
+      "side": "ge",
+      "n_mocks": 4000,
+      "n_exceed": 2990,
+      "p_emp": 0.7475,
+      "mock_mean": 9.176492514219712,
+      "mock_sd": 6.038216674187055,
+      "z_gauss": -0.6687386991534022,
+      "p_gauss": 0.7481689116716088,
+      "sigma_gauss_one_sided": -0.6687386991534022
+    },
+    "tail_note": "Under LCDM truth Delta is typically positive; the lower tail P(Delta<=obs) tests whether the observed win is suspiciously small (TS mimicking), the upper tail whether it is larger than LCDM-truth sampling scatter explains. Neither is the evidence-against-TS statement; that is part1_ts_truth.p_ge_obs."
+  },
+  "part1_ts_truth": {
+    "truth": {
+      "model": "timescape",
+      "fv0": 0.8528822055137845
+    },
+    "noncentrality_min_profiled_dist_truth_to_LCDM_family": 8.716356782511866,
+    "Delta_quantiles": {
+      "0.001": -29.714832156998124,
+      "0.01": -23.838180296918026,
+      "0.025": -20.794169357776134,
+      "0.05": -18.642701033866157,
+      "0.16": -14.678154988215173,
+      "0.25": -12.726690331950483,
+      "0.5": -8.56835353572809,
+      "0.75": -4.525610873339568,
+      "0.84": -2.7804889348213755,
+      "0.95": 1.1901209538232649,
+      "0.975": 2.782865144196226,
+      "0.99": 4.733713507941811,
+      "0.999": 8.946082307352548
+    },
+    "Delta_mean": -8.724558916166439,
+    "Delta_sd": 6.069653659645353,
+    "frac_Delta_positive": 0.07125,
+    "railed_frac": {
+      "om": 0.0,
+      "fv": 0.0165
+    },
+    "fv_hat": {
+      "mean": 0.8559687472306727,
+      "sd": 0.04897726942329832
+    },
+    "p_ge_obs": {
+      "label": "P(Delta>=+5.14 | TS true): probability of the observed LCDM win if timescape were right (discriminating power / evidence against TS)",
+      "threshold": 5.138503350317478,
+      "side": "ge",
+      "n_mocks": 4000,
+      "n_exceed": 32,
+      "p_emp": 0.008,
+      "mock_mean": -8.724558916166439,
+      "mock_sd": 6.069653659645353,
+      "z_gauss": 2.283995602360931,
+      "p_gauss": 0.011185894698199875,
+      "sigma_gauss_one_sided": 2.283995602360931,
+      "gpd": {
+        "u": 1.1901209538232649,
+        "n_exc": 200,
+        "shape": -0.006150361560197897,
+        "scale": 2.1149403638354407,
+        "p_gpd": 0.007647066902264958,
+        "sigma_gpd_one_sided": 2.4253381460029977,
+        "note": "POT fit to top 5% of mocks; extrapolation beyond mock max is model-dependent"
+      }
+    },
+    "tail_note": "One-sided upper tail: timescape is the null; large positive Delta is evidence against it. This is the frequentist p-value that calibrates the observed dBIC=+5.14."
+  },
+  "baocmb_real_data_check": {
+    "fv0_BAOCMB_refined": 0.6356655913946028,
+    "chi2": 36.32377208057658,
+    "dof": 11,
+    "fv0_err_dchi2eq1": [
+      0.005655349873683546,
+      0.005563570771354387
+    ],
+    "alpha_at_joint_truth": 38.43151917309919,
+    "committed": {
+      "fv0": 0.636,
+      "chi2": 36.32731787580997,
+      "source": "results_baocmb.json (grid step 0.001)"
+    }
+  },
+  "part2_fv_split": {
+    "truth": {
+      "model": "timescape single fv0",
+      "fv0": 0.6426065162907268,
+      "alpha_baocmb": 38.43151917309919,
+      "bao_rows": 13,
+      "cmb_err": 0.05
+    },
+    "fv_sn_hat": {
+      "mean": 0.6440037326535295,
+      "sd": 0.026944535918021185,
+      "bias": 0.0013972163628026557,
+      "railed_frac": 0.0
+    },
+    "fv_bao_hat": {
+      "mean": 0.6424969662999674,
+      "sd": 0.005602868862139849,
+      "bias": -0.00010954999075940552,
+      "railed_frac": 0.0
+    },
+    "dfv_quantiles": {
+      "0.001": -0.08180532377786467,
+      "0.01": -0.06150696921310272,
+      "0.025": -0.05232655602259282,
+      "0.05": -0.04346692192010288,
+      "0.16": -0.025901038490367605,
+      "0.25": -0.016732816944656143,
+      "0.5": 0.00116586361864629,
+      "0.75": 0.019749124771756027,
+      "0.84": 0.0285407219733096,
+      "0.95": 0.04717042500792297,
+      "0.975": 0.05641285444465051,
+      "0.99": 0.06709303555338221,
+      "0.999": 0.08112175034245683
+    },
+    "dfv_mean": 0.0015067663535619366,
+    "dfv_sd": 0.02749923888005322,
+    "dfv_max": 0.12208181456700018,
+    "dfv_min": -0.09605453093306682,
+    "observed_split_task": {
+      "label": "P(dfv>=0.214 | single fv0): task-specified split 0.853-0.639",
+      "threshold": 0.21399999999999997,
+      "side": "ge",
+      "n_mocks": 4000,
+      "n_exceed": 0,
+      "p_emp": 0.0,
+      "mock_mean": 0.0015067663535619366,
+      "mock_sd": 0.02749923888005322,
+      "z_gauss": 7.727240545576394,
+      "p_gauss": 5.495142798093147e-15,
+      "sigma_gauss_one_sided": 7.727240545576393,
+      "gpd": {
+        "u": 0.04717042500792297,
+        "n_exc": 200,
+        "shape": -0.06411906606640069,
+        "scale": 0.012774088358709322,
+        "p_gpd": 2.487882316457114e-14,
+        "sigma_gpd_one_sided": 7.5325531895966895,
+        "note": "POT fit to top 5% of mocks; extrapolation beyond mock max is model-dependent"
+      },
+      "hard_bound": {
+        "p_lt": 0.00025,
+        "rule_of_three_p95_upper": 0.00075,
+        "note": "zero of n mocks exceeded; p < 1/n at face value, 95% CL upper bound 3/n"
+      }
+    },
+    "observed_split_variant": {
+      "label": "P(dfv>=0.2169): results.json 0.8529 vs results_baocmb.json 0.636",
+      "threshold": 0.21688220551378445,
+      "side": "ge",
+      "n_mocks": 4000,
+      "n_exceed": 0,
+      "p_emp": 0.0,
+      "mock_mean": 0.0015067663535619366,
+      "mock_sd": 0.02749923888005322,
+      "z_gauss": 7.832050919650969,
+      "p_gauss": 2.3998752584525802e-15,
+      "sigma_gauss_one_sided": 7.83205091965097,
+      "gpd": {
+        "u": 0.04717042500792297,
+        "n_exc": 200,
+        "shape": -0.06411906606640069,
+        "scale": 0.012774088358709322,
+        "p_gpd": 5.8169490405991e-15,
+        "sigma_gpd_one_sided": 7.719989837678247,
+        "note": "POT fit to top 5% of mocks; extrapolation beyond mock max is model-dependent"
+      },
+      "hard_bound": {
+        "p_lt": 0.00025,
+        "rule_of_three_p95_upper": 0.00075,
+        "note": "zero of n mocks exceeded; p < 1/n at face value, 95% CL upper bound 3/n"
+      }
+    }
+  },
+  "part3_seifert_split": {
+    "observed_split": {
+      "label": "P(dfv>=0.098): Seifert fv0=0.737 vs BAO+CMB 0.639",
+      "threshold": 0.09799999999999998,
+      "side": "ge",
+      "n_mocks": 4000,
+      "n_exceed": 3,
+      "p_emp": 0.00075,
+      "mock_mean": 0.0015067663535619366,
+      "mock_sd": 0.02749923888005322,
+      "z_gauss": 3.5089419771697803,
+      "p_gauss": 0.0002249465207623169,
+      "sigma_gauss_one_sided": 3.5089419771697803,
+      "gpd": {
+        "u": 0.04717042500792297,
+        "n_exc": 200,
+        "shape": -0.06411906606640069,
+        "scale": 0.012774088358709322,
+        "p_gpd": 0.000505677741560229,
+        "sigma_gpd_one_sided": 3.287348616739507,
+        "note": "POT fit to top 5% of mocks; extrapolation beyond mock max is model-dependent"
+      }
+    },
+    "observed_split_variant": {
+      "label": "P(dfv>=0.101): Seifert 0.737 vs verify_and_extend 0.636",
+      "threshold": 0.10099999999999998,
+      "side": "ge",
+      "n_mocks": 4000,
+      "n_exceed": 2,
+      "p_emp": 0.0005,
+      "mock_mean": 0.0015067663535619366,
+      "mock_sd": 0.02749923888005322,
+      "z_gauss": 3.6180359056630547,
+      "p_gauss": 0.00014842361074745186,
+      "sigma_gauss_one_sided": 3.6180359056630547,
+      "gpd": {
+        "u": 0.04717042500792297,
+        "n_exc": 200,
+        "shape": -0.06411906606640069,
+        "scale": 0.012774088358709322,
+        "p_gpd": 0.0003677397256625145,
+        "sigma_gpd_one_sided": 3.37599990315443,
+        "note": "POT fit to top 5% of mocks; extrapolation beyond mock max is model-dependent"
+      }
+    },
+    "caveat": "Seifert et al.'s fv0=0.737 comes from their own Tripp standardisation + covariance, which this repo cannot reproduce; the SN-side sampling error used here is the mock error of THIS pipeline's m_b_corr full-covariance fit (sd of fv_sn_hat above), a proxy that is likely narrower than Seifert's actual posterior width."
+  },
+  "runtime_s": 5.9
+}

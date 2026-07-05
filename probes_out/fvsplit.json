@@ -1,0 +1,384 @@
+{
+  "name": "fvsplit",
+  "provenance": {
+    "worktree": "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit",
+    "script": "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit/src/probes/fvsplit.py",
+    "sn_grid": [
+      0.5,
+      0.96,
+      461
+    ],
+    "bao_grid": [
+      0.3,
+      0.995,
+      1391
+    ],
+    "fine_grid": [
+      0.5,
+      0.96,
+      2301
+    ],
+    "cmb_point": 94.29001253445936,
+    "cmb_err_floor": 0.05,
+    "cmb_err_propagated": 0.027170565234838302,
+    "sigma_sys_nazer": 0.082615,
+    "seifert_anchor": [
+      0.737,
+      0.02
+    ],
+    "frozen_tripp": [
+      0.131,
+      2.663
+    ],
+    "N_sn": 1580,
+    "stat": "parameter-shift: dchi2_join = min_fv[SN(fv)+BAO(fv)] - (min SN + min BAO), 1 dof, sigma = sqrt(dchi2_join)"
+  },
+  "sn_curves": {
+    "S1_standard_fullcov": {
+      "fv0": 0.853,
+      "chi2_min": 1391.545176267624,
+      "err_lo": 0.04262558012493589,
+      "err_hi": 0.0495446154390311,
+      "railed": false
+    },
+    "S2_trippfrozen_diag": {
+      "fv0": 0.819,
+      "chi2_min": 1464.844620861113,
+      "err_lo": 0.03021912661427284,
+      "err_hi": 0.03422236782810506,
+      "railed": false
+    },
+    "S3_tripp_prof_z001": {
+      "fv0": 0.8220000000000001,
+      "chi2_min": -1380.8463243956965,
+      "err_lo": 0.03292592880220602,
+      "err_hi": 0.03631143881837007,
+      "railed": false
+    },
+    "S4_tripp_prof_z075": {
+      "fv0": 0.796,
+      "chi2_min": -928.5950087474212,
+      "err_lo": 0.0376229897359891,
+      "err_hi": 0.04115100583914544,
+      "railed": false
+    },
+    "S5_seifert_anchor": {
+      "fv0": 0.737,
+      "chi2_min": 0.0,
+      "err_lo": 0.02,
+      "err_hi": 0.02,
+      "railed": false,
+      "note": "uncertainty ASSUMED +/-0.02 (not from literature agent)"
+    }
+  },
+  "bao_curves": {
+    "B1_baocmb_e050": {
+      "fv0": 0.6355,
+      "chi2_min": 36.32464150991291,
+      "err_lo": 0.005492343903495844,
+      "err_hi": 0.005731557890735317,
+      "railed": false
+    },
+    "B2_baocmb_e027": {
+      "fv0": 0.6355,
+      "chi2_min": 36.3312717191875,
+      "err_lo": 0.005511017344455804,
+      "err_hi": 0.005670167521739433,
+      "railed": false
+    },
+    "B4_baoonly": {
+      "fv0": 0.677,
+      "chi2_min": 29.30956718440575,
+      "err_lo": 0.016638957544818034,
+      "err_hi": 0.016267050141242967,
+      "railed": false
+    },
+    "B3_baocmb_e050_nazersys": {
+      "fv0": 0.6354,
+      "chi2_min": null,
+      "err_lo": 0.08251500136198542,
+      "err_hi": 0.08310437202314436,
+      "railed": false,
+      "sigma_sys": 0.082615,
+      "note": "B1 profile min-plus-convolved with Gaussian width 0.13*fv0_B1"
+    }
+  },
+  "tension_matrix": {
+    "S1_standard_fullcov": {
+      "B1_baocmb_e050": {
+        "dchi2_join": 41.654,
+        "sigma": 6.454,
+        "fv_joint": 0.643,
+        "sn_dchi2_at_joint": 39.912,
+        "bao_dchi2_at_joint": 1.742,
+        "gap_fv0": 0.2175,
+        "gaussian_sigma": 4.685,
+        "joint_at_edge": false
+      },
+      "B2_baocmb_e027": {
+        "dchi2_join": 41.687,
+        "sigma": 6.457,
+        "fv_joint": 0.643,
+        "sn_dchi2_at_joint": 39.912,
+        "bao_dchi2_at_joint": 1.775,
+        "gap_fv0": 0.2175,
+        "gaussian_sigma": 4.685,
+        "joint_at_edge": false
+      },
+      "B3_baocmb_e050_nazersys": {
+        "dchi2_join": 5.451,
+        "sigma": 2.335,
+        "fv_joint": 0.81,
+        "sn_dchi2_at_joint": 1.019,
+        "bao_dchi2_at_joint": 4.432,
+        "gap_fv0": 0.2176,
+        "gaussian_sigma": 2.296,
+        "joint_at_edge": false
+      },
+      "B4_baoonly": {
+        "dchi2_join": 19.545,
+        "sigma": 4.421,
+        "fv_joint": 0.712,
+        "sn_dchi2_at_joint": 15.02,
+        "bao_dchi2_at_joint": 4.525,
+        "gap_fv0": 0.176,
+        "gaussian_sigma": 3.597,
+        "joint_at_edge": false
+      }
+    },
+    "S2_trippfrozen_diag": {
+      "B1_baocmb_e050": {
+        "dchi2_join": 52.455,
+        "sigma": 7.243,
+        "fv_joint": 0.646,
+        "sn_dchi2_at_joint": 48.967,
+        "bao_dchi2_at_joint": 3.488,
+        "gap_fv0": 0.1835,
+        "gaussian_sigma": 5.611,
+        "joint_at_edge": false
+      },
+      "B2_baocmb_e027": {
+        "dchi2_join": 52.509,
+        "sigma": 7.246,
+        "fv_joint": 0.646,
+        "sn_dchi2_at_joint": 48.967,
+        "bao_dchi2_at_joint": 3.542,
+        "gap_fv0": 0.1835,
+        "gaussian_sigma": 5.611,
+        "joint_at_edge": false
+      },
+      "B3_baocmb_e050_nazersys": {
+        "dchi2_join": 4.314,
+        "sigma": 2.077,
+        "fv_joint": 0.7976,
+        "sn_dchi2_at_joint": 0.49,
+        "bao_dchi2_at_joint": 3.824,
+        "gap_fv0": 0.1836,
+        "gaussian_sigma": 2.066,
+        "joint_at_edge": false
+      },
+      "B4_baoonly": {
+        "dchi2_join": 19.939,
+        "sigma": 4.465,
+        "fv_joint": 0.7196,
+        "sn_dchi2_at_joint": 13.287,
+        "bao_dchi2_at_joint": 6.652,
+        "gap_fv0": 0.142,
+        "gaussian_sigma": 3.925,
+        "joint_at_edge": false
+      }
+    },
+    "S3_tripp_prof_z001": {
+      "B1_baocmb_e050": {
+        "dchi2_join": 47.482,
+        "sigma": 6.891,
+        "fv_joint": 0.645,
+        "sn_dchi2_at_joint": 44.644,
+        "bao_dchi2_at_joint": 2.838,
+        "gap_fv0": 0.1865,
+        "gaussian_sigma": 5.318,
+        "joint_at_edge": false
+      },
+      "B2_baocmb_e027": {
+        "dchi2_join": 47.529,
+        "sigma": 6.894,
+        "fv_joint": 0.645,
+        "sn_dchi2_at_joint": 44.644,
+        "bao_dchi2_at_joint": 2.884,
+        "gap_fv0": 0.1865,
+        "gaussian_sigma": 5.318,
+        "joint_at_edge": false
+      },
+      "B3_baocmb_e050_nazersys": {
+        "dchi2_join": 4.352,
+        "sigma": 2.086,
+        "fv_joint": 0.7969999999999999,
+        "sn_dchi2_at_joint": 0.557,
+        "bao_dchi2_at_joint": 3.796,
+        "gap_fv0": 0.1866,
+        "gaussian_sigma": 2.079,
+        "joint_at_edge": false
+      },
+      "B4_baoonly": {
+        "dchi2_join": 18.844,
+        "sigma": 4.341,
+        "fv_joint": 0.717,
+        "sn_dchi2_at_joint": 12.963,
+        "bao_dchi2_at_joint": 5.881,
+        "gap_fv0": 0.145,
+        "gaussian_sigma": 3.783,
+        "joint_at_edge": false
+      }
+    },
+    "S4_tripp_prof_z075": {
+      "B1_baocmb_e050": {
+        "dchi2_join": 23.36,
+        "sigma": 4.833,
+        "fv_joint": 0.641,
+        "sn_dchi2_at_joint": 22.444,
+        "bao_dchi2_at_joint": 0.916,
+        "gap_fv0": 0.1605,
+        "gaussian_sigma": 4.034,
+        "joint_at_edge": false
+      },
+      "B2_baocmb_e027": {
+        "dchi2_join": 23.38,
+        "sigma": 4.835,
+        "fv_joint": 0.6406,
+        "sn_dchi2_at_joint": 22.577,
+        "bao_dchi2_at_joint": 0.803,
+        "gap_fv0": 0.1605,
+        "gaussian_sigma": 4.035,
+        "joint_at_edge": false
+      },
+      "B3_baocmb_e050_nazersys": {
+        "dchi2_join": 3.089,
+        "sigma": 1.758,
+        "fv_joint": 0.7689999999999999,
+        "sn_dchi2_at_joint": 0.495,
+        "bao_dchi2_at_joint": 2.594,
+        "gap_fv0": 0.1606,
+        "gaussian_sigma": 1.751,
+        "joint_at_edge": false
+      },
+      "B4_baoonly": {
+        "dchi2_join": 9.6,
+        "sigma": 3.098,
+        "fv_joint": 0.701,
+        "sn_dchi2_at_joint": 7.448,
+        "bao_dchi2_at_joint": 2.153,
+        "gap_fv0": 0.119,
+        "gaussian_sigma": 2.788,
+        "joint_at_edge": false
+      }
+    },
+    "S5_seifert_anchor": {
+      "B1_baocmb_e050": {
+        "dchi2_join": 23.832,
+        "sigma": 4.882,
+        "fv_joint": 0.643,
+        "sn_dchi2_at_joint": 22.09,
+        "bao_dchi2_at_joint": 1.742,
+        "gap_fv0": 0.1015,
+        "gaussian_sigma": 4.886,
+        "joint_at_edge": false
+      },
+      "B2_baocmb_e027": {
+        "dchi2_join": 23.865,
+        "sigma": 4.885,
+        "fv_joint": 0.643,
+        "sn_dchi2_at_joint": 22.09,
+        "bao_dchi2_at_joint": 1.775,
+        "gap_fv0": 0.1015,
+        "gaussian_sigma": 4.888,
+        "joint_at_edge": false
+      },
+      "B3_baocmb_e050_nazersys": {
+        "dchi2_join": 1.415,
+        "sigma": 1.189,
+        "fv_joint": 0.7313999999999999,
+        "sn_dchi2_at_joint": 0.078,
+        "bao_dchi2_at_joint": 1.336,
+        "gap_fv0": 0.1016,
+        "gaussian_sigma": 1.193,
+        "joint_at_edge": false
+      },
+      "B4_baoonly": {
+        "dchi2_join": 5.392,
+        "sigma": 2.322,
+        "fv_joint": 0.7012,
+        "sn_dchi2_at_joint": 3.204,
+        "bao_dchi2_at_joint": 2.188,
+        "gap_fv0": 0.06,
+        "gaussian_sigma": 2.317,
+        "joint_at_edge": false
+      }
+    }
+  },
+  "ladder": {
+    "i_committed_pipeline": {
+      "desc": "published DESI errors + CMB point err floored at 0.05 (committed)",
+      "sigma_vs_S1": 6.454
+    },
+    "ii_floor_cost": {
+      "desc": "cmb_err 0.05 floor vs propagated theta* error (no floor)",
+      "sig_cmb_propagated": 0.027170565234838302,
+      "B1_fv0_width": 0.005611950897115581,
+      "B2_fv0_width": 0.005590592433097619,
+      "sigma_vs_S1_e050": 6.454,
+      "sigma_vs_S1_e027": 6.457
+    },
+    "iii_nazer_sys": {
+      "desc": "Nazer&Wiltshire 13% fv0 systematic as Gaussian width on BAO+CMB profile",
+      "sigma_sys": 0.082615,
+      "sigma_vs_S1": 2.335,
+      "sigma_vs_S3": 2.086,
+      "sigma_vs_S4": 1.758,
+      "sigma_vs_S5": 1.189
+    },
+    "iv_bao_only": {
+      "desc": "BAO only: no CMB point, no r_d amplitude assumption, no CMB systematics",
+      "sigma_vs_S1": 4.421,
+      "sigma_vs_S4_floor": 3.098
+    }
+  },
+  "paper_1to2sigma_reproduction": {
+    "desc": "what assumption set reproduces the paper's '~1-2 sigma' (tex:311-312, abstract tex:71-73)",
+    "anchor0737_sysonly": 1.229,
+    "anchor0737_quadrature": 1.192,
+    "tripp_z075_quadrature": 1.75,
+    "tripp_full_quadrature": 2.078,
+    "standard_full_quadrature": 2.295,
+    "statement": "'1-2 sigma' requires BOTH (a) replacing the paper's own SN fit by the cosmology-independent anchor 0.737 or a Tripp reduction, AND (b) grafting the 13% CMB-power-spectrum systematic (Nazer&Wiltshire 2015, recombination physics on a CMB-spectrum-derived fv0) onto the geometric BAO-shape fit, which the paper itself shows is r_d/amplitude-independent. The paper's own standard full-cov SN fit stays above 2 sigma even then."
+  },
+  "crosschecks_vs_committed": {
+    "SN_S1_dchi2_at_fv0677": 25.747027814388275,
+    "BAOonly_dchi2_at_fv0853": 80.73346732388018,
+    "committed_SN_dchi2_at_BAOfv": 25.747,
+    "committed_BAO_dchi2_at_SNfv": 80.733,
+    "B1_fv0_err_regenerated": {
+      "fv0": 0.6355,
+      "err_lo": 0.005492343903495844,
+      "err_hi": 0.005731557890735317,
+      "paper_quote": "0.636 +/- 0.007 (tex:299, no committed provenance)"
+    },
+    "S1_fv0_unclipped": {
+      "fv0": 0.853,
+      "err_lo": 0.04262558012493589,
+      "err_hi": 0.0495446154390311,
+      "note": "grid extends to 0.96, so upper error is NOT clipped at 0.900 (results.json quotes +0.0471, clipped)"
+    }
+  },
+  "headline": {
+    "pairing": "S1_standard_fullcov x B4_baoonly",
+    "dchi2_join": 19.545,
+    "sigma": 4.421,
+    "justification": "SN side = the paper's own headline reduction (m_b_corr, FULL stat+sys covariance, the same one that gives dBIC=+5.1 for LCDM); BAO side = DESI DR1 BAO alone, which needs NO CMB point, NO r_d calibration and NO CMB systematic -- every rung of the systematics ladder is bypassed by construction, so this number cannot be softened by the Nazer 13% argument.",
+    "floor": {
+      "pairing": "S4_tripp_prof_z075 x B4_baoonly",
+      "sigma": 3.098,
+      "note": "most BAO-friendly SN reduction vs cleanest BAO side = absolute floor"
+    }
+  },
+  "runtime_s": 9.5
+}
