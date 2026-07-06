@@ -1,0 +1,121 @@
+{
+  "probe": "T1 rider \u2014 free void history + f_v0 drift",
+  "free_shape_fit": {
+    "nodes_z": [
+      0.2,
+      0.5,
+      0.9,
+      1.5,
+      2.33
+    ],
+    "n_free_params": 6,
+    "chi2_start_LCDMmatched": 1403.955985407345,
+    "chi2_free_min": 1391.8498080582358,
+    "chi2_SN": 1384.5950220152736,
+    "chi2_BAOCMB": 7.254786042962223,
+    "H0_free": 68.2340616943614,
+    "converged": true
+  },
+  "reference_chi2_same_data": {
+    "LCDM": 1402.2371681695804,
+    "w0waCDM": 1398.2855555121787,
+    "timescape": 1469.2926030652598
+  },
+  "chi2_free_minus_LCDM": -10.387360111344606,
+  "free_vs_LCDM_significance": {
+    "delta_chi2": 10.387360111344606,
+    "n_extra_params": 5,
+    "p_value": 0.06497472398191234,
+    "note": "improvement is not significant for the extra freedom"
+  },
+  "chi2_timescape_minus_LCDM": 67.05543489567935,
+  "interpretation_a": "free ~ LCDM (improvement not significant for the extra parameters), and both crush the timescape tracker => the split is timescape-SPECIFIC rigidity",
+  "fv0_drift_SNonly": [
+    {
+      "z_shell": [
+        0.01,
+        0.05
+      ],
+      "n": 524,
+      "fv0": 0.391,
+      "fv0_err": [
+        0.091,
+        0.594
+      ],
+      "Om_LCDM": 0.7359999999999999,
+      "railed": true
+    },
+    {
+      "z_shell": [
+        0.05,
+        0.1
+      ],
+      "n": 96,
+      "fv0": 0.985,
+      "fv0_err": [
+        0.635,
+        0.0
+      ],
+      "Om_LCDM": 0.05,
+      "railed": true
+    },
+    {
+      "z_shell": [
+        0.1,
+        0.2
+      ],
+      "n": 207,
+      "fv0": 0.985,
+      "fv0_err": [
+        0.349,
+        0.0
+      ],
+      "Om_LCDM": 0.26599999999999996,
+      "railed": true
+    },
+    {
+      "z_shell": [
+        0.2,
+        0.4
+      ],
+      "n": 445,
+      "fv0": 0.985,
+      "fv0_err": [
+        0.265,
+        0.0
+      ],
+      "Om_LCDM": 0.31799999999999995,
+      "railed": true
+    },
+    {
+      "z_shell": [
+        0.4,
+        0.8
+      ],
+      "n": 278,
+      "fv0": 0.5449999999999999,
+      "fv0_err": [
+        0.106,
+        0.105
+      ],
+      "Om_LCDM": 0.5199999999999999,
+      "railed": false
+    },
+    {
+      "z_shell": [
+        0.8,
+        2.3
+      ],
+      "n": 30,
+      "fv0": 0.706,
+      "fv0_err": [
+        0.203,
+        0.184
+      ],
+      "Om_LCDM": 0.26599999999999996,
+      "railed": false
+    }
+  ],
+  "shell_caveat": "Narrow disjoint z-shells lack the baseline to constrain the expansion-history shape, so most fv0 (and LCDM Om) estimates RAIL to the grid edges with one-sided errors - the per-shell 'drift' is dominated by unconstrained fitting, not a clean signal, and it is NOT timescape-specific (Om rails identically). The rigidity verdict rests on the free-shape fit (a), not on this test.",
+  "conclusion": "(a) A free smooth expansion history reaches chi2=1391.8 - it does NOT significantly beat LCDM (1402.2; Delta=10.4 for 5 extra params, p=0.06) and both sit far below the timescape tracker (1469.3, Delta=+67.1). SN + BAO + CMB ARE reconcilable by a smooth history, so the SN-vs-BAO+CMB f_v0 split (0.85 vs 0.64) is timescape's ONE-parameter RIGIDITY - one tracker history cannot serve both the SN shape and the BAO+CMB shape - NOT a model-independent data conflict. (b) The disjoint-shell fv0 fit is too weak to measure a clean drift (narrow shells rail; LCDM Om rails too), so it is reported with that caveat and is not load-bearing. Together with Probes 2-3 (measured LOS structure adds nothing), T1 locates timescape's failure in the RIGIDITY of its single-parameter averaged history, not in directional averaging."
+}
