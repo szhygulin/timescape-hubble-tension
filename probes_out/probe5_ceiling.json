@@ -1,0 +1,147 @@
+{
+  "probe": "5 \u2014 analytic z>0.1 ceiling",
+  "measured_stdF_vs_z": [
+    {
+      "z": 0.013115283018867926,
+      "stdF(-0.5)": 0.22444665643300205,
+      "n": 53,
+      "implied_L_void_Mpc_h": 11.619813943634911
+    },
+    {
+      "z": 0.016978958333333332,
+      "stdF(-0.5)": 0.18711592343059394,
+      "n": 96,
+      "implied_L_void_Mpc_h": 10.445462429270435
+    },
+    {
+      "z": 0.022868706896551724,
+      "stdF(-0.5)": 0.21397197088577008,
+      "n": 116,
+      "implied_L_void_Mpc_h": 18.371255643853555
+    },
+    {
+      "z": 0.027543703703703706,
+      "stdF(-0.5)": 0.20228691962532624,
+      "n": 81,
+      "implied_L_void_Mpc_h": 19.75396889357976
+    },
+    {
+      "z": 0.033906694214876035,
+      "stdF(-0.5)": 0.1938550077552134,
+      "n": 121,
+      "implied_L_void_Mpc_h": 22.29825664694026
+    },
+    {
+      "z": 0.045056181818181815,
+      "stdF(-0.5)": 0.13876032734885924,
+      "n": 55,
+      "implied_L_void_Mpc_h": 15.140678417765557
+    },
+    {
+      "z": 0.05688790697674419,
+      "stdF(-0.5)": 0.15557502356577532,
+      "n": 43,
+      "implied_L_void_Mpc_h": 23.961241745039104
+    }
+  ],
+  "independent_cell_model": {
+    "f(1-f)": 0.16993168160776156,
+    "L_void_range_Mpc_h": [
+      10.445462429270435,
+      23.961241745039104
+    ],
+    "L_void_calibrated(z>0.03)_Mpc_h": 22.29825664694026,
+    "note": "implied L_void rises from ~low-z (saturated, few-cell) to the many-cell value; the extrapolation uses the many-cell L_void as an UPPER bound on std(F)."
+  },
+  "z_grid": [
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.07,
+    0.1,
+    0.15,
+    0.2,
+    0.3
+  ],
+  "dmu_dz": [
+    218.7882684145137,
+    110.18412382411746,
+    73.96856103089266,
+    44.96931430235218,
+    32.51654332367071,
+    23.14684322724858,
+    15.81063489503265,
+    12.102241381244383,
+    8.327154703553497
+  ],
+  "RMS_dmu_vs_z(mag)": {
+    "lambda=0.05 (data-constrained 3sigma ceiling)": [
+      0.03923404518840095,
+      0.028186044294895112,
+      0.023373520683487806,
+      0.018656021334033757,
+      0.016225698591455468,
+      0.014139587184348247,
+      0.01228865368707183,
+      0.011260975797927255,
+      0.01014563291414058
+    ],
+    "lambda=0.5 (illustrative, excluded)": [
+      0.39234045188400957,
+      0.2818604429489511,
+      0.23373520683487808,
+      0.1865602133403376,
+      0.16225698591455467,
+      0.14139587184348246,
+      0.1228865368707183,
+      0.11260975797927256,
+      0.1014563291414058
+    ],
+    "lambda=1.0 (illustrative, excluded)": [
+      0.7846809037680191,
+      0.5637208858979021,
+      0.46747041366975617,
+      0.3731204266806752,
+      0.32451397182910935,
+      0.2827917436869649,
+      0.2457730737414366,
+      0.2252195159585451,
+      0.2029126582828116
+    ]
+  },
+  "Pantheon_error_budget_median(mag)": [
+    0.313698,
+    0.230676,
+    0.19938050000000002,
+    0.180751,
+    0.19288450000000001,
+    0.1934525,
+    0.177112,
+    0.1955825,
+    0.204333
+  ],
+  "sigma_lens(0.055z)": [
+    0.00055,
+    0.0011,
+    0.00165,
+    0.0027500000000000003,
+    0.0038500000000000006,
+    0.0055000000000000005,
+    0.00825,
+    0.011000000000000001,
+    0.0165
+  ],
+  "ratio_dataconstrained_ceiling_to_budget": [
+    0.1250694782510598,
+    0.12218888958927289,
+    0.1172307255899539,
+    0.10321393150817289,
+    0.08412131919078758,
+    0.07309074415863454,
+    0.06938351826568404,
+    0.057576602190519376,
+    0.049652444363566244
+  ],
+  "conclusion": "Two independent reasons the LOS effect is negligible and low-z-weighted. (1) Amplitude: the data cap the coupling at |lambda|<0.05 (Probe 3, 3 sigma), so the per-sightline magnitude modulation is at most ~0.039 mag - a few percent of the ~0.2 mag Pantheon+ per-SN error at every redshift (ratio 0.05-0.13). (2) Geometry: Var(F) ~ f(1-f) L_void/D(z) with L_void~22 Mpc/h (many-cell regime), so even a hypothetical order-unity coupling declines with beam length and is concentrated at z<~0.1. Both independently explain WHY the published timescape SN preference is low-z-driven - a low-z/covariance effect, not a high-z cosmological signal."
+}
