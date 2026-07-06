@@ -69,7 +69,13 @@ def main():
     dz = 1e-4
     dmudz = (mu_fid(zq + dz) - mu_fid(zq - dz)) / (2 * dz)
     Dq = dimless_D(zq)
-    LAM_CEIL = 0.05
+    # data-constrained coupling ceiling: 3 sigma_lambda from Probe 3, INFLATED by the rotation-null
+    # width (Probe 3's null dchi2 mean > 1 shows the naive delta-chi2=1 error understates the
+    # estimator scatter, consistent with the Probe-2 lesson).
+    p3 = json.load(open(os.path.join(LC.WT, "probes_out", "probe3_los_timescape.json")))
+    sig_lam3 = p3["profile_lambda_at_fv0_std"]["sigma_lambda"]
+    infl = float(np.sqrt(max(p3["rotation_null_calibration"]["dchi2_null_mean"], 1.0)))
+    LAM_CEIL = round(3.0 * sig_lam3 * infl, 3)
     rms_dmu = {}
     for lam in [LAM_CEIL, 0.5, 1.0]:
         tag = f"lambda={lam}" + (" (data-constrained 3sigma ceiling)" if lam == LAM_CEIL else " (illustrative, excluded)")
@@ -107,9 +113,11 @@ def main():
         "Pantheon_error_budget_median(mag)": budget,
         "sigma_lens(0.055z)": sig_lens,
         "ratio_dataconstrained_ceiling_to_budget": ratio_ceiling,
+        "lambda_ceiling(3sigma, rotation-null-inflated)": LAM_CEIL,
         "conclusion": (
             f"Two independent reasons the LOS effect is negligible and low-z-weighted. (1) Amplitude: "
-            f"the data cap the coupling at |lambda|<{3*0.017:.2f} (Probe 3, 3 sigma), so the per-sightline "
+            f"the data cap the coupling at |lambda|<{LAM_CEIL:.3f} (Probe 3, 3 sigma, rotation-null "
+            f"inflated), so the per-sightline "
             f"magnitude modulation is at most ~{max(ceil):.3f} mag - a few percent of the ~0.2 mag "
             f"Pantheon+ per-SN error at every redshift (ratio {min(ratio_ceiling):.02f}-{max(ratio_ceiling):.02f}). "
             f"(2) Geometry: Var(F) ~ f(1-f) L_void/D(z) with L_void~{L_hi:.0f} Mpc/h (many-cell regime), "

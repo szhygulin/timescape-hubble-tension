@@ -76,16 +76,16 @@
     8.327154703553497
   ],
   "RMS_dmu_vs_z(mag)": {
-    "lambda=0.05 (data-constrained 3sigma ceiling)": [
-      0.03923404518840095,
-      0.028186044294895112,
-      0.023373520683487806,
-      0.018656021334033757,
-      0.016225698591455468,
-      0.014139587184348247,
-      0.01228865368707183,
-      0.011260975797927255,
-      0.01014563291414058
+    "lambda=0.058 (data-constrained 3sigma ceiling)": [
+      0.04551149241854511,
+      0.032695811382078326,
+      0.02711328399284586,
+      0.021640984747479164,
+      0.01882181036608834,
+      0.016401921133843967,
+      0.014254838277003324,
+      0.013062731925595617,
+      0.011768934180403074
     ],
     "lambda=0.5 (illustrative, excluded)": [
       0.39234045188400957,
@@ -133,15 +133,16 @@
     0.0165
   ],
   "ratio_dataconstrained_ceiling_to_budget": [
-    0.1250694782510598,
-    0.12218888958927289,
-    0.1172307255899539,
-    0.10321393150817289,
-    0.08412131919078758,
-    0.07309074415863454,
-    0.06938351826568404,
-    0.057576602190519376,
-    0.049652444363566244
+    0.14508059477122937,
+    0.14173911192355654,
+    0.13598764168434654,
+    0.11972816054948059,
+    0.09758073026131359,
+    0.08478526322401606,
+    0.08048488118819348,
+    0.06678885854100249,
+    0.05759683546173685
   ],
-  "conclusion": "Two independent reasons the LOS effect is negligible and low-z-weighted. (1) Amplitude: the data cap the coupling at |lambda|<0.05 (Probe 3, 3 sigma), so the per-sightline magnitude modulation is at most ~0.039 mag - a few percent of the ~0.2 mag Pantheon+ per-SN error at every redshift (ratio 0.05-0.13). (2) Geometry: Var(F) ~ f(1-f) L_void/D(z) with L_void~22 Mpc/h (many-cell regime), so even a hypothetical order-unity coupling declines with beam length and is concentrated at z<~0.1. Both independently explain WHY the published timescape SN preference is low-z-driven - a low-z/covariance effect, not a high-z cosmological signal."
+  "lambda_ceiling(3sigma, rotation-null-inflated)": 0.058,
+  "conclusion": "Two independent reasons the LOS effect is negligible and low-z-weighted. (1) Amplitude: the data cap the coupling at |lambda|<0.058 (Probe 3, 3 sigma, rotation-null inflated), so the per-sightline magnitude modulation is at most ~0.046 mag - a few percent of the ~0.2 mag Pantheon+ per-SN error at every redshift (ratio 0.06-0.15). (2) Geometry: Var(F) ~ f(1-f) L_void/D(z) with L_void~22 Mpc/h (many-cell regime), so even a hypothetical order-unity coupling declines with beam length and is concentrated at z<~0.1. Both independently explain WHY the published timescape SN preference is low-z-driven - a low-z/covariance effect, not a high-z cosmological signal."
 }
