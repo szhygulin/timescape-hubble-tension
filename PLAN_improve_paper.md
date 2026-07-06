@@ -106,13 +106,19 @@ D(z) fit separating "timescape is rigid" from "SN and BAO shapes disagree model-
 Outcome feeds a new discussion subsection (or a companion paper) answering whether the failure
 is the *averaging* or the *void hypothesis itself*.
 
-## Phase 4 — void-population-forced backreaction (designed 2026-07-06, not executed)
+## Phase 4 — void-population-forced backreaction (executed 2026-07-06 → spun out)
 
-Execute `PLAN_void_history.md`: replace the tracker closure with the *observed* void
-history f_v(z) (Model V) and depth/size distribution (V2) through the same Buchert
-averaging + lapse dressing; Probe R (required-vs-available void history) gates the rest.
-Answers "right mechanism, wrong parameter set?" after T1 located the failure in tracker
-rigidity. Publication routing (same paper vs companion) is decided after Probe R.
+`PLAN_void_history.md` executed through Probe R on this branch (commit b2bfa35): the general
+non-tracker solver passed gates G-T/G-A and **R1 = RECONCILES** — free f_v(z) reaches joint
+χ² = 1396.06 vs ΛCDM 1402.24 / tracker 1469.29, at f_v(0) = 0.640 (band 0.638–0.641, algebraic
+lapse); no-lapse control 1396.49. Routing decided: **companion papers**, program continues in
+dedicated repos — paper 2 [free-history-timescape](https://github.com/szhygulin/free-history-timescape)
+(the theory test: evidence ladder, observed-history Phase D/R2, telescope-forced fit; strategy in
+its `REASONING_AND_ROADMAP.md`) and paper 3
+[free-history-timescape-tensions](https://github.com/szhygulin/free-history-timescape-tensions)
+(H₀ tension end-to-end on fitted + catalog-forced structure, then the wider tension suite; its
+`PLAN.md`). This paper's tex is unaffected; Phase 4 results enter here only as optional
+discussion citations once papers 2–3 land.
 
 ---
 
