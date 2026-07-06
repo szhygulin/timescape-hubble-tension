@@ -1,0 +1,69 @@
+{
+  "probe": "4 \u2014 external void-fraction consistency (no fitting)",
+  "timescape_own_fv0(finite-infinity)": [
+    {
+      "value": 0.762,
+      "source": "Leith, Ng & Wiltshire 2008 (arXiv:0709.2535); Wiltshire 2009 (0909.0749)",
+      "context": "Gold SNe expansion-history fit; dressed H0=61.7"
+    },
+    {
+      "value": 0.695,
+      "err": [
+        0.051,
+        0.041
+      ],
+      "source": "Duley, Nazer & Wiltshire 2013 (arXiv:1306.3208, Table 1)",
+      "context": "Planck-constrained (radiation fluid to recombination)"
+    },
+    {
+      "value": 0.627,
+      "source": "Nazer & Wiltshire 2015 (arXiv:1410.3470)",
+      "context": "full Planck acoustic-peak MCMC (BAO+CMB-side value)"
+    },
+    {
+      "value": "0.67-0.78",
+      "source": "Dam, Heinesen & Wiltshire 2017 (arXiv:1706.07236, Table 2)",
+      "context": "JLA SNe; strongly redshift-cut dependent (ML 0.778 at z_min=0.033)"
+    }
+  ],
+  "timescape_own_cluster": "~0.63-0.78, centred ~0.65-0.70",
+  "observed_watershed_fraction": [
+    {
+      "value": 0.62,
+      "source": "Pan et al. 2012, SDSS DR7 VoidFinder (arXiv:1207.2524)",
+      "context": "filling factor of 1055 voids at z<0.1; near the watershed-tessellation ceiling"
+    },
+    {
+      "value": "0.50-0.615",
+      "source": "Williams, Macpherson, Wiltshire & Stevens 2024 (arXiv:2403.15134)",
+      "context": "watershed void finder on fluid numerical-relativity sims; 61.5% at 4 h/Mpc, 50% at 12 h/Mpc (resolution-dependent). Voids expand ~10-30% faster than the global average; central kinetic curvature |Omega_K|~0.6-0.8 - stated consistent with the Planck-fit timescape parameters. (Volume-fraction %s are body-sourced; the expansion/curvature figures are abstract-confirmed.)"
+    }
+  ],
+  "observed_bracket(watershed/below-mean-density)": [
+    0.5,
+    0.62
+  ],
+  "SN_preferred": {
+    "value": 0.853,
+    "source": "this paper (standard_full); Seifert et al. 2024 (2412.15143)",
+    "verdict": "OUTSIDE the observed bracket (exceeds even the max watershed filling) -> DISFAVOURED"
+  },
+  "BAOCMB_preferred": {
+    "value": 0.636,
+    "source": "this paper (BAO+CMB fit); Nazer & Wiltshire 2015 gives 0.627",
+    "verdict": "OUTSIDE the observed bracket (exceeds even the max watershed filling) -> DISFAVOURED"
+  },
+  "definition_dependence_warning": {
+    "watershed_tessellation_voids": "fill most of space; ceiling ~0.62 (Pan; Williams NR)",
+    "delta<-0.8 deep voids": "much smaller, smoothing-scale dependent (~0.15-0.25, UNVERIFIED)",
+    "delta<0 underdense": ">0.5 of volume but low mass",
+    "timescape finite-infinity voids": "distinct dynamical definition; own fits 0.63-0.78",
+    "note": "0.85 fails the MOST PERMISSIVE (watershed) definition - the load-bearing point"
+  },
+  "flags": [
+    "Williams 2024 volume-fraction percentages are body-sourced (abstract confirms the watershed method + 10-30% faster void expansion + 60-80% central curvature).",
+    "delta<-0.8 volume fraction (~0.15-0.25) is unverified against a specific primary source.",
+    "Dam 2017 f_v0 is redshift-cut dependent (0.675 ML full-sample vs 0.778 at z_min=0.033)."
+  ],
+  "conclusion": "Under the watershed / below-mean-density definition - the one that maps onto timescape's 'regions expanding faster than the mean' and that Williams et al. 2024 use for the timescape comparison - the observed present-day void volume fraction brackets [0.50, 0.62]. The BAO+CMB-preferred f_v0~0.64 sits at the top edge and coincides with timescape's own Planck fits (0.627-0.695) and the NR void statistics -> physically plausible. The SN-preferred f_v0~0.85 lies WELL OUTSIDE the bracket, exceeding even the maximum watershed-tessellation filling (~0.62): under any definition that maps onto observed cosmic structure, 0.85 is disfavoured. This is an independent, zero-fit strike against the SN-preferred corner and corroborates that the SN preference is a low-z/covariance artifact (Probes 2-3-5), not a physical void fraction."
+}
