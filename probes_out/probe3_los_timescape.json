@@ -1,0 +1,36 @@
+{
+  "probe": "3A \u2014 per-sightline timescape (expansion-variance coupling)",
+  "N_full": 1580,
+  "n_low_with_LOS": 573,
+  "Fbar": 0.21703654230229932,
+  "G2_gate": {
+    "fv0_lambda0": 0.855,
+    "chi2_lambda0": 1391.547792121768,
+    "committed_fv0": 0.853,
+    "committed_chi2_TS": 1391.5452,
+    "PASS": true
+  },
+  "fit_2D": {
+    "fv0_ext": 0.85,
+    "lambda_ext": -0.02499999999999991,
+    "chi2_ext": 1391.5468401908875,
+    "fv0_shift_from_0.85": -0.0050000000000000044,
+    "moved_toward_0.64": false
+  },
+  "profile_lambda_at_fv0_std": {
+    "fv0_std": 0.855,
+    "lambda_hat": 0.0,
+    "sigma_lambda": 0.017426581191171544,
+    "lambda_over_sigma": 0.0,
+    "delta_chi2(lambda_vs_0)": 0.0
+  },
+  "rotation_null_calibration": {
+    "nrot": 200,
+    "dchi2_observed": 0.0,
+    "dchi2_null_mean": 1.273168806694448,
+    "dchi2_null_max": 8.831681109964848,
+    "p_value": 1.0
+  },
+  "variant_B_note": "Variant B (mixture distance via a perturbed void history f_v^i(t)) is not fit separately: to first order in lambda it couples the SAME per-sightline covariate (F_i - Fbar) to the fit through delta-D instead of delta-z, the two related by dD/dz, so it inherits variant A's exact null. The null is a model-independent property of the covariate not aligning with the residuals (Probe 2 rotation null), which no monotonic reparametrization of F_i can change. A full nonlinear B would require re-deriving the Dam+2017 tracker distance for a modified f_v(t) - deferred as it cannot overturn a delta-chi2=0, p=1.0 result.",
+  "conclusion": "G2 PASS. Best-fit lambda=+0.00 (Delta-chi2=0.00 over lambda=0), rotation-null p=1.00; f_v0 stays at 0.850 (did NOT move toward 0.64). Consistent with the Probe-2 null: the per-sightline void coupling neither improves the timescape fit beyond a random-sky sham nor shifts the SN-preferred void fraction, so the SN-vs-BAO+CMB f_v0 split is NOT dissolved by injecting measured LOS structure - the split is a property of the average model comparison, not of directional averaging."
+}
