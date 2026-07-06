@@ -98,20 +98,27 @@ def main():
           "PASS": bool(abs(fv0_std - 0.853) < 0.006 and abs(chi2_std - 1391.5452) < 0.5)}
 
     # ---- 2D fit over (fv0, lambda): does fv0 move? ----
-    lam_grid = np.linspace(-2.0, 2.0, 161)
-    chi2_grid = np.empty((len(fv_grid), len(lam_grid)))
+    # Fine lambda grid: the profile minimum is shallow and sits near lambda~-0.01, so a coarse
+    # grid straddles it and spuriously reports lambda=0 / Delta-chi2=0 (and floors the rotation-null
+    # p to 1.0). Step 0.0025 resolves the dip; chi2 rises steeply for |lambda|>~0.05 so no far
+    # minimum is missed (chi2(+-0.5) ~ +1000).
+    lam_grid = np.linspace(-1.0, 1.0, 801)
+    i0 = int(np.argmin(np.abs(lam_grid)))          # lambda = 0 node
+    lam_2d = lam_grid[::10]                        # coarse lambda for the 2D fv0-drift scan
+    chi2_grid = np.empty((len(fv_grid), len(lam_2d)))
     for a, fv in enumerate(fv_grid):
         Df = factories[fv]
-        for c, lam in enumerate(lam_grid):
+        for c, lam in enumerate(lam_2d):
             chi2_grid[a, c] = chi2_zdist(Df, zdist(lam))
     amin, cmin = np.unravel_index(np.argmin(chi2_grid), chi2_grid.shape)
-    fv0_ext, lam_ext, chi2_ext = float(fv_grid[amin]), float(lam_grid[cmin]), float(chi2_grid[amin, cmin])
+    fv0_ext, lam_ext, chi2_ext = float(fv_grid[amin]), float(lam_2d[cmin]), float(chi2_grid[amin, cmin])
 
     # profile lambda at fixed fv0_std for sigma_lambda and Delta-chi2
     Df0 = factories[fv0_std]
     chi_lam = np.array([chi2_zdist(Df0, zdist(lam)) for lam in lam_grid])
+    chi_lam0 = float(chi_lam[i0])                 # chi2 at lambda=0, fv0_std
     j = int(np.argmin(chi_lam)); lam_hat = float(lam_grid[j]); chi2_at = float(chi_lam[j])
-    dchi2_lambda = chi2_std - chi2_at            # improvement of best lambda over lambda=0
+    dchi2_lambda = chi_lam0 - chi2_at            # improvement of best lambda over lambda=0 (fixed fv0)
     # sigma from delta-chi2=1
     dd = chi_lam - chi2_at
     lo = np.interp(1.0, dd[:j + 1][::-1], lam_grid[:j + 1][::-1]) if j > 0 else lam_hat
@@ -137,7 +144,7 @@ def main():
         def zd(lam):
             return zHD + (1.0 + zHD) * lam * Ff * d_dimless
         cl = np.array([chi2_zdist(Df0, zd(lam)) for lam in lam_grid])
-        return chi2_std - cl.min()
+        return float(cl[i0] - cl.min())          # improvement over lambda=0 (same baseline as observed)
 
     rng = np.random.default_rng(7)
     nrot = 200
@@ -168,7 +175,7 @@ def main():
             "covariate not aligning with the residuals (Probe 2 rotation null), which no monotonic "
             "reparametrization of F_i can change. A full nonlinear B would require re-deriving the "
             "Dam+2017 tracker distance for a modified f_v(t) - deferred as it cannot overturn a "
-            "delta-chi2=0, p=1.0 result."),
+            "negligible-improvement, f_v0-unmoved result."),
         "conclusion": None,
     }
     moved = out["fit_2D"]["moved_toward_0.64"]
