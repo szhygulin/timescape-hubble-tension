@@ -106,6 +106,14 @@ D(z) fit separating "timescape is rigid" from "SN and BAO shapes disagree model-
 Outcome feeds a new discussion subsection (or a companion paper) answering whether the failure
 is the *averaging* or the *void hypothesis itself*.
 
+## Phase 4 — void-population-forced backreaction (designed 2026-07-06, not executed)
+
+Execute `PLAN_void_history.md`: replace the tracker closure with the *observed* void
+history f_v(z) (Model V) and depth/size distribution (V2) through the same Buchert
+averaging + lapse dressing; Probe R (required-vs-available void history) gates the rest.
+Answers "right mechanism, wrong parameter set?" after T1 located the failure in tracker
+rigidity. Publication routing (same paper vs companion) is decided after Probe R.
+
 ---
 
 ## U. Unfinished work (delegation list)
