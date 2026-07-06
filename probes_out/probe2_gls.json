@@ -1,0 +1,250 @@
+{
+  "probe": "2 \u2014 model-independent GLS regression",
+  "N": 573,
+  "n_unique": 460,
+  "fiducial": {
+    "FV0_SN": 0.853,
+    "OM_LCDM": 0.3332775919732441
+  },
+  "preregistered_sign": "slope(r on mean_delta) > 0 ; slope(r on F_void) < 0",
+  "nuisance": "20 z-bin indicators (within-bin estimator)",
+  "big_surveys(>=20)": [
+    5,
+    50,
+    51,
+    56,
+    57,
+    63,
+    64,
+    65,
+    150
+  ],
+  "diagnostics": {
+    "corr_meandelta_z": -0.09448265872994883,
+    "corr_F_z": 0.012247481538121949,
+    "corr_dloc_z": -0.13443189695667554,
+    "corr_meandelta_VPEC": 0.01156225321026369,
+    "corr_F_VPEC": 0.0238744412572326
+  },
+  "r_zCMB_shape_LCDM": {
+    "mean_delta": {
+      "M0_raw": {
+        "model": "raw",
+        "lambda": -0.022886051199769497,
+        "sigma": 0.010523105929081287,
+        "lambda_over_sigma": -2.174838051997786
+      },
+      "M1_+zbins": {
+        "model": "+zbins",
+        "lambda": -0.023411879146770787,
+        "sigma": 0.011134765517318157,
+        "lambda_over_sigma": -2.102592920376972
+      },
+      "M2_+mass": {
+        "model": "+zbins+mass",
+        "lambda": -0.023339377243754456,
+        "sigma": 0.011157594170928944,
+        "lambda_over_sigma": -2.091792987467234
+      },
+      "M3_+survey": {
+        "model": "+zbins+mass+survey",
+        "lambda": -0.02287589658542899,
+        "sigma": 0.011271619757105831,
+        "lambda_over_sigma": -2.029512801033553
+      }
+    },
+    "F_void(-0.5)": {
+      "M0_raw": {
+        "model": "raw",
+        "lambda": -0.027332904283937864,
+        "sigma": 0.034791443303736534,
+        "lambda_over_sigma": -0.7856214542557469
+      },
+      "M1_+zbins": {
+        "model": "+zbins",
+        "lambda": -0.03041272298429476,
+        "sigma": 0.036372700843370014,
+        "lambda_over_sigma": -0.8361414544182348
+      },
+      "M2_+mass": {
+        "model": "+zbins+mass",
+        "lambda": -0.031876327491389134,
+        "sigma": 0.03663063845457356,
+        "lambda_over_sigma": -0.8702094431392358
+      },
+      "M3_+survey": {
+        "model": "+zbins+mass+survey",
+        "lambda": -0.03382090284721073,
+        "sigma": 0.03672986128193435,
+        "lambda_over_sigma": -0.920801268145426
+      }
+    },
+    "delta_loc8": {
+      "M0_raw": {
+        "model": "raw",
+        "lambda": -0.004467573108607681,
+        "sigma": 0.006067077817444307,
+        "lambda_over_sigma": -0.7363632448824596
+      },
+      "M1_+zbins": {
+        "model": "+zbins",
+        "lambda": -0.004504270221308282,
+        "sigma": 0.0062981022839817035,
+        "lambda_over_sigma": -0.7151789568048507
+      },
+      "M2_+mass": {
+        "model": "+zbins+mass",
+        "lambda": -0.004405979659634518,
+        "sigma": 0.006324006127844482,
+        "lambda_over_sigma": -0.6967070509680677
+      },
+      "M3_+survey": {
+        "model": "+zbins+mass+survey",
+        "lambda": -0.004852830632897209,
+        "sigma": 0.0063537444140071165,
+        "lambda_over_sigma": -0.7637749202185289
+      }
+    }
+  },
+  "r_zCMB_shape_TS": {
+    "mean_delta": {
+      "M0_raw": {
+        "model": "raw",
+        "lambda": -0.02318434767794031,
+        "sigma": 0.010523105929081287,
+        "lambda_over_sigma": -2.203184861407587
+      },
+      "M1_+zbins": {
+        "model": "+zbins",
+        "lambda": -0.023412184749485476,
+        "sigma": 0.011134765517318157,
+        "lambda_over_sigma": -2.1026203661919927
+      },
+      "M2_+mass": {
+        "model": "+zbins+mass",
+        "lambda": -0.02334021834859712,
+        "sigma": 0.011157594170928944,
+        "lambda_over_sigma": -2.0918683715356794
+      },
+      "M3_+survey": {
+        "model": "+zbins+mass+survey",
+        "lambda": -0.022875247322275527,
+        "sigma": 0.011271619757105831,
+        "lambda_over_sigma": -2.029455199449446
+      }
+    },
+    "F_void(-0.5)": {
+      "M0_raw": {
+        "model": "raw",
+        "lambda": -0.027713215675646552,
+        "sigma": 0.034791443303736534,
+        "lambda_over_sigma": -0.7965526303035035
+      },
+      "M1_+zbins": {
+        "model": "+zbins",
+        "lambda": -0.030408697850901945,
+        "sigma": 0.036372700843370014,
+        "lambda_over_sigma": -0.836030790835397
+      },
+      "M2_+mass": {
+        "model": "+zbins+mass",
+        "lambda": -0.03186897894279639,
+        "sigma": 0.03663063845457356,
+        "lambda_over_sigma": -0.8700088310586722
+      },
+      "M3_+survey": {
+        "model": "+zbins+mass+survey",
+        "lambda": -0.03381279878018972,
+        "sigma": 0.03672986128193435,
+        "lambda_over_sigma": -0.9205806284060378
+      }
+    },
+    "delta_loc8": {
+      "M0_raw": {
+        "model": "raw",
+        "lambda": -0.004712737205485595,
+        "sigma": 0.006067077817444307,
+        "lambda_over_sigma": -0.7767721706049893
+      },
+      "M1_+zbins": {
+        "model": "+zbins",
+        "lambda": -0.004505505137464283,
+        "sigma": 0.0062981022839817035,
+        "lambda_over_sigma": -0.7153750343057103
+      },
+      "M2_+mass": {
+        "model": "+zbins+mass",
+        "lambda": -0.004407653862092076,
+        "sigma": 0.006324006127844482,
+        "lambda_over_sigma": -0.6969717886080562
+      },
+      "M3_+survey": {
+        "model": "+zbins+mass+survey",
+        "lambda": -0.004854175893503232,
+        "sigma": 0.0063537444140071165,
+        "lambda_over_sigma": -0.763986647432966
+      }
+    }
+  },
+  "G4_zHD_positive_control": {
+    "LCDM": {
+      "mean_delta": {
+        "model": "zHD +zbins",
+        "lambda": -0.02061283341573983,
+        "sigma": 0.011134765517318157,
+        "lambda_over_sigma": -1.8512139643785237
+      },
+      "F_void": {
+        "model": "zHD +zbins",
+        "lambda": -0.029042391866596518,
+        "sigma": 0.036372700843370014,
+        "lambda_over_sigma": -0.7984667399778849
+      }
+    },
+    "TS": {
+      "mean_delta": {
+        "model": "zHD +zbins",
+        "lambda": -0.020609943348173232,
+        "sigma": 0.011134765517318157,
+        "lambda_over_sigma": -1.8509544108601221
+      },
+      "F_void": {
+        "model": "zHD +zbins",
+        "lambda": -0.029067353940789076,
+        "sigma": 0.036372700843370014,
+        "lambda_over_sigma": -0.799153025945486
+      }
+    }
+  },
+  "diff_zCMB_minus_zHD_on_mean_delta": {
+    "model": "diff",
+    "lambda": -0.0027990457310369705,
+    "sigma": 0.011134765517318157,
+    "lambda_over_sigma": -0.2513789559989881
+  },
+  "rotation_null(authoritative)": {
+    "nrot": 1000,
+    "nstep": 200,
+    "mean_delta": {
+      "lambda_obs": -0.02300072142742593,
+      "null_mean": -0.0017628826863394704,
+      "null_std": 0.023289166563111016,
+      "z_vs_rotation_null": -0.9119192257711031,
+      "p_two_sided": 0.402
+    },
+    "F_void": {
+      "lambda_obs": -0.02986260805128893,
+      "null_mean": 0.0007315862213253865,
+      "null_std": 0.05353477034784231,
+      "z_vs_rotation_null": -0.5714826845025851,
+      "p_two_sided": 0.624
+    }
+  },
+  "within_bin_permutation(anti-conservative, for contrast)": {
+    "covariate": "mean_delta",
+    "null_std": 0.008647126876080505,
+    "z_vs_perm_null": -2.662264313331903,
+    "note": "null_std here is ~2-3x smaller than the rotation null_std -> destroying spatial coherence understates the variance and manufactures false significance"
+  },
+  "conclusion": "NULL. Against the authoritative sky-rotation null, the GLS regression of Pantheon+ Hubble residuals on LOS void content is consistent with zero: mean_delta -0.91 sigma (p=0.40), F_void -0.57 sigma (p=0.62). The naive GLS/permutation error underestimates sigma_lambda by ~2.7x by ignoring the covariate's spatial coherence and the covariance's coherent modes; correcting this dissolves an apparent 2.1-sigma artifact. G4 (zHD) and corr(covariate,VPEC)~0 independently show the covariate carries no peculiar-velocity information. Interpretation per plan: the measured low-z structure adds nothing at Pantheon+ precision, so the single-parameter timescape AVERAGE is not the bottleneck - timescape's tension is not a directional-averaging artifact. Probe 3 is not mandated by the decision rule; run as confirmatory."
+}
