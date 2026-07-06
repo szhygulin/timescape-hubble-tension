@@ -66,12 +66,16 @@ timescape void fraction rails to $\fvo\approx0.85$; a timescape preference
 \emph{discarded}. Exact Bayes factors track this: the full covariance gives
 $\ln B=+1.3$ to $+1.8$ for $\Lcdm$, while the cosmology-independent stat-only
 reduction gives $\ln B=5.4$--$5.9$ for timescape, reproducing the proponents'
-$\ln B>5$ purely from the covariance treatment. That cosmology-independent
-covariance of Seifert et al.\ (2025)---which rebuilds rather than discards the
-off-diagonal terms---has recently been released publicly, so the sign of the
-supernova preference is now settleable under our harness; pending that
-reproduction we localise the preference to the covariance treatment and conclude
-that the supernova evidence on timescape is contingent rather than robust. Third, we calibrate timescape against DESI DR2
+$\ln B>5$ purely from the covariance treatment. Running the comparison directly
+under the now-public cosmology-independent covariance of Seifert et al.\ (2025),
+our frequentist fit reproduces the published maximum-likelihood value
+($\fvo=0.675$, $\Omega_{m0}=0.433$) \cite{Lane2025} and recovers the reported
+redshift-cut dependence: timescape is marginally favoured below the
+statistical-homogeneity scale ($\dBIC=-0.5$ at $z>0.01$) and $\Lcdm$ above it
+($\dBIC=+4.9$ at $z\geq0.055$). The supernova preference is therefore real but
+scale-dependent---a low-redshift effect rather than a robust whole-sample
+preference---which sharpens rather than overturns our localisation of it to the
+low-$z$ regime. Third, we calibrate timescape against DESI DR2
 baryon-acoustic-oscillation (BAO) distances and the Planck acoustic scale: this
 recovers the published timescape CMB void fraction ($\fvo\simeq0.64$, dressed
 $\Ho\simeq63\kmsmpc$) but fits worse than $\Lcdm$
@@ -324,20 +328,68 @@ sensitivity.}
 \label{fig:hubble}
 \end{figure}
 
-\subsection{Caveats}
+\subsection{Reproducing the cosmology-independent covariance}
+\label{sec:seifert}
 Our diagonal cases \emph{discard} the off-diagonal covariance; they are not
 equivalent to the cosmology-independent covariance of \cite{Lane2025,Seifert2024},
 which \emph{rebuilds} the off-diagonal (FLRW-geometry- and
-peculiar-velocity-independent) terms. That covariance has recently been released
-publicly,\footnote{\url{https://github.com/antosft/SNe-PantheonPlus-Analysis}
-(pipeline and covariance construction; repository updated 2026).} so their
-$\ln B>5$ preference and $\fvo=0.737$ are now reproducible under our
-harness---the immediate next step, which we flag rather than carry out here (our
-own $\fvo$ rails to $\approx0.85$, and our raw-Tripp $\beta\approx2.66$ is below
-the canonical $\sim\!3.1$). Our result is therefore not a refutation of Seifert
-et al.; it localises the preference to the off-diagonal covariance treatment and
-shows that, under every full-covariance reduction reproducible from the public
-products, $\Lcdm$ is favoured.
+peculiar-velocity-independent) terms. That covariance, with its $P{+}1690$ input
+vector, is now public,\footnote{Covariance and input: Zenodo
+doi:10.5281/zenodo.12729746; pipeline and construction:
+\url{https://github.com/antosft/SNe-PantheonPlus-Analysis}.} so we run our
+timescape-versus-$\Lcdm$ comparison directly under it, using the authors'
+Nielsen--Guffanti--Sarkar hierarchical likelihood (latent SALT2 population with
+profiled $\alpha,\beta$ and intrinsic dispersion, marginalised absolute
+magnitude) with our own distance code, which we verify is numerically identical
+to theirs; the likelihood itself we cross-check against an independent
+implementation to $10^{-13}$.
+
+\begin{table}[t]
+\caption{Timescape versus flat $\Lcdm$ under the cosmology-independent
+Seifert--Lane $P{+}1690$ covariance, as a function of the CMB-frame redshift cut
+$z_{\min}$ (frequentist profile likelihood; $\dBIC=\mathrm{BIC}_{\rm TS}-
+\mathrm{BIC}_{\Lcdm}$ with $k=9$ each, so $\dBIC=\Delta\chi^2$; both statistics
+$<0$ favour timescape, $>0$ favour $\Lcdm$). $\ln B$ profiles the nuisances and
+integrates the cosmological parameter (its $2\times2$-prior spread is $\pm0.3$).
+The maximum-likelihood $\fvo,\Omega_{m0}$ reproduce the published values of
+\cite{Lane2025}.}
+\label{tab:seifert}
+\begin{ruledtabular}
+\begin{tabular}{lccccc}
+$z_{\min}$ & $N$ & $\fvo$ & $\Omega_{m0}$ & $\dBIC$ & $\ln B$ \\
+\colrule
+$0.010$ & $1578$ & $0.670$ & $0.451$ & $-0.5$ & $-0.8$ \\
+$0.033$ & $1169$ & $0.675$ & $0.433$ & $+1.5$ & $+0.3$ \\
+$0.055$ & $1032$ & $0.680$ & $0.415$ & $+4.9$ & $+2.0$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Our frequentist maximum-likelihood fit reproduces the published values,
+$\fvo=0.675$ and $\Omega_{m0}=0.433$ \cite{Lane2025}, and recovers the reported
+dependence on the redshift cut (Table~\ref{tab:seifert}): timescape is marginally
+favoured below the statistical-homogeneity scale ($\dBIC=-0.5$ at $z_{\min}=0.01$,
+with $\ln B$ likewise mildly favouring timescape), there is no significant
+preference at $z_{\min}=0.033$, and $\Lcdm$ is favoured at $z_{\min}=0.055$
+($\dBIC=+4.9$). This \emph{reproduces} the qualitative finding of
+\cite{Lane2025,Seifert2024}---a timescape preference concentrated below the
+homogeneity scale that weakens and reverses above it---rather than refuting it.
+
+Three caveats bound the interpretation. (i) Our frequentist $\fvo\approx0.68$ at
+$z\geq0.055$ sits $\approx2\sigma$ below the $\fvo=0.737\pm0.029$ that
+\cite{Seifert2024} obtain by Bayesian nested sampling; this is an
+estimator difference (frequentist maximum likelihood versus Bayesian posterior on
+a skewed profile), not a discrepancy---our value matches the frequentist
+maximum-likelihood estimate of \cite{Lane2025}. (ii) Their headline $\ln B>5$ is
+a fully-marginalised evidence for the whole sample ($z_{\min}\!\to\!0$); our
+$\ln B$ profiles the nuisance parameters and integrates the single cosmological
+parameter by quadrature (Occam factors assumed to cancel by the identical
+nuisance structure across models), so we take $\dBIC$ as the primary statistic and
+$\ln B$ as a consistency check. (iii) The $\Lcdm$ preference at $z\geq0.055$ is
+mild-to-moderate ($|\dBIC|<6$), not decisive. The picture is thus sharpened rather
+than overturned: under the cosmology-independent covariance the supernova
+preference is a low-redshift, scale-dependent effect, not a robust whole-sample
+preference for either model.
 
 \section{Joint calibration: BAO and the CMB acoustic scale}
 \label{sec:baocmb}
@@ -540,14 +592,14 @@ Seifert et al.\ \cite{Seifert2024} reanalyse Pantheon$+$ with a covariance
 constructed to be independent of FLRW geometry and peculiar-velocity corrections
 and report very strong Bayesian evidence ($\ln B>5$) for timescape over $\Lcdm$,
 with the preference persisting beyond the statistical-homogeneity scale. We
-report these proponent claims as they stand; our own reanalysis
-(Sec.~\ref{sec:sne}) could not reproduce the supernova preference once the full
-\emph{public} Pantheon$+$ covariance is retained, the preference appearing only
-when the off-diagonal terms are discarded, while the proponents'
-cosmology-independent covariance has since been released publicly, so this
-preference is now directly reproducible under our harness---the step that would
-settle the sign, which we flag as immediate future work rather than carry out
-here.
+test these claims directly (Sec.~\ref{sec:seifert}): running our comparison under
+their now-public cosmology-independent covariance, we reproduce their published
+maximum-likelihood void fraction ($\fvo=0.675$) and their reported redshift-cut
+dependence---timescape marginally favoured below the statistical-homogeneity scale
+and $\Lcdm$ above it. The supernova preference is thus real but scale-dependent, a
+low-redshift effect rather than a robust whole-sample result, and its Bayesian
+magnitude ($\ln B>5$) reflects their fully-marginalised evidence for the whole
+sample where ours is a nuisance-profiled approximation.
 
 \emph{Backreaction and giant voids.} A parallel tradition seeks acceleration
 directly from spatial averaging: R\"as\"anen's mechanism \cite{Rasanen2006}, in
@@ -633,12 +685,56 @@ template rather than from first principles; BAO and growth constraints are far
 less developed than for $\Lcdm$; and whether backreaction can be dynamically
 significant is disputed \cite{GreenWald2014,Buchert2015}.
 
+\subsection{Is the split directional averaging, or model rigidity? A line-of-sight test}
+\label{sec:losvoids}
+Timescape applies one averaged distance--redshift curve to every sightline, yet the local
+void content is \emph{measured} at low redshift. We tested directly whether injecting it changes
+the supernova verdict, using the reconstructed 2M$++$ galaxy density field
+\cite{Carrick2015} along the line of sight to each of the 573 Pantheon$+$ supernovae
+($460$ distinct) inside the reconstruction's reliable radius ($\lesssim200\,h^{-1}$Mpc,
+$z\lesssim0.067$); redshifts are placed with $z_{\rm CMB}$, not the peculiar-velocity-corrected
+$z_{\rm HD}$, to avoid regressing the data on the same 2M$++$ field.
+
+Three findings, each a null for the ``directional-averaging'' hypothesis. First, a generalised-least-squares
+regression of the Hubble residuals on the per-sightline void fraction, under the full
+covariance, is consistent with zero once calibrated against a sky-rotation null
+($-0.9\sigma$); the naive regression error understates the scatter by $\approx2.7\times$
+because it ignores the covariate's spatial coherence and the covariance's coherent modes, so an
+apparent $\sim\!2\sigma$ signal is sub-threshold and does not survive. Second, a one-parameter
+per-sightline extension of the tracker (an expansion-variance coupling to the measured void excess)
+improves the fit by only $\Delta\chi^{2}\approx0.6$ and leaves $\hat\fvo$ at $0.85$: random
+rotations of the field help the fit as much on average (rotation-null $p\approx0.6$). Third, the
+maximal per-sightline magnitude modulation allowed by the data is $\lesssim0.05$\,mag, a few percent
+of the per-supernova error and steeply weighted to $z\lesssim0.1$, because $\mathrm{Var}(F)\sim
+L_{\rm void}/D(z)$ shrinks along longer beams. Measured structure therefore adds no information
+at Pantheon$+$ precision: the single-parameter \emph{average} is not the bottleneck, and the
+low-redshift origin of the supernova preference is a variance/covariance effect rather than a
+cosmological signal.
+
+Two further checks locate the tension. Externally, the supernova-preferred $\fvo\approx0.85$
+exceeds the observed present-day void volume fraction under any structure-based definition
+(numerical-relativity watershed void statistics bracket $\approx0.50$--$0.62$
+\cite{Williams2024}), whereas $\fvo\approx0.64$ coincides with both that bracket and
+timescape's own Planck fits \cite{Nazer2015}. And a free, spline-parametrised smooth expansion
+history fit jointly to supernovae, BAO, and the CMB acoustic scale matches $\Lcdm$
+($\Delta\chi^{2}=10$ for five extra parameters, $p=0.07$) and sits far below the timescape
+tracker ($\Delta\chi^{2}\approx67$). A smooth history \emph{can} reconcile the three datasets;
+the timescape tracker cannot. The SN-versus-BAO$+$CMB split is thus the rigidity of the
+one-parameter averaged history---one $\fvo$ forced to serve a low-redshift supernova shape and the
+BAO$+$CMB geometry at once---not a failure to resolve directional structure, and not an
+irreducible supernova--BAO shape disagreement. This is a robustness result: it strengthens, rather
+than overturns, the recasting interpretation of Sec.~\ref{sec:discussion}.
+
 \section{What a decisive test requires}
 \label{sec:future}
 (i) The cosmology-independent, FLRW-geometry- and peculiar-velocity-independent
-Pantheon$+$ covariance of Seifert et al., recently released publicly, run under
-our harness to settle the sign of the supernova preference---the immediate next
-step now that the data requirement is met.
+Pantheon$+$ covariance of Seifert et al.\ is now public and we have run it under
+our harness (Sec.~\ref{sec:seifert}): the supernova preference is
+scale-dependent---marginally timescape below the statistical-homogeneity scale
+($\dBIC=-0.5$), $\Lcdm$ above ($\dBIC=+4.9$ at $z\geq0.055$)---reproducing the
+proponents' redshift-cut trend and their maximum-likelihood void fraction. A
+fully-marginalised Bayesian evidence, versus our nuisance-profiled approximation,
+would sharpen the low-$z$ magnitude but not the sign; that is what remains.
 (ii) A joint re-fit of Pantheon$+$ and Planck within timescape with the dressed
 $\Ho$ \emph{free}, and a self-consistent timescape sound-horizon/BAO calibration,
 so early and late $\Ho$ are genuine independent measurements; the
@@ -653,14 +749,16 @@ Within timescape the early- and late-Universe dressed Hubble constants agree to
 $\lesssim0.5\sigma$ (versus $\approx4.9\sigma$ in $\Lcdm$), and the local excess
 matches the predicted void-scale variance---but the model recasts rather than
 reconciles the tension, collapsing both canonical values to $\approx61\kmsmpc$,
-below Planck. Our independent Pantheon$+$ reanalysis finds $\Lcdm$ favoured under
-every full-covariance reduction reproducible from the public products
-($\dBIC=+3.9$ to $+5.1$; exact $\ln B=+1.3$ to $+1.8$), with a timescape
-preference appearing only when the off-diagonal covariance is discarded (where the
-stat-only reduction gives $\ln B=5.4$--$5.9$ for timescape), so the supernova
-evidence is contingent on the covariance treatment; the proponents'
-cosmology-independent covariance is now public, making that sign imminently
-settleable. A joint calibration against DESI DR2 BAO and the Planck
+below Planck. Our independent Pantheon$+$ reanalysis finds $\Lcdm$ favoured under our own
+full-covariance reductions ($\dBIC=+3.9$ to $+5.1$; exact $\ln B=+1.3$ to $+1.8$),
+with a timescape preference appearing when the off-diagonal covariance is discarded
+(stat-only $\ln B=5.4$--$5.9$ for timescape). Run under the proponents' now-public
+cosmology-independent covariance, our fit reproduces their published
+maximum-likelihood values and their scale-dependent result: timescape marginally
+favoured below the statistical-homogeneity scale ($\dBIC=-0.5$ at $z>0.01$),
+$\Lcdm$ above it ($\dBIC=+4.9$ at $z\geq0.055$). The supernova preference is thus
+real but a low-redshift, scale-dependent effect, not a robust whole-sample
+preference. A joint calibration against DESI DR2 BAO and the Planck
 acoustic scale fits worse than $\Lcdm$ ($\chi^2/\mathrm{dof}=6.7$ vs $0.89$) and
 prefers a void fraction ($\fvo\simeq0.64$) in tension with the supernova value
 ($0.74$--$0.85$) at $4.8$--$6.6\sigma$ (profile parameter-shift;
@@ -736,6 +834,7 @@ the author and will be deposited publicly on publication.
 \bibitem{Schoneberg2022} N.~Sch\"oneberg \emph{et al.}, Phys.\ Rept.\ \textbf{984}, 1 (2022), arXiv:2107.10291.
 \bibitem{Williams2024} M.~J.~Williams, H.~J.~Macpherson, D.~L.~Wiltshire, C.~Stevens, Mon.\ Not.\ R.\ Astron.\ Soc.\ \textbf{536}, 2645 (2025), arXiv:2403.15134.
 \bibitem{Galoppo2026} M.~Galoppo, T.~Buchert, P.~Mourier, ``Backreaction and the role of spatial curvature in the cosmic neighborhood'', Astrophys.\ J.\ Lett.\ \textbf{1002}, L39 (2026), arXiv:2605.05454.
+\bibitem{Carrick2015} J.~Carrick, S.~J.~Turnbull, G.~Lavaux, M.~J.~Hudson, Mon.\ Not.\ R.\ Astron.\ Soc.\ \textbf{450}, 317 (2015), arXiv:1504.04627.
 \end{thebibliography}
 
 \end{document}

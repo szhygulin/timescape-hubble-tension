@@ -1,0 +1,104 @@
+{
+  "probe": "0 \u2014 feasibility gate + sample definition",
+  "field_source": "Carrick+2015 2M++ (cosmicflows.iap.fr/download), 257^3, +-200 Mpc/h",
+  "field_checks": {
+    "shape": [
+      257,
+      257,
+      257
+    ],
+    "dtype": "float64",
+    "global_mean_full_cube": 0.003114003776582269,
+    "LG_voxel_[128,128,128]": 0.2918596514282739,
+    "min": -1.0,
+    "max": 53.57391633989768,
+    "mean_within_100Mpc": 0.06442056335362094,
+    "mean_within_200Mpc": 0.006018537303009554
+  },
+  "coord_selfcheck": {
+    "NGP_should_be_b90": {
+      "l": 275.8673422263588,
+      "b": 89.99972760873973
+    },
+    "GC_should_be_l0_b0": {
+      "l": 1.1927795712752302e-06,
+      "b": 5.647332958034212e-06
+    }
+  },
+  "structure_selfcheck": {
+    "Virgo_cluster": {
+      "lbr": [
+        283.8,
+        74.5,
+        12.0
+      ],
+      "delta_g": 8.308641656872073
+    },
+    "Coma_cluster": {
+      "lbr": [
+        58.1,
+        87.9,
+        69.0
+      ],
+      "delta_g": 9.98697209694023
+    },
+    "Great_Attractor": {
+      "lbr": [
+        307.0,
+        9.0,
+        45.0
+      ],
+      "delta_g": 1.0585682383905752
+    },
+    "Perseus_Pisces": {
+      "lbr": [
+        140.0,
+        -22.0,
+        50.0
+      ],
+      "delta_g": 3.801322454126542
+    },
+    "Local_Void": {
+      "lbr": [
+        60.0,
+        -15.0,
+        25.0
+      ],
+      "delta_g": -0.9073133684241123
+    }
+  },
+  "n_cosmology_sample(iscal==0, zHD>0.01)": 1580,
+  "radial_shells_within_cosmology_sample": {
+    "r<125 (2MRS-limited depth, all-sky reliable)": 481,
+    "r<150": 530,
+    "r<180": 559,
+    "r<200 (reconstruction limit ~ z 0.067)": 573
+  },
+  "usable_sample_definition": {
+    "cut": "IS_CALIBRATOR==0 AND zHD>0.01 AND comoving_dist(zCMB, LCDM Om=0.315) < 200 Mpc/h",
+    "n_usable_rows": 573,
+    "n_unique_SNe(by CID)": 460,
+    "note": "Pantheon+ has duplicate rows (same SN, multiple surveys) correlated in the full covariance; GLS uses all rows, so the row count matches the paper's machinery while unique sightlines is the independent-info count",
+    "n_in_ZoA_|b|<5": 0,
+    "n_in_ZoA_|b|<10": 6,
+    "n_outside_ZoA_|b|>=10": 567
+  },
+  "usable_redshift_bins": {
+    "0.01-0.02": 149,
+    "0.02-0.03": 197,
+    "0.03-0.04": 121,
+    "0.04-0.05": 55,
+    "0.05-0.067": 43
+  },
+  "endpoint_density_stats": {
+    "n": 573,
+    "mean_delta_g": 1.6190395168961953,
+    "median_delta_g": 1.0591878563657762,
+    "std_delta_g": 2.123599900574947,
+    "min": -0.822939941149147,
+    "max": 13.06006800129127,
+    "frac_underdense(delta<0)": 0.17102966841186737
+  },
+  "n_noncalibrator_below_zHD_0.01(possible_extension)": 44,
+  "frozen_sample_csv": "probes_out/probe0_usable_sample.csv"
+}
