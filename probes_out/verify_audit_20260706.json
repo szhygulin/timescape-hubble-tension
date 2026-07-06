@@ -1,0 +1,74 @@
+{
+  "A1_Fprime_identity": {
+    "PASS": true,
+    "detail": "max rel err 5.32e-10 (5 fv0 values, 200 tau pts)"
+  },
+  "A2_z_at_tau0": {
+    "PASS": true,
+    "detail": "max |z(tau0)| = 2.22e-16"
+  },
+  "A3_lowz_dressed_H0_normalisation": {
+    "PASS": true,
+    "detail": "max |D/z * g - 1| = 4.27e-05 at z=1e-4 (O(z) term ~5e-5)"
+  },
+  "A4a_dressed_Hz_identity": {
+    "PASS": true,
+    "detail": "max rel err 2.22e-16"
+  },
+  "A4b_dDM_dz_vs_DH": {
+    "PASS": true,
+    "detail": "max |dD_M/dz / D_H - 1| = 1.75e-01 (characterisation)"
+  },
+  "A5_dressed_q0": {
+    "PASS": false,
+    "detail": "fv0=0.695: D-fit -0.2227, H-deriv -0.0360, analytic -0.0360; fv0=0.762: D-fit -0.2632, H-deriv -0.0429, analytic -0.0429; fv0=0.853: D-fit -0.3019, H-deriv -0.0368, analytic -0.0368"
+  },
+  "B1a_rotation_orthonormal": {
+    "PASS": true,
+    "detail": "||R R^T - I||max = 1.1e-10, det = 1.0000000000"
+  },
+  "B1b_named_directions": {
+    "PASS": true,
+    "detail": "NGP b=89.9997; GC (l,b)=(0.0000,-0.0000); M87 (l,b)=(283.778,74.491) vs published (283.778, 74.491)"
+  },
+  "B2_comoving_distance_vs_quad": {
+    "PASS": true,
+    "detail": "max rel err 1.50e-14"
+  },
+  "B3_per_SN_covariates_573": {
+    "PASS": true,
+    "detail": "ALL 573 rows recomputed with independent trilinear: max|d mean_delta|=4.44e-16, max|dF|=0.00e+00"
+  },
+  "B4_named_structures": {
+    "PASS": true,
+    "detail": "Virgo(l283.78,b74.49,r12): delta=+8.21; Coma(l58,b88,r70): delta=+11.22; Norma/GA(l325,b-7,r50): delta=+13.10; LocalVoid(l18,b6,r40): delta=-0.90"
+  },
+  "B5_sample_counts": {
+    "PASS": true,
+    "detail": "rows=573 (exp 573), unique CID=460 (exp 460), |b|<10: 6 (exp 6)"
+  },
+  "C1_headline_chi2": {
+    "PASS": true,
+    "detail": "chi2_TS=1391.5452 (stored 1391.5452), chi2_L=1386.4066 (stored 1386.4066), dBIC=+5.139"
+  },
+  "C2_probe2_gls_slopes": {
+    "PASS": true,
+    "detail": "mean_delta lam=-0.023412 (stored -0.023412), F lam=-0.030413 (stored -0.030413); naive sig_md=0.011135 vs rotation-null std 0.023289 (ratio 2.09x)"
+  },
+  "C3_split_sigma_arithmetic": {
+    "PASS": true,
+    "detail": "headline sqrt(19.545)=4.421 vs 4.421; all 8 dr2 pairings sqrt+gaussian consistent"
+  },
+  "C4_T1_pvalue": {
+    "PASS": true,
+    "detail": "dchi2=10.39/5dof -> p=0.0650 (stored 0.0650); chi2 free=1391.8 vs LCDM=1402.2 vs TS=1469.3"
+  },
+  "C5_CMB_point": {
+    "PASS": true,
+    "detail": "D_M(z*)/r_d = 94.3161 (paper 94.32; theta*=1.04109e-2, r*=144.43, r_d=147.09)"
+  },
+  "C6_probe5_ceiling": {
+    "PASS": true,
+    "detail": "RMS dmu(573, lam=0.058) = 0.0248 mag (paper <=0.046), max = 0.0841 mag"
+  }
+}
