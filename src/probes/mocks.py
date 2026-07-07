@@ -31,7 +31,7 @@ OM_TRUTH = 0.3332775919732441          # results.json standard_full Om (LCDM bes
 FV_TRUTH_SN = 0.8528822055137845       # results.json standard_full fv0 (TS best fit)
 FV_TRUTH_JOINT = 0.6426065162907268    # results_joint.json timescape fv0 (joint best fit)
 SPLIT_TASK = 0.853 - 0.639             # = 0.214 (results_fvtension.json values, task spec)
-SPLIT_VAE = 0.8528822055137845 - 0.636 # = 0.2169 (results.json vs results_baocmb.json)
+SPLIT_VAE = 0.8528822055137845 - 0.636 # = 0.2169 (results.json vs results_baocmb_dr1.json)
 SPLIT_SEIFERT = 0.737 - 0.639          # = 0.098 (Seifert cosmology-independent fv0)
 SPLIT_SEIFERT_V = 0.737 - 0.636        # = 0.101 variant
 
@@ -249,7 +249,7 @@ results["baocmb_real_data_check"] = dict(
     fv0_BAOCMB_refined=fvB_obs, chi2=chiB_obs, dof=len(rowsB)-2,
     fv0_err_dchi2eq1=[fvB_obs - lo, hi - fvB_obs],
     alpha_at_joint_truth=alpha_true,
-    committed=dict(fv0=0.636, chi2=36.32731787580997, source="results_baocmb.json (grid step 0.001)"))
+    committed=dict(fv0=0.636, chi2=36.32731787580997, source="results_baocmb_dr1.json (grid step 0.001)"))
 print(f"[{time.time()-T0:6.1f}s] BAO+CMB real data: fv0={fvB_obs:.4f} "
       f"(+{hi-fvB_obs:.4f}/-{fvB_obs-lo:.4f}) chi2={chiB_obs:.2f}", flush=True)
 
@@ -269,7 +269,7 @@ results["part2_fv_split"] = dict(
     dfv_quantiles=quantiles(dfv), dfv_mean=float(np.mean(dfv)), dfv_sd=float(np.std(dfv, ddof=1)),
     dfv_max=float(np.max(dfv)), dfv_min=float(np.min(dfv)),
     observed_split_task=tail_stats(dfv, SPLIT_TASK, "ge", "P(dfv>=0.214 | single fv0): task-specified split 0.853-0.639"),
-    observed_split_variant=tail_stats(dfv, SPLIT_VAE, "ge", "P(dfv>=0.2169): results.json 0.8529 vs results_baocmb.json 0.636"))
+    observed_split_variant=tail_stats(dfv, SPLIT_VAE, "ge", "P(dfv>=0.2169): results.json 0.8529 vs results_baocmb_dr1.json 0.636"))
 print(f"[{time.time()-T0:6.1f}s] split: dfv mean={np.mean(dfv):+.4f} sd={np.std(dfv):.4f} "
       f"max={np.max(dfv):+.4f} P(>=0.214)={np.mean(dfv>=SPLIT_TASK):.5f}", flush=True)
 
