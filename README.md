@@ -44,6 +44,8 @@ Joint SN + BAO + CMB fit, ΔBIC relative to ΛCDM (larger = more disfavoured):
 | `src/data/` | Pantheon+ supernova data + covariance (public release) |
 | `results_*.json`, `fig_*.{pdf,png}` | numerical outputs and figures |
 
+> **BAO+CMB artifacts:** the DR2 BAO+CMB headline (χ²/dof = 6.7 vs ΛCDM 0.89; the 4.8–6.6σ SN-vs-BAO+CMB split) is backed by `probes_out/dr2.json`; `results_baocmb_dr1.json` is the DR1 cross-validation / sensitivity check.
+
 ## Reproducing the results
 
 ```bash

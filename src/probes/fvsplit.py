@@ -213,7 +213,7 @@ for sname, sd in sn_fine.items():
 log("tension matrix done")
 
 # ----------------------------------------------------------------------
-# 7. Cross-checks vs committed numbers (results_baocmb.json core block)
+# 7. Cross-checks vs committed numbers (results_baocmb_dr1.json core block)
 # ----------------------------------------------------------------------
 crosschecks = dict(
     SN_S1_dchi2_at_fv0677=float(np.interp(0.677, fv_sn, d_s1)),        # committed 25.747

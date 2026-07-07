@@ -103,5 +103,5 @@ json.dump(dict(cmb_point=DM_zstar_over_rd,cmb_err=sig_cmb,
   lcdm=dict(Om=float(bestom),H0=float(H0_l),chi2=float(chi_l),dof=n-2,q0=float(q0_lcdm(bestom))),
   w0wa=dict(Om=float(Omw),w0=float(w0),wa=float(wa),H0=float(H0_w),chi2=float(chi_w),dof=n-4,q0=float(q0_w0wa(Omw,w0)),dBIC_vs_lcdm=float(bic(chi_w,4)-bic(chi_l,2))),
   core=dict(fv0_SN=float(fvsn),fv0_BAOonly=float(fvbo),SN_dchi2_at_BAOfv=float(sn_at_bo),BAO_dchi2_at_SNfv=float(bo_at_sn))),
-  open("../results_baocmb.json","w"),indent=2)
-print("\nsaved results_baocmb.json")
+  open("../results_baocmb_dr1.json","w"),indent=2)
+print("\nsaved results_baocmb_dr1.json")

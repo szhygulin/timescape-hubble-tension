@@ -56,7 +56,10 @@ Planck acoustic scale, timescape fits the geometry worse than $\Lcdm$ and prefer
 a present-day void fraction in significant tension with the supernova-preferred
 value---a shape tension that recurs across the wider void and backreaction family,
 none of which reaches the local $\Ho$, and that is not relieved by injecting the
-measured line-of-sight void structure. We conclude that, on present public data,
+measured line-of-sight void structure, though a free smooth expansion history does
+reconcile the three datasets---locating the shape tension in the tracker's
+one-parameter rigidity rather than in any dark-energy-free description. We conclude
+that, on present public data,
 eliminating dark energy through inhomogeneity does not resolve the Hubble tension.
 \end{abstract}
 
@@ -169,13 +172,24 @@ fresh SH0ES-calibrator-anchored dressed $\Ho$ measured inside the identical
 machinery (validation gate: the flat-$\Lcdm$ anchored fit recovers
 $\Ho=73.5\pm1.0\kmsmpc$ and $\Omega_{m0}=0.33$, matching \cite{Brout2022})---yields
 a fresh timescape dressed $\Ho=73.0\pm1.0\kmsmpc$ ($\fvo=0.853$, $M_B=-19.24$).
+The validation gate is a calibration consistency check rather than independent
+confirmation of the specific local-variance mechanism: any smooth low-redshift
+distance relation reduces to $d_L\simeq cz/\Ho$ for the Cepheid-host supernovae at
+$z\lesssim0.01$ regardless of shape parameter, so recovering $\Ho=73.5$ verifies
+the anchoring alone---the mechanism itself is what Sec.~\ref{sec:losvoids} tests,
+with a null result.
 This is expected, not a falsification: anchoring to the local Cepheid ladder pins
 $\Ho$ to precisely the value a wall observer is predicted to infer biased high,
 and the required fractional excess
 $\delta_{\rm req}=\Ho^{\rm local}/\Ho^{\rm dressed}-1=0.197\pm0.023$ lies inside
 the predicted $17$--$22\%$ apparent-Hubble-variance window. The $\approx9\sigma$
 gap between this local-anchored $73.0$ and the CMB-calibrated dressed asymptote
-$61.0$ is thus the model's own predicted local bias, not an anomaly. Claim~(A)
+$61.0$ is thus consistent with that predicted variance window rather than an
+anomaly; but the paper's own directional line-of-sight test
+(Sec.~\ref{sec:losvoids}), injecting the measured 2M$++$ density field along real
+supernova sightlines, finds no such directional void signal, so this excess is best
+read as the same variance/covariance-driven low-redshift fitting behaviour
+diagnosed there, not a confirmed physical local-void expansion-rate bias. Claim~(A)
 accordingly rests on this expansion-variance argument---a recasting---and never on
 an $\Ho$ agreement at $61$; making the late value a fresh measurement makes that
 dependence explicit.
@@ -375,13 +389,14 @@ sum of the separate minima, distributed as $\chi^2$ with one degree of freedom.
 Against the paper's own Pantheon$+$ fit this shift is $6.6\sigma$ for the
 BAO$+$CMB pairing and $4.8\sigma$ for the CMB- and $r_d$-free BAO-only pairing
 ($6.5\sigma$ and $4.4\sigma$ on DR1). A ladder over five supernova
-standardisations and four BAO treatments puts a $3.1\sigma$ floor on the split
-(from the DR1 ladder; DR2 only raises it) and
-shows that it falls to $\sim1$--$2\sigma$ only when the paper's own SN fit is
-replaced by the external cosmology-independent anchor $\fvo=0.737$ \emph{and} the
-$\sim\!13\%$ CMB $\fvo$ systematic \cite{Nazer2015} is grafted onto the geometric
-BAO-shape fit---a systematic that the $r_d$-independent BAO-only fit does not
-carry. A parametric bootstrap sharpens the exclusion: of 4000 mocks drawn from a
+standardisations and four BAO treatments (from the DR1 ladder; DR2 only raises it)
+locates these softenings precisely. Including the $\sim\!13\%$ CMB $\fvo$
+systematic \cite{Nazer2015} on the BAO$+$CMB side---a systematic that the
+$r_d$-independent BAO-only fit does not carry---drops the split to
+$\sim1.8$--$2.3\sigma$ whichever of the paper's own SN reductions is used, and to
+$\sim1.2\sigma$ if the external cosmology-independent anchor $\fvo=0.737$ is also
+substituted. Across the CMB-systematic-free, non-anchor subgrid (the paper's own SN
+reductions against the BAO-only fit) the split retains a $3.1\sigma$ floor. A parametric bootstrap sharpens the exclusion: of 4000 mocks drawn from a
 single-void-fraction timescape truth, none reproduces the observed
 SN-versus-BAO $\fvo$ split (largest $0.12$ versus the observed $0.21$), a
 distribution-free exclusion of $\gtrsim3.2\sigma$.\footnote{A
@@ -415,7 +430,7 @@ $q_0=-0.02$ to $-0.04$ (a weak apparent effect from the lapse, with the bare
 $\bar q_0>0$), versus $q_0=-0.54$ for $\Lcdm$ (joint fit). As a motivated alternative that
 instead \emph{modifies} the acceleration history, we also fit the CPL
 evolving-dark-energy model $w(a)=w_0+w_a(1-a)$ jointly to SN$+$BAO$+$CMB. It
-returns $w_0=-0.87$, $w_a=-0.48$---the thawing direction hinted at by DESI
+returns $w_0=-0.87$, $w_a=-0.47$---the thawing direction hinted at by DESI
 \cite{DESI2024}---with $q_0=-0.40$, but improves the fit by only
 $\Delta\chi^2=3.9$ for two extra parameters ($\dBIC=+10.8$ versus $\Lcdm$), so it
 is not significantly preferred. Table~\ref{tab:joint} collects the joint fits:
@@ -434,7 +449,7 @@ disfavour.}
 Model & parameters & $\Ho$ & $q_0$ & $\dBIC$\\
 \colrule
 $\Lcdm$ & $\Omega_{m0}=0.305$ & $68.6$ & $-0.54$ & $0$\\
-$w_0w_a$CDM & $\Omega_{m0}=0.31,w_0=-0.87,w_a=-0.48$ & $68.0$ & $-0.40$ & $+10.8$\\
+$w_0w_a$CDM & $\Omega_{m0}=0.31,w_0=-0.87,w_a=-0.47$ & $68.0$ & $-0.40$ & $+10.8$\\
 timescape & $\fvo=0.64$ & $63.1$ & $-0.02$ & $+67.1$\\
 \end{tabular}
 \end{ruledtabular}
@@ -618,7 +633,9 @@ the existing literature lacks.
 Three conclusions follow. First, interpreted within timescape the early- and
 late-Universe \emph{dressed} $\Ho$ agree at $\approx61$, and the local excess is
 of the predicted magnitude (a fresh SH0ES-calibrator-anchored late-time fit
-returns $73.0\pm1.0$, the locally-biased value the model predicts, not $61$); but
+returns $73.0\pm1.0$, consistent with the predicted variance window rather than
+$61$, though the directional line-of-sight test of Sec.~\ref{sec:losvoids} finds no
+confirming void signal); but
 this is a recasting, not a reconciliation near $70$, and the global value lies
 below Planck. Second, the supernova
 model-comparison verdict is contingent on the covariance treatment: it favours
@@ -628,9 +645,12 @@ the CMB acoustic scale \emph{together}, the SN- and BAO$+$CMB-preferred void
 fractions differ ($\Delta\fvo\approx0.1$--$0.2$) and timescape fits the BAO$+$CMB
 geometry worse than $\Lcdm$; the split is a robust profile-likelihood parameter
 shift (up to $6.6\sigma$, $4.8\sigma$ in the CMB- and $r_d$-free pairing,
-$\gtrsim3.2\sigma$ by parametric bootstrap), softening to $\sim1$--$2\sigma$ only
-under the external cosmology-independent anchor combined with the CMB $\fvo$
-systematic (Sec.~\ref{sec:baocmb}). The early/late dressed-$\Ho$ consistency of Sec.~\ref{sec:consistency}
+$\gtrsim3.2\sigma$ by parametric bootstrap, with a $3.1\sigma$ floor across the
+CMB-systematic-free, non-anchor sensitivity subgrid), softening to
+$\sim1.8$--$2.3\sigma$ once the CMB $\fvo$ systematic is included on the BAO$+$CMB
+side---whichever of the paper's own SN reductions is used---and to $\sim1.2\sigma$
+if the external cosmology-independent anchor is also substituted
+(Sec.~\ref{sec:baocmb}). The early/late dressed-$\Ho$ consistency of Sec.~\ref{sec:consistency}
 is thus genuine, but whether one parameter set also describes the combined
 distance data is unsettled on present evidence, pending the self-consistent sound
 horizon and cosmology-independent covariance. Notably the same SN-versus-BAO$+$CMB
@@ -714,8 +734,10 @@ predicted expansion variance that the local-excess cross-check assumes.
 \section{Conclusions}
 \label{sec:concl}
 Within timescape the early- and late-Universe dressed Hubble constants agree to
-$\lesssim0.5\sigma$ (versus $\approx4.9\sigma$ in $\Lcdm$), and the local excess
-matches the predicted void-scale variance---but the model recasts rather than
+$\lesssim0.5\sigma$ (versus $\approx4.9\sigma$ in $\Lcdm$), and the local excess is
+of the predicted void-scale-variance magnitude (though the directional
+line-of-sight test of Sec.~\ref{sec:losvoids} finds no confirming void
+signal)---but the model recasts rather than
 reconciles the tension, collapsing both canonical values to $\approx61\kmsmpc$,
 below Planck. Our independent Pantheon$+$ reanalysis finds $\Lcdm$ favoured under our own
 full-covariance reductions ($\dBIC=+3.9$ to $+5.1$; exact $\ln B=+1.3$ to $+1.8$),
@@ -729,11 +751,20 @@ real but a low-redshift, scale-dependent effect, not a robust whole-sample
 preference. A joint calibration against DESI DR2 BAO and the Planck
 acoustic scale fits worse than $\Lcdm$ ($\chi^2/\mathrm{dof}=6.7$ vs $0.89$) and
 prefers a void fraction ($\fvo\simeq0.64$) in tension with the supernova value
-($0.74$--$0.85$) at $4.8$--$6.6\sigma$ (profile parameter-shift;
-$\gtrsim3.2\sigma$ by parametric bootstrap), softening to $\sim1$--$2\sigma$ only
-under the external cosmology-independent anchor plus the CMB $\fvo$ systematic. The dressed-$\Ho$
+($0.74$--$0.85$) at $4.8$--$6.6\sigma$ for the primary reduction (profile
+parameter-shift; $\gtrsim3.2\sigma$ by parametric bootstrap, with a $3.1\sigma$
+floor across the CMB-systematic-free, non-anchor sensitivity subgrid), softening to
+$\sim1.8$--$2.3\sigma$ once the CMB $\fvo$ systematic is included on the BAO$+$CMB
+side and to $\sim1.2\sigma$ if the external cosmology-independent anchor is also
+substituted. The dressed-$\Ho$
 numbers \emph{are} reconciled within timescape ($\approx61\kmsmpc$); what remains
 open is whether one parameter set also fits the combined SN$+$BAO$+$CMB distances.
+This last incompatibility is a rigidity of the one-parameter tracker rather than an
+irreducible shape mismatch: a free spline-parametrised smooth expansion history
+reconciles the three datasets at $\Lcdm$ quality ($\Delta\chi^2\approx10$,
+$p=0.07$, versus $\Delta\chi^2\approx67$ for the tracker; Sec.~\ref{sec:losvoids}),
+leaving open whether a non-tracker dark-energy-free history could do better---a
+question the companion analysis \cite{FreeHistory2025} pursues.
 A uniform test of the wider void/backreaction family (Sec.~\ref{sec:voids}) finds
 the same SN-vs-BAO$+$CMB split in every dark-energy-free model and none reaching
 the local $\Ho$, with the LTB subclass independently excluded by the kSZ effect.
@@ -757,7 +788,11 @@ This work uses the public Pantheon$+$ release \cite{Scolnic2022,Brout2022}
 (\url{https://github.com/PantheonPlusSH0ES/DataRelease}). The analysis code
 (timescape and $\Lcdm$ distance modules, the magnitude$\times$covariance
 decomposition, the validation tests, and the figure scripts) is available from
-the author and will be deposited publicly on publication.
+the author and will be deposited publicly on publication. The DR2 BAO$+$CMB
+headline ($\chi^2/\mathrm{dof}=6.7$ versus $0.89$ for $\Lcdm$; the
+$4.8$--$6.6\sigma$ SN-versus-BAO$+$CMB split) is backed by
+\texttt{probes\_out/dr2.json}; \texttt{results\_baocmb\_dr1.json} is the DR1
+cross-validation/sensitivity check.
 
 \begin{thebibliography}{99}
 \bibitem{Riess2022} A.~G.~Riess \emph{et al.}, Astrophys.\ J.\ Lett.\ \textbf{934}, L7 (2022), arXiv:2112.04510.
