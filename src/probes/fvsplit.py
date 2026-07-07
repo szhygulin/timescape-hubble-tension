@@ -9,7 +9,7 @@
 import os, sys, json, time
 import numpy as np
 
-WT  = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit"
+WT  = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = WT + "/src"
 OUTJ = WT + "/probes_out/fvsplit.json"
 OUTN = WT + "/probes_out/fvsplit_curves.npz"

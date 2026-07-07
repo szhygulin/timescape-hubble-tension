@@ -30,7 +30,7 @@ import json
 import numpy as np
 from scipy.integrate import cumulative_trapezoid
 
-WT = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit"
+WT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FIELD = os.path.join(WT, "external_data", "twompp_density.npy")
 DATA = os.path.join(WT, "src", "data", "PantheonSH0ES.dat")
 OUTJ = os.path.join(WT, "probes_out", "probe0_sample.json")

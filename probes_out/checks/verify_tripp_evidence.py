@@ -8,7 +8,7 @@ import os, sys, json
 import numpy as np
 from scipy.optimize import minimize
 
-WT = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit"
+WT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = WT + "/src"
 os.chdir(SRC); sys.path.insert(0, SRC)
 import fit_timescape as F

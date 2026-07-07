@@ -25,8 +25,9 @@
 import os, sys, json, time
 import numpy as np
 
-SRC = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit/src"
-OUT = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit/probes_out/dr2.json"
+_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+SRC = os.path.join(_ROOT, "src")
+OUT = os.path.join(_ROOT, "probes_out", "dr2.json")
 os.chdir(SRC)
 sys.path.insert(0, SRC)
 

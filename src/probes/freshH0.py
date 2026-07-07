@@ -12,7 +12,7 @@
 import os, sys, json, hashlib, time
 import numpy as np
 
-WORKTREE = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit"
+WORKTREE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = os.path.join(WORKTREE, "src")
 os.chdir(SRC)
 sys.path.insert(0, SRC)

@@ -13,7 +13,7 @@ import os, sys, json, time
 import numpy as np
 from scipy import stats as st
 
-ROOT = "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit"
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.chdir(ROOT + "/src")
 sys.path.insert(0, ROOT + "/src")
 

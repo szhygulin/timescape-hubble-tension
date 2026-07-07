@@ -1,12 +1,13 @@
 """Robustness check: recompute z>=0.01 LCDM -2lnL minimum on a FINE local Om grid (warm-started
 from the reported nuisances) to confirm the marginal dBIC=-0.53 sign survives grid refinement."""
-import json, numpy as np, importlib.util
+import os, json, numpy as np, importlib.util
+_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 spec=importlib.util.spec_from_file_location("seifert",
-    "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit/src/probes/seifert.py")
+    os.path.join(_ROOT, "src", "probes", "seifert.py"))
 S=importlib.util.module_from_spec(spec); spec.loader.exec_module(S)
 import fit_timescape as F
 
-d=json.load(open('/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit/probes_out/seifert.json'))['results']['z>=0.010']
+d=json.load(open(os.path.join(_ROOT, "probes_out", "seifert.json")))['results']['z>=0.010']
 L=d['lcdm']; nm=[L['alpha'],L['beta'],np.log(L['Vx']),np.log(L['Vc']),np.log(L['VM'])]  # warm start
 ts_min=d['timescape']['neg2lnL']
 lcdm_coarse=d['lcdm']['neg2lnL']
