@@ -139,11 +139,17 @@ B["B2_baocmb_e027"], d_b2 = summarize(fv_bao, c_b2)
 B["B4_baoonly"],     d_b4 = summarize(fv_bao, c_b4)
 for k, v in {**S, **B}.items(): log(f"  {k}: fv0={v['fv0']:.4f} +{v['err_hi']}/-{v['err_lo']} chi2min={v['chi2_min']:.2f} railed={v['railed']}")
 
-# Seifert cosmology-independent anchor: fv0=0.737; NO uncertainty supplied in shared
-# notes -> assume +/-0.02 and FLAG. Analytic Gaussian Delta-chi2.
+# Seifert cosmology-independent anchor: fv0=0.737. Two uncertainty variants:
+#  - assumed +/-0.02 (original placeholder, kept for comparison), and
+#  - the PUBLISHED +/-0.029 from Seifert et al. (2025, MNRAS Lett. 537, L55;
+#    arXiv:2412.15143), the same +/-0.029 the tex already quotes at Sec. BAO+CMB.
+# Analytic Gaussian Delta-chi2 in each case.
 SEIF_FV, SEIF_ERR = 0.737, 0.020
+SEIF_ERR_PUB = 0.029
 S["S5_seifert_anchor"] = dict(fv0=SEIF_FV, chi2_min=0.0, err_lo=SEIF_ERR, err_hi=SEIF_ERR,
-                              railed=False, note="uncertainty ASSUMED +/-0.02 (not from literature agent)")
+                              railed=False, note="uncertainty ASSUMED +/-0.02 (placeholder)")
+S["S5_seifert_anchor_e029"] = dict(fv0=SEIF_FV, chi2_min=0.0, err_lo=SEIF_ERR_PUB, err_hi=SEIF_ERR_PUB,
+                                   railed=False, note="PUBLISHED +/-0.029 (Seifert et al. 2025, arXiv:2412.15143)")
 
 # ----------------------------------------------------------------------
 # 5. Nazer & Wiltshire 13% fv0 systematic grafted onto BAO+CMB (B3):
@@ -177,6 +183,7 @@ sn_fine = {
     "S3_tripp_prof_z001":  dcurve_on_fine(fv_sn, d_s3),
     "S4_tripp_prof_z075":  dcurve_on_fine(fv_sn, d_s4),
     "S5_seifert_anchor":   ((fine - SEIF_FV)/SEIF_ERR)**2,
+    "S5_seifert_anchor_e029": ((fine - SEIF_FV)/SEIF_ERR_PUB)**2,
 }
 bao_fine = {
     "B1_baocmb_e050":          dcurve_on_fine(fv_bao, d_b1),
@@ -247,7 +254,12 @@ ladder = dict(
                        sigma_vs_S1=matrix["S1_standard_fullcov"]["B3_baocmb_e050_nazersys"]["sigma"],
                        sigma_vs_S3=matrix["S3_tripp_prof_z001"]["B3_baocmb_e050_nazersys"]["sigma"],
                        sigma_vs_S4=matrix["S4_tripp_prof_z075"]["B3_baocmb_e050_nazersys"]["sigma"],
-                       sigma_vs_S5=matrix["S5_seifert_anchor"]["B3_baocmb_e050_nazersys"]["sigma"]),
+                       sigma_vs_S5=matrix["S5_seifert_anchor"]["B3_baocmb_e050_nazersys"]["sigma"],
+                       sigma_vs_S5_e020=matrix["S5_seifert_anchor"]["B3_baocmb_e050_nazersys"]["sigma"],
+                       sigma_vs_S5_e029=matrix["S5_seifert_anchor_e029"]["B3_baocmb_e050_nazersys"]["sigma"],
+                       seifert_note="S5 = Seifert cosmology-independent anchor fv0=0.737; e020 assumed, "
+                                    "e029 = published Seifert et al. (2025) uncertainty. These are the "
+                                    "'anchor-substituted softening' figures quoted in Sec. BAO+CMB."),
     iv_bao_only=dict(desc="BAO only: no CMB point, no r_d amplitude assumption, no CMB systematics",
                      sigma_vs_S1=matrix["S1_standard_fullcov"]["B4_baoonly"]["sigma"],
                      sigma_vs_S4_floor=matrix["S4_tripp_prof_z075"]["B4_baoonly"]["sigma"]),
@@ -301,11 +313,12 @@ headline = dict(
 
 out = dict(
     name="fvsplit",
-    provenance=dict(worktree=WT, script=__file__,
+    provenance=dict(script="src/probes/fvsplit.py",
                     sn_grid=[0.500, 0.960, 461], bao_grid=[0.300, 0.995, 1391],
                     fine_grid=[0.500, 0.960, 2301],
                     cmb_point=float(DM_star), cmb_err_floor=0.05, cmb_err_propagated=float(sig_prop),
                     sigma_sys_nazer=float(sigma_sys), seifert_anchor=[SEIF_FV, SEIF_ERR],
+                    seifert_anchor_published=[SEIF_FV, SEIF_ERR_PUB],
                     frozen_tripp=[A0, B0], N_sn=N,
                     stat="parameter-shift: dchi2_join = min_fv[SN(fv)+BAO(fv)] - (min SN + min BAO), "
                          "1 dof, sigma = sqrt(dchi2_join)"),
