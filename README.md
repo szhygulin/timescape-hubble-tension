@@ -12,7 +12,7 @@ Paper (LaTeX source + compiled PDF) and full reproduction code for an independen
 
 ## Findings in one paragraph
 
-Within timescape the early- and late-time *dressed* Hubble constants reconcile internally at **H₀ ≈ 61 km/s/Mpc** — dissolving the *premise* of the tension (that there is a single FLRW H₀ to disagree about), but at a value *below* Planck's 67.4, i.e. a recast of the scale rather than a climb to the local ~73. Run through one uniform supernova + BAO + CMB harness, **no dark-energy-free void or backreaction model fits all three datasets with a single parameter set**: every model shows the same split — supernovae prefer a deeper void (void fraction f_v ≈ 0.85) than the early-Universe geometry allows (f_v ≈ 0.64) — and ΛCDM is statistically preferred. The preference against timescape is **≈1–2σ, not a decisive falsification**; its proponents report Bayesian *preference* for timescape using a cosmology-independent supernova covariance that is not publicly released, which this analysis can neither reproduce nor refute. Recalibrated TRGB distances (CCHP) put H₀ ≈ 68–70, only ~1–1.5σ from Planck, so the headline 5σ tension is largely specific to the SH0ES Cepheid ladder.
+Within timescape the early- and late-time *dressed* Hubble constants reconcile internally at **H₀ ≈ 61 km/s/Mpc** — dissolving the *premise* of the tension (that there is a single FLRW H₀ to disagree about), but at a value *below* Planck's 67.4, i.e. a recast of the scale rather than a climb to the local ~73. Run through one uniform supernova + BAO + CMB harness, **no dark-energy-free void or backreaction model fits all three datasets with a single parameter set**: every model shows the same split — supernovae prefer a deeper void (void fraction f_v ≈ 0.85) than the early-Universe geometry allows (f_v ≈ 0.64) — and ΛCDM is statistically preferred. On the **supernovae alone**, read through the proponents' now-public cosmology-independent covariance, the preference against timescape is only **≈1–2σ (ΔBIC = +4.9 at the z_min ≥ 0.055 cut), not a decisive falsification** — and timescape is marginally *favoured* below the homogeneity scale, reproducing the proponents' redshift-cut trend. The stronger, model-level result is the joint SN-vs-BAO+CMB void-fraction split, significant at **~3.2–7.5σ** across estimators (profile shift, Gaussian parameter difference, distribution-free bootstrap floor). Recalibrated TRGB distances (CCHP) put H₀ ≈ 68–70, only ~1–1.5σ from Planck, so the headline 5σ tension is largely specific to the SH0ES Cepheid ladder.
 
 ### Model comparison
 
@@ -23,17 +23,17 @@ Joint SN + BAO + CMB fit, ΔBIC relative to ΛCDM (larger = more disfavoured):
 | ΛCDM (reference) | no | 0 | — |
 | w₀wₐCDM (evolving DE) | no | +11 | mild DESI-direction hint, not significant |
 | Timescape | yes | ~+67 | does not resolve |
-| LTB giant void (GBH) | yes | ~+57 | does not resolve (+ kSZ-excluded) |
-| Räsänen peak / backreaction | yes | ~+65 | predicts no acceleration |
+| LTB giant void (GBH) | yes | ~+717 | does not resolve (+ kSZ-excluded) |
+| Räsänen peak / backreaction | yes | ~+72 | predicts no acceleration |
 | Buchert "morphon" | yes | ~+1600 | fails BAO+CMB |
 | Szekeres | yes | intractable | does not resolve (literature + kSZ) |
-| KBC local void | no (keeps DE) | ~0 | needs an unobserved deep void |
+| KBC local void | no (keeps DE) | 0 (no-void limit) | needs an unobserved deep void |
 
 ## Repository contents
 
 | Path | What |
 |---|---|
-| `timescape-hubble-tension.tex` / `.pdf` | the paper (RevTeX, 7 pp.) |
+| `timescape-hubble-tension.tex` / `.pdf` | the paper (RevTeX, 11 pp.) |
 | `REPORT.md` | extended research notes |
 | `src/harness.py` | shared SN+BAO+CMB fitting harness (run its self-test first) |
 | `src/fit_timescape.py`, `src/timescape_baocmb.py` | timescape distance model + BAO/CMB calibration |
@@ -70,7 +70,7 @@ pdflatex timescape-hubble-tension.tex   # run twice for cross-references
 
 ## Data
 
-The supernova inputs are the public **Pantheon+** release (Scolnic et al. 2022; Brout et al. 2022), redistributed here under `src/data/` for convenience. BAO are from **DESI DR1** (2024) and the CMB enters through the **Planck 2018** acoustic scale. Full references are in the paper's bibliography.
+The supernova inputs are the public **Pantheon+** release (Scolnic et al. 2022; Brout et al. 2022), redistributed here under `src/data/` for convenience. BAO are from **DESI DR2** (2025) as the primary dataset, with **DESI DR1** (2024) retained as a sensitivity check, and the CMB enters through the **Planck 2018** acoustic scale. Full references are in the paper's bibliography.
 
 ## Citation
 

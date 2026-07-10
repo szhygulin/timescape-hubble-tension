@@ -1,5 +1,7 @@
 # Does the Timescape model resolve the Hubble tension?
 
+> **Note (early exploratory doc):** This is an early exploratory research note dated 2026-06-05. It is **superseded** by the final harness results reported in the paper (`timescape-hubble-tension.tex` / `.pdf`) and `README.md`; where numbers differ, the paper and README are authoritative.
+
 *Research + computation report. Generated autonomously 2026-06-05. Topic: testing the hypothesis that the Hubble tension ("напруження Хабла") dissolves under a dark-energy-free inhomogeneous-expansion cosmology.*
 
 ---
