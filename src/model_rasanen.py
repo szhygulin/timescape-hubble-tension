@@ -267,3 +267,34 @@ if __name__ == "__main__":
     print(f"dBIC(joint a6   vs LCDM)  = {dBIC_a6:+.1f}")
     print(f"SN-only late OQ0={R['sn'][1]:+.3f} vs BAO+CMB late OQ0={R['baocmb'][1]:+.3f}  "
           f"(peak-model ceiling |OQ0|=0.04)")
+
+    # ---- persist result artifact (one-number-one-script-one-artifact) ----
+    import json, os
+    _repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    _out = os.path.join(_repo, "probes_out", "rasanen_family_fit.json")
+    def _leg(t):  # (Om0, OQ0, chi2[, alpha])
+        return dict(Om0=float(t[0]), OQ0=float(t[1]), chi2=float(t[2]))
+    result = dict(
+        model="Rasanen statistical backreaction / peak model (Buchert averaging; arXiv:0801.2692, 0805.2670, 0812.2872)",
+        params="(Om0, OQ0) joint late-mode; k=2 cosmological params",
+        peak_model_published_bound="|Omega_Q|<0.04, q0>0 (NO acceleration) always; SN demand |OQ0|~0.06-0.07",
+        late_mode=dict(sn_only=_leg(R['sn']), bao_only=_leg(R['bao']), bao_cmb=_leg(R['baocmb']),
+                       joint=dict(**_leg(R['joint']), H0=float(H.H0_from_alpha(R['alpha']))) ),
+        a6_mode=dict(joint=_leg(R6['joint'])),
+        lcdm_ref=dict(Om=float(rl.x), joint_chi2=float(rl.fun), H0=float(H.H0_from_alpha(al))),
+        N=1593, lcdm_joint_chi2=1402.2,
+        dchi2_vs_LCDM_late=float(R['joint'][2]-1402.2),
+        dBIC_vs_LCDM_late=float(dBIC_late),
+        dBIC_vs_LCDM_a6=float(dBIC_a6),
+        dBIC_note=f"dBIC = dchi2 + (k-1)*ln(N), k=2 (Om0,OQ0) vs LCDM k=1, N=1593, ln(N)={lnN:.2f} "
+                  "-- same Occam convention as joint_w0wa.py / model_ltbvoid.py",
+        command="cd src && python model_rasanen.py",
+        verdict_of_verification="Reproduced from src/model_rasanen.py: joint late-mode dBIC~+72 (above "
+                                "timescape's +67 once its 2nd backreaction parameter is charged the ln N "
+                                "Occam penalty); SN demand backreaction beyond the physical peak-model "
+                                "ceiling and within the ceiling produce no acceleration. Row of tab:voids "
+                                "now backed by this artifact.",
+    )
+    with open(_out, "w") as _f:
+        json.dump(result, _f, indent=2)
+    print(f"\nsaved probes_out/rasanen_family_fit.json  (joint late dBIC={dBIC_late:+.1f})")

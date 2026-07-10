@@ -1,0 +1,48 @@
+{
+  "model": "Rasanen statistical backreaction / peak model (Buchert averaging; arXiv:0801.2692, 0805.2670, 0812.2872)",
+  "params": "(Om0, OQ0) joint late-mode; k=2 cosmological params",
+  "peak_model_published_bound": "|Omega_Q|<0.04, q0>0 (NO acceleration) always; SN demand |OQ0|~0.06-0.07",
+  "late_mode": {
+    "sn_only": {
+      "Om0": 0.05,
+      "OQ0": -0.06000000000000005,
+      "chi2": 1416.5976641997695
+    },
+    "bao_only": {
+      "Om0": 0.19,
+      "OQ0": -0.040000000000000036,
+      "chi2": 9.284757196510327
+    },
+    "bao_cmb": {
+      "Om0": 0.3,
+      "OQ0": -0.06000000000000005,
+      "chi2": 20.38521338906139
+    },
+    "joint": {
+      "Om0": 0.2742280024886131,
+      "OQ0": -0.07375162145495423,
+      "chi2": 1467.1769342990592,
+      "H0": 65.93561114690505
+    }
+  },
+  "a6_mode": {
+    "joint": {
+      "Om0": 0.04468898360129131,
+      "OQ0": 1.8622520550173434e-05,
+      "chi2": 1563.8384858155623
+    }
+  },
+  "lcdm_ref": {
+    "Om": 0.3048091925107283,
+    "joint_chi2": 1402.2371682743542,
+    "H0": 68.59358067695187
+  },
+  "N": 1593,
+  "lcdm_joint_chi2": 1402.2,
+  "dchi2_vs_LCDM_late": 64.97693429905917,
+  "dBIC_vs_LCDM_late": 72.35030860896921,
+  "dBIC_vs_LCDM_a6": 169.0118601254723,
+  "dBIC_note": "dBIC = dchi2 + (k-1)*ln(N), k=2 (Om0,OQ0) vs LCDM k=1, N=1593, ln(N)=7.37 -- same Occam convention as joint_w0wa.py / model_ltbvoid.py",
+  "command": "cd src && python model_rasanen.py",
+  "verdict_of_verification": "Reproduced from src/model_rasanen.py: joint late-mode dBIC~+72 (above timescape's +67 once its 2nd backreaction parameter is charged the ln N Occam penalty); SN demand backreaction beyond the physical peak-model ceiling and within the ceiling produce no acceleration. Row of tab:voids now backed by this artifact."
+}

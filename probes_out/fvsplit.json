@@ -1,8 +1,7 @@
 {
   "name": "fvsplit",
   "provenance": {
-    "worktree": "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit",
-    "script": "/Users/s/dev/science/timescape-hubble-tension/.claude/worktrees/significance-audit/src/probes/fvsplit.py",
+    "script": "src/probes/fvsplit.py",
     "sn_grid": [
       0.5,
       0.96,
@@ -25,6 +24,10 @@
     "seifert_anchor": [
       0.737,
       0.02
+    ],
+    "seifert_anchor_published": [
+      0.737,
+      0.029
     ],
     "frozen_tripp": [
       0.131,
@@ -68,7 +71,15 @@
       "err_lo": 0.02,
       "err_hi": 0.02,
       "railed": false,
-      "note": "uncertainty ASSUMED +/-0.02 (not from literature agent)"
+      "note": "uncertainty ASSUMED +/-0.02 (placeholder)"
+    },
+    "S5_seifert_anchor_e029": {
+      "fv0": 0.737,
+      "chi2_min": 0.0,
+      "err_lo": 0.029,
+      "err_hi": 0.029,
+      "railed": false,
+      "note": "PUBLISHED +/-0.029 (Seifert et al. 2025, arXiv:2412.15143)"
     }
   },
   "bao_curves": {
@@ -313,6 +324,48 @@
         "gaussian_sigma": 2.317,
         "joint_at_edge": false
       }
+    },
+    "S5_seifert_anchor_e029": {
+      "B1_baocmb_e050": {
+        "dchi2_join": 11.774,
+        "sigma": 3.431,
+        "fv_joint": 0.6394,
+        "sn_dchi2_at_joint": 11.327,
+        "bao_dchi2_at_joint": 0.448,
+        "gap_fv0": 0.1015,
+        "gaussian_sigma": 3.436,
+        "joint_at_edge": false
+      },
+      "B2_baocmb_e027": {
+        "dchi2_join": 11.787,
+        "sigma": 3.433,
+        "fv_joint": 0.639,
+        "sn_dchi2_at_joint": 11.42,
+        "bao_dchi2_at_joint": 0.367,
+        "gap_fv0": 0.1015,
+        "gaussian_sigma": 3.437,
+        "joint_at_edge": false
+      },
+      "B3_baocmb_e050_nazersys": {
+        "dchi2_join": 1.333,
+        "sigma": 1.155,
+        "fv_joint": 0.726,
+        "sn_dchi2_at_joint": 0.144,
+        "bao_dchi2_at_joint": 1.189,
+        "gap_fv0": 0.1016,
+        "gaussian_sigma": 1.158,
+        "joint_at_edge": false
+      },
+      "B4_baoonly": {
+        "dchi2_join": 3.259,
+        "sigma": 1.805,
+        "fv_joint": 0.6914,
+        "sn_dchi2_at_joint": 2.472,
+        "bao_dchi2_at_joint": 0.786,
+        "gap_fv0": 0.06,
+        "gaussian_sigma": 1.8,
+        "joint_at_edge": false
+      }
     }
   },
   "ladder": {
@@ -334,7 +387,10 @@
       "sigma_vs_S1": 2.335,
       "sigma_vs_S3": 2.086,
       "sigma_vs_S4": 1.758,
-      "sigma_vs_S5": 1.189
+      "sigma_vs_S5": 1.189,
+      "sigma_vs_S5_e020": 1.189,
+      "sigma_vs_S5_e029": 1.155,
+      "seifert_note": "S5 = Seifert cosmology-independent anchor fv0=0.737; e020 assumed, e029 = published Seifert et al. (2025) uncertainty. These are the 'anchor-substituted softening' figures quoted in Sec. BAO+CMB."
     },
     "iv_bao_only": {
       "desc": "BAO only: no CMB point, no r_d amplitude assumption, no CMB systematics",
@@ -380,5 +436,5 @@
       "note": "most BAO-friendly SN reduction vs cleanest BAO side = absolute floor"
     }
   },
-  "runtime_s": 9.5
+  "runtime_s": 9.4
 }

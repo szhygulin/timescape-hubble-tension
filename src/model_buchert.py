@@ -339,3 +339,26 @@ if __name__ == "__main__":
         dBIC_note="equal k (both models: 2 cosmo params + offset/alpha) -> dBIC = dchi2",
     ), open("../results_buchert.json", "w"), indent=2)
     print("\nsaved results_buchert.json")
+
+    # ---- also persist under probes_out/ (family-table artifact convention) ----
+    import os as _os
+    _repo = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    _out = _os.path.join(_repo, "probes_out", "buchert_family_fit.json")
+    json.dump(dict(
+        model="Buchert scaling-solution backreaction 'morphon' template (Larena, Alimi, Buchert, Kunz & Corasaniti 2009, arXiv:0808.1161)",
+        params="(n, Om) evolving-curvature morphon; k=2 cosmological params",
+        sn_only=dict(n=float(ns), Om=float(oms), chi2=float(csn), q0=float(q0(ns, oms))),
+        bao_only=dict(n=float(nbo), Om=float(ombo), chi2=float(cbo), H0=float(H.H0_from_alpha(abo)), q0=float(q0(nbo, ombo))),
+        bao_cmb=dict(n=float(nbc), Om=float(ombc), chi2=float(cbc), H0=float(H.H0_from_alpha(abc)), q0=float(q0(nbc, ombc))),
+        joint=dict(n=float(nj), Om=float(omj), chi2=float(cj), sn_chi2=float(c_sn_at_j),
+                   baocmb_chi2=float(c_bc_at_j), H0=float(H.H0_from_alpha(aj)), q0=float(q0(nj, omj))),
+        lcdm_joint_chi2=LCDM_JOINT, N=1593,
+        dchi2_vs_LCDM=float(cj - LCDM_JOINT),
+        dBIC_vs_LCDM=float(cj - LCDM_JOINT),
+        dBIC_note="equal k (both models: 2 cosmo params + offset/alpha) -> dBIC = dchi2",
+        command="cd src && python model_buchert.py",
+        verdict_of_verification="Reproduced from src/model_buchert.py: joint dBIC~+1.56e3 (fits SNe but fails "
+                                "BAO+CMB catastrophically); paper quotes ~+1600. Row of tab:voids now backed "
+                                "by this artifact (and the root results_buchert.json).",
+    ), open(_out, "w"), indent=2)
+    print("saved probes_out/buchert_family_fit.json")
