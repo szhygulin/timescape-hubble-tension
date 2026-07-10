@@ -7,8 +7,8 @@
 %  Class: revtex4-2.  Figures fig_dbic.pdf, fig_hubble.pdf in same dir.
 %
 %  >>> BEFORE SUBMITTING <<<
-%   (1) Fill in affiliation (currently "Independent Researcher").
-%   (2) arXiv ids machine-verified vs live arXiv 2026-06-06 (all 12 resolve); fixed CCHP2025 first author (Hoyt) + Wiltshire2014 publisher; confirm Phys.~Rept. vol/page before final submission.
+%   (1) Affiliation is final: Independent Researcher.
+%   (2) Bibliography machine-verified via committed verify_bibliography.py (all arXiv ids resolve, 2026-07-10); confirm Phys.~Rept. vol/page before final submission.
 %   (3) astro-ph.CO/gr-qc need an endorsement for a first-time submitter.
 % =====================================================================
 \documentclass[aps,prd,twocolumn,nofootinbib,superscriptaddress,floatfix]{revtex4-2}
@@ -16,7 +16,9 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+  pdftitle={Can eliminating dark energy resolve the Hubble tension? A uniform test of void and backreaction cosmologies},
+  pdfauthor={Viacheslav Zhygulin}}
 
 \newcommand{\Ho}{H_{0}}
 \newcommand{\Hbaro}{\bar H_{0}}
@@ -54,10 +56,10 @@ the off-diagonal terms are discarded or the sample is restricted to low redshift
 Third, calibrated against DESI baryon-acoustic-oscillation distances and the
 Planck acoustic scale, timescape fits the geometry worse than $\Lcdm$ and prefers
 a present-day void fraction in significant tension with the supernova-preferred
-value---a shape tension that recurs across the wider void and backreaction family,
-none of which reaches the local $\Ho$, and that is not relieved by injecting the
-measured line-of-sight void structure, though a free smooth expansion history does
-reconcile the three datasets---locating the shape tension in the tracker's
+value. This shape tension recurs across the wider void and backreaction family,
+none of which reaches the local $\Ho$, and it is not relieved by injecting the
+measured line-of-sight void structure. A free smooth expansion history does, however,
+reconcile the three datasets, locating the shape tension in the tracker's
 one-parameter rigidity rather than in any dark-energy-free description. We conclude
 that, on present public data,
 eliminating dark energy through inhomogeneity does not resolve the Hubble tension.
@@ -70,29 +72,33 @@ eliminating dark energy through inhomogeneity does not resolve the Hubble tensio
 
 The Hubble tension is the disagreement between late- and early-Universe
 determinations of $\Ho$. The local Cepheid$+$type~Ia supernova (SN~Ia)
-measurement of SH0ES is $\Ho=73.04\pm1.04\kmsmpc$ \cite{Riess2022}; the Planck
+measurement of SH0ES is $\Ho=73.04\pm1.04\kmsmpc$~\cite{Riess2022}; the Planck
 CMB value under spatially-flat $\Lcdm$ is $\Ho=67.36\pm0.54\kmsmpc$
 \cite{Planck2018}; the discrepancy is quoted at $5\sigma$. JWST rules out
-Cepheid crowding as the cause at $8.2\sigma$ \cite{Riess2024JWST}. The picture is,
+Cepheid crowding as the cause at $8.2\sigma$~\cite{Riess2024JWST}. The picture is,
 however, calibrator-dependent: the tip-of-the-red-giant-branch (TRGB) ladder of
 the Chicago--Carnegie Hubble Program gives a markedly lower
-$\Ho\simeq68$--$70\kmsmpc$ \cite{Freedman2024,CCHP2025}---only $\sim\!1$--$1.5
+$\Ho\simeq68$--$70\kmsmpc$~\cite{Freedman2024,CCHP2025}---only $\sim\!1$--$1.5
 \sigma$ above Planck---and baryon-acoustic inverse-distance-ladder values remain
-near $68$ \cite{DESI2024}. The strong $5\sigma$ tension is therefore largely
+near $68$~\cite{DESI2024}. The strong $5\sigma$ tension is therefore largely
 specific to the SH0ES Cepheid calibration; the target a late-Universe model must
 reach is $\sim\!69$ if one adopts the TRGB ladder, or $73$ for Cepheids.
 
 A logically distinct class of resolution questions the homogeneous
 Friedmann--Lema\^itre--Robertson--Walker (FLRW) interpretation itself. The
-timescape cosmology of Wiltshire \cite{Wiltshire2007,Wiltshire2009} models the
+timescape cosmology of Wiltshire~\cite{Wiltshire2007,Wiltshire2009} models the
 present, void-dominated Universe as a two-phase Buchert average
 \cite{Buchert2000}: spatially-flat ``walls'' (bound structures, where observers
 sit) and negatively-curved ``voids.'' A quasilocal gravitational-energy and
 clock-rate gradient means a wall observer fitting FLRW infers ``dressed''
 parameters distinct from the volume-average ``bare'' ones; apparent acceleration
 follows without dark energy. Recent Bayesian comparisons against Pantheon$+$
-report strong evidence for timescape over $\Lcdm$ \cite{Seifert2024,Lane2025},
-reviving the question of whether the framework also addresses the Hubble tension.
+report strong evidence for timescape over $\Lcdm$~\cite{Seifert2024,Lane2025},
+reviving the question of whether the framework also addresses the Hubble tension---a
+possibility argued directly in a recent essay of Wiltshire~\cite{Wiltshire2024GRF},
+which frames the dynamical spatial curvature of the void-dominated Universe as a
+potential resolution. This paper reaches the opposite conclusion on present public data,
+so we engage that argument explicitly below.
 
 The popular framing conflates two claims that are not equivalent: \textbf{(A)}
 within timescape the early- and late-Universe dressed Hubble constants
@@ -104,22 +110,29 @@ the covariance treatment.
 
 \paragraph*{Originality.} The framework relations of Sec.~\ref{sec:framework}
 and the published best-fit parameters are due to Wiltshire and collaborators and
-are reproduced for self-containment. New here are: the explicit tension statistic
-and local-excess cross-check of Sec.~\ref{sec:consistency}; and the independent
-Pantheon$+$ reanalysis of Sec.~\ref{sec:sne}, in particular the localisation of
-the timescape preference to the discarding of the off-diagonal covariance. All
-code is available (Sec.~\ref{sec:avail}). This is a timescape-specific study; it
-does not survey other void/inhomogeneous models (LTB, Szekeres, general Buchert
-closures), which the same pipeline could test in future work.
+are reproduced for self-containment. New here are five contributions: (i) the explicit
+dressed-$\Ho$ tension statistic and local-excess cross-check of
+Sec.~\ref{sec:consistency}; (ii) the independent Pantheon$+$ reanalysis of
+Sec.~\ref{sec:sne}, localising the timescape preference to the discarding of the
+off-diagonal covariance, together with a direct reproduction under the proponents'
+cosmology-independent covariance (Sec.~\ref{sec:seifert}); (iii) the joint BAO$+$CMB
+calibration and the SN-versus-BAO$+$CMB void-fraction split (Sec.~\ref{sec:baocmb});
+(iv) a uniform, same-harness test of the wider void and backreaction family
+(Sec.~\ref{sec:voids}); and (v) a line-of-sight test injecting the measured 2M$++$
+density field along real supernova sightlines (Sec.~\ref{sec:losvoids}). All
+code is available (Sec.~\ref{sec:avail}). The scope limit is one of comparison depth,
+not model coverage: the family test is a geometric, $\dBIC$-level distance comparison on
+a single CMB acoustic point and a standard sound horizon, not a per-model
+fully-marginalised Bayesian evidence or a full CMB-power-spectrum fit.
 
 \section{Timescape framework}
 \label{sec:framework}
 
-We use only what is needed; see \cite{Wiltshire2007,Wiltshire2009} for
+We use only what is needed; see~\cite{Wiltshire2007,Wiltshire2009} for
 derivations. The void volume fraction $f_v(t)$ grows to a present value $\fvo$.
 The lapse $\bar\gamma\equiv dt/d\tau_w$ relates volume-average time $t$ to wall
 proper time $\tau_w$, and in the late-time tracker solution the dressed and bare
-Hubble parameters are related by \cite[eq.~(B9)]{Wiltshire2009}
+Hubble parameters are related by \cite[eqs.~(B7),(B9)]{Wiltshire2009}
 \begin{equation}
 \Ho=\frac{4\fvo^{2}+\fvo+4}{2(2+\fvo)}\,\Hbaro,\qquad
 \bar\gamma_0=\tfrac12(2+\fvo).
@@ -127,50 +140,50 @@ Hubble parameters are related by \cite[eq.~(B9)]{Wiltshire2009}
 \end{equation}
 The bare deceleration parameter stays positive while the dressed one turns
 negative for $f_v\gtrsim0.59$. Best fits give dressed $\Ho\approx61.7$ and bare
-$\Hbaro\approx50\kmsmpc$ \cite{Leith2008,Duley2013}.
+$\Hbaro\approx50\kmsmpc$~\cite{Leith2008,Duley2013}.
 
 \section{Dressed-Hubble consistency and resolution-vs-recasting}
 \label{sec:consistency}
 
 We quantify agreement by $T_{AB}=|\Ho^A-\Ho^B|/\sqrt{\sigma_A^2+\sigma_B^2}$.
 
-\emph{$\Lcdm$ reference.} For SH0ES versus Planck,
-$T=5.68/\sqrt{1.04^2+0.54^2}=4.85$ ($\approx5\sigma$ as quoted) \cite{Riess2022}.
+\paragraph*{$\Lcdm$ reference.} For SH0ES versus Planck,
+$T=5.68/\sqrt{1.04^2+0.54^2}=4.85$ ($\approx5\sigma$ as quoted)~\cite{Riess2022}.
 
-\emph{Timescape.} The CMB-calibrated dressed value is $61.0\kmsmpc$
-($\pm0.79$ stat, $\pm4.88$ sys) \cite{Nazer2015} and the SN-calibrated value is
-$61.7^{+1.2}_{-1.1}\kmsmpc$ \cite{Leith2008,Wiltshire2009}; the residual is
+\paragraph*{Timescape.} The CMB-calibrated dressed value is $61.0\kmsmpc$
+($\pm0.79$ stat, $\pm4.88$ sys)~\cite{Nazer2015} and the SN-calibrated value is
+$61.7^{+1.2}_{-1.1}\kmsmpc$~\cite{Leith2008,Wiltshire2009}; the residual is
 $0.7\kmsmpc$, so $T^{\rm TS}=0.50$ (stat) or $0.14$ (stat$\oplus$sys). The same
 statistic that registers $4.85\sigma$ for the $\Lcdm$ reading registers
 $\lesssim0.5\sigma$ for the timescape reading, establishing claim~(A).
 
-\emph{Local-excess cross-check.} Timescape predicts that a wall observer infers
+\paragraph*{Local-excess cross-check.} Timescape predicts that a wall observer infers
 an apparent $\Ho$ biased high below the $\sim\!100\,h^{-1}$Mpc homogeneity scale,
 peaking near the $\sim\!30\,h^{-1}$Mpc dominant-void scale
 \cite{Wiltshire2009,Smale2011}. The excess required to reconcile SH0ES with the
 dressed asymptote, $\delta_{\rm req}=73.04/61.7-1=0.184\pm0.028$, lies within the
 predicted $\sim\!17$--$22\%$ apparent-Hubble variance (local maxima
-$\sim\!75\kmsmpc$) \cite{Wiltshire2009}. This is a magnitude-consistency
+$\sim\!75\kmsmpc$)~\cite{Wiltshire2009}. This is a magnitude-consistency
 argument: the SH0ES Hubble-flow sample extends to $z\sim0.15$, beyond the
 homogeneity scale, so the account relies additionally on the cosmic-rest-frame
-choice, for which \cite{Wiltshire2013} report evidence favouring the Local Group
+choice, for which~\cite{Wiltshire2013} report evidence favouring the Local Group
 frame.
 
-\emph{Resolution versus recasting.} The global dressed value
+\paragraph*{Resolution versus recasting.} The global dressed value
 ($\approx\!61\kmsmpc$) lies below \emph{both} $67.4$ and $73.0$. Timescape does
 not split the difference near $70$; it reinterprets both canonical values as
 biased relative to a lower global average. This is a \emph{recasting} of the
 tension as an FLRW-interpretation artifact, with consequences for consistency
-with inverse-distance-ladder BAO \cite{DESI2024} not yet established for
+with inverse-distance-ladder BAO~\cite{DESI2024} not yet established for
 timescape at $\Lcdm$ precision.
 
-\emph{A fresh late-time anchor.} The $\lesssim0.5\sigma$ agreement above pairs the
+\paragraph*{A fresh late-time anchor.} The $\lesssim0.5\sigma$ agreement above pairs the
 CMB-calibrated $61.0\kmsmpc$ with the 2008-era SN-calibrated $61.7\kmsmpc$, both
 tied to early-Universe or literature calibrations. Executing decisive
 test~(ii) of Sec.~\ref{sec:future}---replacing the literature late value with a
 fresh SH0ES-calibrator-anchored dressed $\Ho$ measured inside the identical
 machinery (validation gate: the flat-$\Lcdm$ anchored fit recovers
-$\Ho=73.5\pm1.0\kmsmpc$ and $\Omega_{m0}=0.33$, matching \cite{Brout2022})---yields
+$\Ho=73.5\pm1.0\kmsmpc$ and $\Omega_{m0}=0.33$, matching~\cite{Brout2022})---yields
 a fresh timescape dressed $\Ho=73.0\pm1.0\kmsmpc$ ($\fvo=0.853$, $M_B=-19.24$).
 The validation gate is a calibration consistency check rather than independent
 confirmation of the specific local-variance mechanism: any smooth low-redshift
@@ -198,9 +211,11 @@ dependence explicit.
 \label{sec:sne}
 
 \subsection{Data, models, likelihood}
-We use the Pantheon$+$ release \cite{Scolnic2022,Brout2022}; the cosmology
+We use the Pantheon$+$ release~\cite{Scolnic2022,Brout2022}; the cosmology
 sample is the $N=1580$ SNe with $z_{\rm HD}>0.01$ that are not Cepheid
-calibrators ($0.010<z<2.26$). For flat $\Lcdm$,
+calibrators ($0.010<z<2.26$; the exact selection is \texttt{IS\_CALIBRATOR}${}=0$ and
+$z_{\rm HD}>0.01$ with no further quality cuts, which accounts for the small difference
+from the $\sim\!1590$ sometimes quoted). For flat $\Lcdm$,
 $d_L=(1+z_{\rm hel})(c/\Ho)\int_0^{z_{\rm HD}}dz'/E(z')$. For timescape we
 implement the dressed luminosity distance from \cite[App.~A]{Dam2017} verbatim:
 $d_L=(1+z)^2d_A$, $d_A=c\,t^{2/3}[F(t_0)-F(t)]$ with
@@ -212,7 +227,7 @@ F(t)&=2t^{1/3}+\frac{b^{1/3}}{6}\ln\frac{(t^{1/3}+b^{1/3})^2}
 $1+z=2^{4/3}t^{1/3}(t+b)/[\fvo^{1/3}\Hbaro\,t(2t+3b)^{4/3}]$,
 $b=2(1-\fvo)(2+\fvo)/(9\fvo\Hbaro)$, and (\ref{eq:dressed}). Only $\fvo$ or
 $\Omega_{m0}$ shapes the Hubble diagram. We compare by $\dBIC$ (equal nuisance
-counts), adopting the Kass--Raftery scale \cite{KassRaftery1995}, marginalising
+counts), adopting the Kass--Raftery scale~\cite{KassRaftery1995}, marginalising
 the absolute-magnitude/$\Ho$ offset analytically.
 
 \subsection{Pipeline validation}
@@ -224,17 +239,19 @@ coefficient of $\mu_{\rm TS}(z)$ matches the analytic expression of
 \cite{Dam2017} to $\sim\!10^{-4}$ across $\fvo\in[0.6,0.8]$.
 
 \subsection{Covariance sensitivity}
-We vary two axes: the apparent magnitude---the standard bias-corrected
+We vary two axes. The apparent magnitude: the standard bias-corrected
 $m_{B,\rm corr}$ versus a raw SALT2 Tripp combination
-$m_B+\alpha x_1-\beta c$ \cite{Tripp1998} with no FLRW-fiducial BBC bias
-correction---and the covariance---the full public statistical$+$systematic
+$m_B+\alpha x_1-\beta c$~\cite{Tripp1998} with no FLRW-fiducial BBC bias
+correction. And the covariance: the full public statistical$+$systematic
 matrix $C$ versus its diagonal. Results are in Table~\ref{tab:fits} and
 Fig.~\ref{fig:dbic}.
 
 With the \emph{full} covariance, $\Lcdm$ is favoured for \emph{every} magnitude
 definition ($\dBIC=+3.9$ to $+5.1$; $+9.0$ if the bias correction is removed),
 and the timescape void fraction rails high ($\fvo\approx0.85$--$0.90$, implying a
-strongly void-dominated dressed $\Omega_{m0}\approx0.2$). A timescape preference
+strongly void-dominated dressed $\Omega_{m0}\approx0.2$; the timescape posterior retains
+$\approx21\%$ of its peak density at the $\fvo=0.95$ prior edge, so this railed value is
+sensitive to the prior upper bound). A timescape preference
 ($\dBIC\approx-8$) appears \emph{only} in the raw-Tripp$+$diagonal corner---i.e.
 only when the off-diagonal covariance is discarded. A fully marginalised
 statistical-only Tripp fit (fitting $\alpha,\beta,\sigma_{\rm int}$) gives
@@ -252,14 +269,20 @@ because $\Lcdm$ carries a $\sim\!1$-nat larger Occam
 factor\footnote{The maximised-likelihood ratio favours $\Lcdm$ by
 $\Delta\chi^2/2\approx2.6$, but $\Lcdm$'s prior-to-posterior compression costs
 $\approx1$ nat more than timescape's, so $\ln B\approx\Delta\chi^2/2-1\approx1.6$.}).
-By contrast the cosmology-independent stat-only Tripp reduction gives
-$\ln B=5.4$--$5.9$ \emph{for} timescape (``very strong''), reproducing in-house the
-$\ln B>5$ of \cite{Seifert2024} purely from the covariance treatment: the sign of
-the evidence is set by whether the off-diagonal terms are retained or rebuilt, not
-by the model. A parametric bootstrap calibrates the frequentist significance:
+By contrast our in-house statistical-only Tripp reduction, which drops the systematic
+off-diagonal covariance, gives $\ln B=5.4$--$5.9$ \emph{for} timescape (``very
+strong''). This matches the \emph{magnitude} of the $\ln B>5$ reported by
+\cite{Seifert2024}, but by a distinct construction: their evidence is built on a
+\emph{rebuilt} cosmology-independent covariance, under which our own whole-sample fit
+returns only $\ln B\approx-0.8$ at $z>0.01$ (Sec.~\ref{sec:seifert})---mildly favouring
+timescape, not $>5$. The lesson is the same (the sign and strength of the supernova
+evidence are set by the covariance treatment, not by the model), but the
+strong-for-timescape number comes from discarding the off-diagonal terms, which is not
+what the proponents do. A parametric bootstrap calibrates the frequentist significance:
 were timescape true, the observed supernova-only $\dBIC=+5.1$ in $\Lcdm$'s favour
-would arise with probability $p=0.008$ ($2.4\sigma$; 4000 mocks drawn from the
-full stat$+$sys covariance).
+would arise with probability $p\approx0.011$ ($2.3\sigma$; 4000 mocks drawn from the
+full stat$+$sys covariance, Gaussian tail approximation---a generalised-Pareto tail model
+gives $2.4\sigma$).
 
 \begin{table}[t]
 \caption{Timescape vs flat $\Lcdm$ on Pantheon$+$: $\dBIC$ (timescape$-\Lcdm$;
@@ -304,7 +327,7 @@ sensitivity.}
 \subsection{Reproducing the cosmology-independent covariance}
 \label{sec:seifert}
 Our diagonal cases \emph{discard} the off-diagonal covariance; they are not
-equivalent to the cosmology-independent covariance of \cite{Lane2025,Seifert2024},
+equivalent to the cosmology-independent covariance of~\cite{Lane2025,Seifert2024},
 which \emph{rebuilds} the off-diagonal (FLRW-geometry- and
 peculiar-velocity-independent) terms. That covariance, with its $P{+}1690$ input
 vector, is now public,\footnote{Covariance and input: Zenodo
@@ -339,25 +362,38 @@ $0.055$ & $1032$ & $0.680$ & $0.415$ & $+4.9$ & $+2.0$ \\
 \end{table}
 
 Our frequentist maximum-likelihood fit reproduces the published values,
-$\fvo=0.675$ and $\Omega_{m0}=0.433$ \cite{Lane2025}, and recovers the reported
+$\fvo=0.675$ and $\Omega_{m0}=0.433$~\cite{Lane2025} (their quoted maximum-likelihood
+void fraction, evaluated at $z_{\rm CMB}=0.033$; the $z_{\min}=0.033$ row of
+Table~\ref{tab:seifert}), and recovers the reported
 dependence on the redshift cut (Table~\ref{tab:seifert}): timescape is marginally
 favoured below the statistical-homogeneity scale ($\dBIC=-0.5$ at $z_{\min}=0.01$,
 with $\ln B$ likewise mildly favouring timescape), there is no significant
 preference at $z_{\min}=0.033$, and $\Lcdm$ is favoured at $z_{\min}=0.055$
-($\dBIC=+4.9$). This \emph{reproduces} the qualitative finding of
+($\dBIC=+4.9$). This \emph{reproduces}, in its maximum-likelihood void fraction and its redshift-cut
+trend, the finding of
 \cite{Lane2025,Seifert2024}---a timescape preference concentrated below the
-homogeneity scale that weakens and reverses above it---rather than refuting it.
+homogeneity scale that weakens above it---rather than refuting it. Above the homogeneity
+scale the two analyses diverge in \emph{sign}, however: our frequentist $\dBIC=+4.9$ at
+$z\geq0.055$ favours $\Lcdm$, whereas~\cite{Seifert2024} report a Bayesian $\ln B>1$
+still favouring timescape even at $z>0.075$. What we reproduce is thus the
+maximum-likelihood parameters and the qualitative cut dependence, not the whole-sample
+Bayesian verdict, which above the homogeneity scale remains estimator- and
+prior-dependent.
 
 Three caveats bound the interpretation. (i) Our frequentist $\fvo\approx0.68$ at
-$z\geq0.055$ sits $\approx2\sigma$ below the $\fvo=0.737\pm0.029$ that
-\cite{Seifert2024} obtain by Bayesian nested sampling; this is an
+$z\geq0.055$ lies $0.057$ below the $\fvo=0.737\pm0.029$ that
+\cite{Seifert2024} obtain by Bayesian nested sampling: this is $\approx2\sigma$ measured
+against their posterior width alone, but only $\approx1.3\sigma$ once our own profile
+width is combined in quadrature. Either way it is an
 estimator difference (frequentist maximum likelihood versus Bayesian posterior on
 a skewed profile), not a discrepancy---our value matches the frequentist
-maximum-likelihood estimate of \cite{Lane2025}. (ii) Their headline $\ln B>5$ is
+maximum-likelihood estimate of~\cite{Lane2025}. (ii) Their headline $\ln B>5$ is
 a fully-marginalised evidence for the whole sample ($z_{\min}\!\to\!0$); our
 $\ln B$ profiles the nuisance parameters and integrates the single cosmological
-parameter by quadrature (Occam factors assumed to cancel by the identical
-nuisance structure across models), so we take $\dBIC$ as the primary statistic and
+parameter by quadrature. Only the \emph{nuisance} Occam factors cancel between models
+(identical nuisance structure); the single cosmological-parameter Occam factor does
+not---$\Lcdm$'s $\Omega_{m0}$ prior compresses $\approx1$~nat more than timescape's
+$\fvo$ prior---which is one reason we take $\dBIC$ as the primary statistic and
 $\ln B$ as a consistency check. (iii) The $\Lcdm$ preference at $z\geq0.055$ is
 mild-to-moderate ($|\dBIC|<6$), not decisive. The picture is thus sharpened rather
 than overturned: under the cosmology-independent covariance the supernova
@@ -376,32 +412,43 @@ $(\fvo,\,\alpha\equiv c/(\Hbaro r_d))$. Since $r_d$ enters only the amplitude
 $\alpha$, the redshift \emph{shape}---and hence $\fvo$---is independent of the
 sound-horizon calibration.
 
-The fit prefers $\fvo=0.636\pm0.006$ and, with the standard $r_d=147.1$~Mpc, a
+The fit prefers $\fvo=0.636^{+0.003}_{-0.004}$ and, with the standard $r_d=147.1$~Mpc, a
 dressed $\Ho=62.6\kmsmpc$: close to the dressed value of
 Sec.~\ref{sec:consistency}, and recovering the independent CMB determination
-$\fvo=0.627$ of \cite{Nazer2015}, which validates the calculation. However the
+$\fvo=0.627$ of~\cite{Nazer2015}, which validates the calculation. However the
 fit is poor, $\chi^2/\mathrm{dof}=6.7$, versus $0.89$ for flat $\Lcdm$
 ($\Omega_{m0}=0.30$, $\Ho=69\kmsmpc$ on the same data and pipeline); BAO alone
 prefer $\fvo=0.68$. The BAO$+$CMB and supernova data prefer different void
-fractions (Fig.~\ref{fig:fvtension}), which we quantify by a profile-likelihood
-parameter-shift in $\fvo$: the rise in the jointly-minimised $\chi^2$ above the
-sum of the separate minima, distributed as $\chi^2$ with one degree of freedom.
-Against the paper's own Pantheon$+$ fit this shift is $6.6\sigma$ for the
-BAO$+$CMB pairing and $4.8\sigma$ for the CMB- and $r_d$-free BAO-only pairing
-($6.5\sigma$ and $4.4\sigma$ on DR1). A ladder over five supernova
-standardisations and four BAO treatments (from the DR1 ladder; DR2 only raises it)
-locates these softenings precisely. Including the $\sim\!13\%$ CMB $\fvo$
-systematic \cite{Nazer2015} on the BAO$+$CMB side---a systematic that the
-$r_d$-independent BAO-only fit does not carry---drops the split to
+fractions (Fig.~\ref{fig:fvtension}). We quantify the split three ways, which together
+bound its significance. (a)~A profile-likelihood parameter-shift in $\fvo$---the rise in
+the jointly-minimised $\chi^2$ above the sum of the separate minima, referred to $\chi^2$
+with one degree of freedom---gives, against the paper's own Pantheon$+$ fit, $6.6\sigma$
+for the BAO$+$CMB pairing and $4.8\sigma$ for the CMB- and $r_d$-free BAO-only pairing
+($6.5\sigma$ and $4.4\sigma$ on DR1). This is an upper end: the supernova $\chi^2(\fvo)$
+profile is markedly non-parabolic, railing toward high $\fvo$, so its rise near the joint
+minimum is $\approx1.8\times$ the Gaussian expectation and the $\sqrt{\Delta\chi^2}$
+conversion overstates a nominal Gaussian significance. (b)~A Gaussian parameter-difference
+built from the two profile widths at their minima, which does not inherit the
+non-parabolic tail, gives $4.7\sigma$ (BAO$+$CMB) and $3.6\sigma$ (BAO-only). (c)~A
+distribution-free parametric bootstrap: of 4000 mocks drawn from a single-void-fraction
+timescape truth, none reproduces the observed SN-versus-BAO $\fvo$ split (largest $0.12$
+versus the observed $0.21$), a $\gtrsim3.2\sigma$ floor by the rule of
+three.\footnote{A Gaussian or generalised-Pareto extrapolation of the mock tail gives
+$\approx7.5\sigma$, but that is a tail-model figure beyond the mock support; we quote the
+distribution-free floor.} The honest range is therefore $\sim3.2$--$7.5\sigma$: a
+$\gtrsim3.2\sigma$ distribution-free floor, $3.6$--$4.7\sigma$ on the Gaussian parameter
+difference, $4.8$--$6.6\sigma$ on the profile shift, and $7.5\sigma$ only under a tail
+model. A ladder over five supernova standardisations and four BAO treatments (from the
+DR1 ladder; DR2 only raises it) locates the softenings precisely. Including the
+$\sim\!13\%$ CMB $\fvo$ systematic~\cite{Nazer2015} on the BAO$+$CMB side, a systematic
+that the $r_d$-independent BAO-only fit does not carry, drops the split to
 $\sim1.8$--$2.3\sigma$ whichever of the paper's own SN reductions is used, and to
 $\sim1.2\sigma$ if the external cosmology-independent anchor $\fvo=0.737$ is also
-substituted. Across the CMB-systematic-free, non-anchor subgrid (the paper's own SN
-reductions against the BAO-only fit) the split retains a $3.1\sigma$ floor. A parametric bootstrap sharpens the exclusion: of 4000 mocks drawn from a
-single-void-fraction timescape truth, none reproduces the observed
-SN-versus-BAO $\fvo$ split (largest $0.12$ versus the observed $0.21$), a
-distribution-free exclusion of $\gtrsim3.2\sigma$.\footnote{A
-Gaussian/generalised-Pareto tail extrapolation beyond the mock support gives
-$\approx7.5\sigma$; we quote the distribution-free floor.} The BAO$+$CMB-alone
+substituted (this last adopts an assumed $\pm0.02$ uncertainty on the anchored SN void
+fraction; the published $\pm0.029$ is larger and lowers the figure slightly further, to
+$\sim1.1$--$1.2\sigma$). Across the CMB-systematic-free, non-anchor subgrid (the paper's
+own SN reductions against the BAO-only fit) the split retains a $3.1\sigma$ floor. The
+BAO$+$CMB-alone
 model comparison gives $\dBIC(\mathrm{TS}-\Lcdm)=+69.3$ ($+23.3$ on DR1). We
 therefore report a robust tension between the SN- and BAO$+$CMB-preferred void
 fractions---largely $r_d$-independent (it concerns the distance--redshift shape),
@@ -422,7 +469,7 @@ regions: no single timescape model fits both.}
 \label{fig:fvtension}
 \end{figure}
 
-\subsection{Acceleration, and an evolving-dark-energy comparison}
+\subsection{Apparent acceleration and a comparison with evolving dark energy}
 \label{sec:w0wa}
 Apparent acceleration is present in every best fit, so the comparison is not an
 artifact of one model lacking it: the dressed timescape deceleration parameter is
@@ -430,8 +477,8 @@ $q_0=-0.02$ to $-0.04$ (a weak apparent effect from the lapse, with the bare
 $\bar q_0>0$), versus $q_0=-0.54$ for $\Lcdm$ (joint fit). As a motivated alternative that
 instead \emph{modifies} the acceleration history, we also fit the CPL
 evolving-dark-energy model $w(a)=w_0+w_a(1-a)$ jointly to SN$+$BAO$+$CMB. It
-returns $w_0=-0.87$, $w_a=-0.47$---the thawing direction hinted at by DESI
-\cite{DESI2024}---with $q_0=-0.40$, but improves the fit by only
+returns $w_0=-0.87$, $w_a=-0.47$ (the thawing direction hinted at by DESI
+\cite{DESI2024}), with $q_0=-0.40$, but improves the fit by only
 $\Delta\chi^2=3.9$ for two extra parameters ($\dBIC=+10.8$ versus $\Lcdm$), so it
 is not significantly preferred. Table~\ref{tab:joint} collects the joint fits:
 $\Lcdm$ is the most economical, evolving dark energy a mild non-significant
@@ -461,11 +508,15 @@ The calibration makes explicit approximations, none of which affect the central
 SN--BAO$+$CMB incompatibility (which is geometric and, in the BAO-only form,
 independent of $r_d$ and the CMB): (i) the CMB enters only through the
 acoustic-scale point $D_M(z_*)/r_d$, not the full power spectrum or the
-$(R,\ell_A,\omega_b)$ compression; (ii) we adopt the standard early-physics
+$(R,\ell_A,\omega_b)$ compression, and its error is floored at $0.05$
+($\approx2\times$ looser than Planck's $\sim\!0.03\%$ determination of $100\theta_*$),
+a deliberate conservative inflation---tightening it only strengthens the timescape
+disfavour; (ii) we adopt the standard early-physics
 $r_d=147.1$~Mpc rather than a self-consistent timescape sound horizon, which
 would rescale $\Ho$ but not the shape-driven $\fvo$; (iii) the timescape tracker
-is the late-time attractor (reached by $z\sim37$), so $D_M(z_*)$ uses it slightly
-beyond its regime, though the comoving distance is dominated by $z\lesssim$ few;
+is the late-time attractor, so $D_M(z_*)$ evaluates it beyond the regime where it is an
+accurate description, though the comoving distance to last scattering is dominated by the
+low-redshift ($z\lesssim$ few) portion of the integral where the tracker holds;
 (iv) radiation is neglected in the late-time distance integrals; (v) $\Lcdm$ is
 taken spatially flat.
 
@@ -491,24 +542,41 @@ demand values beyond its physical reach and the joint fit gives
 $\dBIC\approx+72$ (above timescape's $+67$ once its extra backreaction parameter
 is charged the Occam penalty the same harness applies to $w_0w_a$CDM and LTB). (iii) The Buchert backreaction ``morphon'' template
 \cite{Larena2009} fits SNe but fails BAO$+$CMB catastrophically
-($\dBIC\sim+1.6\times10^3$). (iv) The Szekeres model \cite{MeuresBruni2011} has no
+($\dBIC\sim+1.6\times10^3$). (iv) The Szekeres model~\cite{MeuresBruni2011} has no
 closed-form isotropic distance and could not be reliably fit here; the literature
 verdict (kSZ-capped void depth, residual $\sim\!3\sigma$ tension
-\cite{Camarena2022}) is that it does not resolve the tension. (v) The local KBC
-void \cite{KBC2013,Haslbauer2020}---which \emph{retains} dark energy---leaves
+\cite{Camarena2022}) is that it does not resolve the tension; a recent effective
+$\Lambda$-Szekeres model fittable to the local Universe with Cosmicflows-4 finds that
+accounting for local structure \emph{increases} the $\Ho$ tension, shifting the best-fit
+$\Ho$ by $\approx0.5\kmsmpc$~\cite{GaloppoSzekeres2025}. (v) The local KBC
+void~\cite{KBC2013,Haslbauer2020}---which \emph{retains} dark energy---leaves
 BAO$+$CMB untouched and earns no statistical preference (a fixed literature-depth
 void worsens the joint fit by $\dBIC\approx+165$, growing monotonically with
 depth, so the no-void $\Lcdm$ limit is preferred); a void deep enough to reach
 $73$ is both deeper than observed
 and disfavoured by the supernova Hubble-flow shape
-\cite{Kenworthy2019,Camarena2022}.
+\cite{Kenworthy2019,Camarena2022}. The wider literature is actively divided on the local
+void as an $\Ho$ mechanism: $\Lambda$LTB fits to SN$+$BAO$+$CMB find an underdensity does
+not solve the tension~\cite{Castello2022}, the required void is emptier than $\Lcdm$
+structure allows~\cite{Huterer2023}, and direct distance tracers prefer a void far
+smaller ($<70$~Mpc) than the KBC fiducial~\cite{Stiskalek2025}; against this, local-void
+models have been argued to reduce a twenty-year BAO-compilation tension from $3.3\sigma$
+to $1.1$--$1.4\sigma$~\cite{BanikBAO2025}, to survive DESI DR2 without definitive
+exclusion~\cite{BanikDESI2026}, and to track the observed decline of the inferred $\Ho$
+with redshift~\cite{Mazurenko2025}. Our harness verdict here---a fixed literature-depth
+KBC void worsens the joint fit---stands as computed, but the row's underlying literature
+status is contested on present data.
 
 Every dark-energy-free void/backreaction model thus shows the same
 SN-versus-BAO$+$CMB parameter split as timescape, and none reaches the local
 $\Ho$: the failure is generic to the class, not specific to one model. The
 $\dBIC$ magnitudes from this geometric harness are approximate (single CMB
 acoustic point, standard $r_d$), but the qualitative verdict is robust and, for
-the LTB/Szekeres subclass, reinforced by the independent kSZ exclusion.
+the LTB/Szekeres subclass, reinforced by the independent kSZ exclusion. One recent
+family member we did not test is the $\eta$CDM ``emergent dark energy from structure
+formation'' of~\cite{Lapi2025}, an ensemble-averaged closure claiming to ease both the
+$\Ho$ and $f\sigma_8$ tensions; implementing its distance--redshift relation in this
+harness is left to future work.
 
 \begin{table}[t]
 \caption{Uniform SN$+$BAO$+$CMB test of void/backreaction cosmologies on the same
@@ -542,80 +610,108 @@ the proponents' claims from the principal critiques, so that our uniform survey
 (Sec.~\ref{sec:voids}) and the void-family Table~\ref{tab:voids} can be read in
 context.
 
-\emph{The timescape program.} Timescape grew out of Wiltshire's resolution of
-the cosmological averaging problem \cite{Wiltshire2007,Wiltshire2009}, built on
-the Buchert spatial-averaging formalism \cite{Buchert2000}, with the bare/dressed
+\paragraph*{The timescape program.} Timescape grew out of Wiltshire's resolution of
+the cosmological averaging problem~\cite{Wiltshire2007,Wiltshire2009}, built on
+the Buchert spatial-averaging formalism~\cite{Buchert2000}, with the bare/dressed
 distinction as its conceptual core: a wall observer fitting FLRW infers
 parameters that differ from the volume average. Leith, Ng \& Wiltshire
 \cite{Leith2008} reported the first multi-probe concordance fit (SNe$+$CMB$+$BBN
 mutually consistent without dark energy at a low dressed $\Ho$), Duley, Nazer \&
-Wiltshire \cite{Duley2013} added a radiation fluid to reach recombination, and
-Nazer \& Wiltshire \cite{Nazer2015} fitted the CMB acoustic peaks, quoting a
+Wiltshire~\cite{Duley2013} added a radiation fluid to reach recombination, and
+Nazer \& Wiltshire~\cite{Nazer2015} fitted the CMB acoustic peaks, quoting a
 dressed $\Ho\simeq61\kmsmpc$ with large ($\sim8$--$13\%$) systematics. On
 supernovae the verdict has been sensitive throughout: Smale \& Wiltshire
 \cite{Smale2011} found timescape preferred for MLCS2k2-reduced samples but
 disfavoured for SALT-reduced ones, identifying the light-curve fitter as the
-dominant systematic, and Dam, Heinesen \& Wiltshire \cite{Dam2017} found
+dominant systematic, and Dam, Heinesen \& Wiltshire~\cite{Dam2017} found
 timescape statistically indistinguishable from flat $\Lcdm$ on JLA with marginal
-apparent acceleration. The review of Wiltshire \cite{Wiltshire2014} frames dark
+apparent acceleration. The review of Wiltshire~\cite{Wiltshire2014} frames dark
 energy as a coarse-graining artifact and rests part of the case on a sub-$100\,
 h^{-1}$Mpc Hubble-flow variance and a claimed Local-Group-frame uniformity
-\cite{Wiltshire2013}---a cosmic-rest-frame inference that remains contested. The
-recent revival sharpens the supernova claim: Lane et al.\ \cite{Lane2025} and
-Seifert et al.\ \cite{Seifert2024} reanalyse Pantheon$+$ with a covariance
+\cite{Wiltshire2013}---a cosmic-rest-frame inference that remains contested. An
+independent $N$-body group-catalogue test of the predicted Hubble-flow variation
+\cite{Saulder2019} found the data to prefer $\Lcdm$ over a differential-expansion
+approximation to timescape, which Wiltshire~\cite{Wiltshire2019comment} rebutted on the
+grounds that the Newtonian rescaling omits the model's key geometrical features. More
+recently, an essay of Wiltshire~\cite{Wiltshire2024GRF} has argued that the dynamical
+spatial curvature of the void-dominated Universe can potentially resolve the Hubble
+tension---a qualitative mechanism claim that the present quantitative multi-probe test
+does not bear out. The
+recent revival sharpens the supernova claim: Lane et al.~\cite{Lane2025} and
+Seifert et al.~\cite{Seifert2024} reanalyse Pantheon$+$ with a covariance
 constructed to be independent of FLRW geometry and peculiar-velocity corrections
 and report very strong Bayesian evidence ($\ln B>5$) for timescape over $\Lcdm$,
 with the preference persisting beyond the statistical-homogeneity scale. We
 test these claims directly (Sec.~\ref{sec:seifert}): running our comparison under
 their now-public cosmology-independent covariance, we reproduce their published
 maximum-likelihood void fraction ($\fvo=0.675$) and their reported redshift-cut
-dependence---timescape marginally favoured below the statistical-homogeneity scale
-and $\Lcdm$ above it. The supernova preference is thus real but scale-dependent, a
+dependence---timescape marginally favoured below the statistical-homogeneity scale,
+our frequentist statistic favouring $\Lcdm$ above it where their Bayesian evidence still
+mildly favours timescape ($\ln B>1$ at $z>0.075$). The supernova preference is thus real but scale-dependent, a
 low-redshift effect rather than a robust whole-sample result, and its Bayesian
 magnitude ($\ln B>5$) reflects their fully-marginalised evidence for the whole
 sample where ours is a nuisance-profiled approximation.
 
-\emph{Backreaction and giant voids.} A parallel tradition seeks acceleration
-directly from spatial averaging: R\"as\"anen's mechanism \cite{Rasanen2006}, in
+\paragraph*{Backreaction and giant voids.} A parallel tradition seeks acceleration
+directly from spatial averaging: R\"as\"anen's mechanism~\cite{Rasanen2006}, in
 which faster-expanding voids coming to dominate the volume drive an effective
 acceleration, which his own quantitative peak-model evaluation
 \cite{Rasanen2008} then found too weak, and the Buchert ``morphon'' repackaging
-of backreaction as an effective scalar \cite{Larena2009}. Whether backreaction
+of backreaction as an effective scalar~\cite{Larena2009}. A scaling-solution closure with
+dynamical spatial curvature has already been fit jointly to supernovae, the CMB, and BAO
+\cite{Desgrange2019} and found statistically indistinguishable from $\Lcdm$ on the
+supernova data---an early multi-probe test of a non-timescape backreaction model, and a
+precedent for the same-footing comparison we pursue here. Whether backreaction
 can be dynamically significant is the subject of a long, still-open exchange:
 Green \& Wald argue the metric is everywhere close to FLRW so backreaction is
-trace-free and cannot source acceleration \cite{GreenWald2014}, while an
-eleven-author rebuttal contends their scheme misses the non-local averaging
-effects that matter \cite{Buchert2015}; recent first-principles GR computations
+trace-free and cannot source acceleration~\cite{GreenWald2014,GreenWald2015}, while an
+eleven-author rebuttal~\cite{Buchert2015}, and a subsequent analysis of the formalism's
+assumptions~\cite{OstrowskiRoukema2015}, contend their scheme misses the non-local
+averaging effects that matter. The dispute is partly one of gauge: spatial averaging
+yields a gauge-dependent, hence ambiguous, backreaction magnitude~\cite{Verweg2023}.
+Recent first-principles GR computations
 on the real local Universe find the kinematical backreaction small ($\lesssim
 1\%$) even as the integrated spatial curvature reaches $\sim10\%$
-\cite{Galoppo2026}, and full numerical-relativity void statistics supply a
+\cite{Galoppo2026}, numerical-relativity averaging on Newtonian-gauge-like
+hypersurfaces likewise finds it negligible while the curvature varies at the $\sim10\%$
+level~\cite{Oestreicher2024}, and full numerical-relativity void statistics supply a
 $10$--$30\%$ void-overexpansion that motivates the void-fraction parameter
-\cite{Williams2024}. The LTB/Szekeres giant-void line \cite{GBH2008} fits SNe
+\cite{Williams2024}; a first observational assessment over an extended redshift range
+cannot yet tightly constrain the total backreaction either way~\cite{Koksbang2026}. The LTB/Szekeres giant-void line~\cite{GBH2008} fits SNe
 with a deep central void but is bounded sharply from outside: radial BAO and a
-low-$\Ho$/fine-tuning dilemma \cite{ZibinMossScott}, a multi-probe exclusion
+low-$\Ho$/fine-tuning dilemma~\cite{ZibinMossScott}, a multi-probe exclusion
 \cite{MossZibinScott2011}, and---decisively---the kinetic Sunyaev--Zel'dovich
 effect, an unavoidable consequence of large radial inhomogeneity that rules out
-adiabatic Gpc voids \cite{ZhangStebbins2011}. The distinct \emph{local}-void
-($\Ho$-outflow) idea, including the deep KBC void \cite{KBC2013,Haslbauer2020},
+adiabatic Gpc voids~\cite{ZhangStebbins2011}. The distinct \emph{local}-void
+($\Ho$-outflow) idea, including the deep KBC void~\cite{KBC2013,Haslbauer2020},
 is separately disfavoured: the local Hubble-flow shape shows no outflow of the
-required size \cite{Kenworthy2019} and the supposed void resolution is an artifact
-of the redshift range used to calibrate $\Ho$ \cite{Camarena2022}.
+required size~\cite{Kenworthy2019} and the supposed void resolution is an artifact
+of the redshift range used to calibrate $\Ho$~\cite{Camarena2022}. This local-void
+question is under active debate on present data (Sec.~\ref{sec:voids}). Distinct from all
+of these averaging and void routes are proposals that the apparent acceleration is itself
+an observational artifact---of a large-scale bulk-flow anisotropy in Pantheon$+$
+\cite{SahAniso2024}, or of a progenitor-age luminosity drift that, once corrected, points
+to deceleration~\cite{SahAge2026}---which place the effect in the supernova data rather
+than in cosmic inhomogeneity.
 
-\emph{The recent (2023--26) context.} Several developments have renewed interest.
+\paragraph*{The recent (2023--26) context.} Several developments have renewed interest.
 The DESI inverse-distance-ladder gives $\Ho\simeq68\kmsmpc$ and hints at evolving
-dark energy ($w_0>-1$, $w_a<0$) \cite{DESI2024}, which the no-dark-energy programs
+dark energy ($w_0>-1$, $w_a<0$)~\cite{DESI2024}, which the no-dark-energy programs
 read as room for an inhomogeneity-driven effective equation of state. The
 tension's apparent magnitude has also softened on the calibrator axis: the
 TRGB ladder of the Chicago--Carnegie Hubble Program gives $\Ho\simeq68$--$70$,
-only $\sim1$--$1.5\sigma$ from Planck \cite{Freedman2024,CCHP2025}, so the
+only $\sim1$--$1.5\sigma$ from Planck~\cite{Freedman2024,CCHP2025}, so the
 $5\sigma$ figure is largely SH0ES-Cepheid-specific. Against this, the
 review/ranking literature has consistently placed the inhomogeneity class below
 early-time new physics: the field's solution catalogues assign it a weaker
-verdict \cite{DiValentino2021}, and metric-based rankings find late-Universe and
+verdict~\cite{DiValentino2021}, metric-based rankings find late-Universe and
 local mechanisms cannot resolve $\Ho$ under joint BAO$+$SN constraints
-\cite{Schoneberg2022}.
+\cite{Schoneberg2022}, and the community CosmoVerse review---co-authored by
+timescape proponents---likewise catalogues the inhomogeneity class among the more
+weakly supported options while calling for systematics-controlled tests
+\cite{CosmoVerse2025}.
 
-\emph{This work in context.} The studies above are overwhelmingly single-model:
+\paragraph*{This work in context.} The studies above are overwhelmingly single-model:
 each proponent paper fits one framework, and each critique bounds one mechanism.
 Our contribution is a \emph{uniform} test---the identical SN$+$BAO$+$CMB harness,
 with the same likelihood, marginalisation, and model-comparison statistic applied
@@ -628,43 +724,7 @@ reproduction possible, and where the critiques deploy probes (kSZ, radial BAO)
 outside our distance-only harness, our test adds the same-footing comparison that
 the existing literature lacks.
 
-\section{Discussion}
-\label{sec:discussion}
-Three conclusions follow. First, interpreted within timescape the early- and
-late-Universe \emph{dressed} $\Ho$ agree at $\approx61$, and the local excess is
-of the predicted magnitude (a fresh SH0ES-calibrator-anchored late-time fit
-returns $73.0\pm1.0$, consistent with the predicted variance window rather than
-$61$, though the directional line-of-sight test of Sec.~\ref{sec:losvoids} finds no
-confirming void signal); but
-this is a recasting, not a reconciliation near $70$, and the global value lies
-below Planck. Second, the supernova
-model-comparison verdict is contingent on the covariance treatment: it favours
-$\Lcdm$ under the full public covariance and timescape only when the off-diagonal
-terms are removed. Third, when timescape is required to fit supernovae, BAO, and
-the CMB acoustic scale \emph{together}, the SN- and BAO$+$CMB-preferred void
-fractions differ ($\Delta\fvo\approx0.1$--$0.2$) and timescape fits the BAO$+$CMB
-geometry worse than $\Lcdm$; the split is a robust profile-likelihood parameter
-shift (up to $6.6\sigma$, $4.8\sigma$ in the CMB- and $r_d$-free pairing,
-$\gtrsim3.2\sigma$ by parametric bootstrap, with a $3.1\sigma$ floor across the
-CMB-systematic-free, non-anchor sensitivity subgrid), softening to
-$\sim1.8$--$2.3\sigma$ once the CMB $\fvo$ systematic is included on the BAO$+$CMB
-side---whichever of the paper's own SN reductions is used---and to $\sim1.2\sigma$
-if the external cosmology-independent anchor is also substituted
-(Sec.~\ref{sec:baocmb}). The early/late dressed-$\Ho$ consistency of Sec.~\ref{sec:consistency}
-is thus genuine, but whether one parameter set also describes the combined
-distance data is unsettled on present evidence, pending the self-consistent sound
-horizon and cosmology-independent covariance. Notably the same SN-versus-BAO$+$CMB
-split recurs across the whole void/backreaction family (Sec.~\ref{sec:voids}),
-suggesting it is generic to dark-energy-free inhomogeneous models rather than
-specific to timescape.
-
-These results sit within known open problems: the timescape CMB fit
-\cite{Nazer2015} matches the acoustic-peak structure by adapting an $\Lcdm$
-template rather than from first principles; BAO and growth constraints are far
-less developed than for $\Lcdm$; and whether backreaction can be dynamically
-significant is disputed \cite{GreenWald2014,Buchert2015}.
-
-\subsection{Is the split directional averaging, or model rigidity? A line-of-sight test}
+\section{Directional averaging or model rigidity? A line-of-sight test}
 \label{sec:losvoids}
 Timescape applies one averaged distance--redshift curve to every sightline, yet the local
 void content is \emph{measured} at low redshift. We tested directly whether injecting it changes
@@ -693,25 +753,64 @@ cosmological signal.
 Two further checks locate the tension. Externally, the supernova-preferred $\fvo\approx0.85$
 exceeds the observed present-day void volume fraction under any structure-based definition
 (numerical-relativity watershed void statistics bracket $\approx0.50$--$0.62$
-\cite{Williams2024}), whereas $\fvo\approx0.64$ coincides with both that bracket and
-timescape's own Planck fits \cite{Nazer2015}. And a free, spline-parametrised smooth expansion
+\cite{Williams2024}), whereas $\fvo\approx0.64$ sits just above the top edge of that
+bracket and coincides with timescape's own Planck fits~\cite{Nazer2015}. And a free, spline-parametrised smooth expansion
 history fit jointly to supernovae, BAO, and the CMB acoustic scale matches $\Lcdm$
-($\Delta\chi^{2}=10$ for five extra parameters, $p=0.07$) and sits far below the timescape
+($\Delta\chi^{2}=10$ for five extra parameters, $p=0.065$; the Wilks $p$ is approximate
+here, as $\Lcdm$ is not nested in the spline family, but conservatively so---it does not
+inflate the spline's improvement over $\Lcdm$) and sits far below the timescape
 tracker ($\Delta\chi^{2}\approx67$). A smooth history \emph{can} reconcile the three datasets;
 the timescape tracker cannot. The SN-versus-BAO$+$CMB split is thus the rigidity of the
-one-parameter averaged history---one $\fvo$ forced to serve a low-redshift supernova shape and the
-BAO$+$CMB geometry at once---not a failure to resolve directional structure, and not an
+one-parameter averaged history (one $\fvo$ forced to serve a low-redshift supernova shape and the
+BAO$+$CMB geometry at once), not a failure to resolve directional structure, and not an
 irreducible supernova--BAO shape disagreement. This is a robustness result: it strengthens, rather
-than overturns, the recasting interpretation of Sec.~\ref{sec:discussion}.
+than overturns, the recasting interpretation of the Discussion below.
 
-A companion analysis \cite{FreeHistory2025} pursues the same diagnosis in the full
+A companion analysis~\cite{FreeHistory2025} pursues the same diagnosis in the full
 dressed-geometry solver rather than the kinematic spline used above: freeing the
 void-fraction history $f_v(z)$ from the one-parameter tracker recovers an
-$\Lcdm$-quality joint SN$+$BAO$+$CMB fit, isolating the tracker's rigidity---not the
-dressed-geometry framework itself---as the cause of the combined-fit failure. That
+$\Lcdm$-quality joint SN$+$BAO$+$CMB fit, isolating the tracker's rigidity, not the
+dressed-geometry framework itself, as the cause of the combined-fit failure. That
 reconciliation is a kinematic reading (the forced history need not satisfy the
 Buchert integrability conditions) and the analysis is ongoing; code at
 \url{https://github.com/szhygulin/free-history-timescape}.
+
+\section{Discussion}
+\label{sec:discussion}
+Three conclusions follow. First, interpreted within timescape the early- and
+late-Universe \emph{dressed} $\Ho$ agree at $\approx61$, and the local excess is
+of the predicted magnitude (a fresh SH0ES-calibrator-anchored late-time fit
+returns $73.0\pm1.0$, consistent with the predicted variance window rather than
+$61$, though the directional line-of-sight test of Sec.~\ref{sec:losvoids} finds no
+confirming void signal); but
+this is a recasting, not a reconciliation near $70$, and the global value lies
+below Planck. Second, the supernova
+model-comparison verdict is contingent on the covariance treatment: it favours
+$\Lcdm$ under the full public covariance and timescape only when the off-diagonal
+terms are removed. Third, when timescape is required to fit supernovae, BAO, and
+the CMB acoustic scale \emph{together}, the SN- and BAO$+$CMB-preferred void
+fractions differ ($\Delta\fvo\approx0.1$--$0.2$) and timescape fits the BAO$+$CMB
+geometry worse than $\Lcdm$; the split is significant across estimators
+($\sim3.2$--$7.5\sigma$; profile shift, Gaussian parameter difference, and
+distribution-free bootstrap floor), softening to $\sim1.2$--$2.3\sigma$ once the CMB
+$\fvo$ systematic and the external cosmology-independent SN anchor are included (see
+Sec.~\ref{sec:baocmb}). The early/late dressed-$\Ho$ consistency of Sec.~\ref{sec:consistency}
+is thus genuine, but whether one parameter set also describes the combined
+distance data is unsettled on present evidence, pending the self-consistent sound
+horizon and cosmology-independent covariance. Notably the same SN-versus-BAO$+$CMB
+split recurs across the whole void/backreaction family (Sec.~\ref{sec:voids}),
+suggesting it is generic to dark-energy-free inhomogeneous models rather than
+specific to timescape; a recent geometric analysis reaches a parallel conclusion for
+late-time $w(z)$ dark energy, finding that supernovae and BAO constrain $\Omega_{m0}$
+through orthogonal channels that disagree~\cite{Zhou2026}, so the tension is not
+idiosyncratic to the void closure.
+
+These results sit within known open problems: the timescape CMB fit
+\cite{Nazer2015} matches the acoustic-peak structure by adapting an $\Lcdm$
+template rather than from first principles; BAO and growth constraints are far
+less developed than for $\Lcdm$; and whether backreaction can be dynamically
+significant remains disputed, with the estimated magnitude sensitive to gauge and
+averaging choice~\cite{GreenWald2014,Buchert2015,Verweg2023,Oestreicher2024}.
 
 \section{What a decisive test requires}
 \label{sec:future}
@@ -751,20 +850,17 @@ real but a low-redshift, scale-dependent effect, not a robust whole-sample
 preference. A joint calibration against DESI DR2 BAO and the Planck
 acoustic scale fits worse than $\Lcdm$ ($\chi^2/\mathrm{dof}=6.7$ vs $0.89$) and
 prefers a void fraction ($\fvo\simeq0.64$) in tension with the supernova value
-($0.74$--$0.85$) at $4.8$--$6.6\sigma$ for the primary reduction (profile
-parameter-shift; $\gtrsim3.2\sigma$ by parametric bootstrap, with a $3.1\sigma$
-floor across the CMB-systematic-free, non-anchor sensitivity subgrid), softening to
-$\sim1.8$--$2.3\sigma$ once the CMB $\fvo$ systematic is included on the BAO$+$CMB
-side and to $\sim1.2\sigma$ if the external cosmology-independent anchor is also
-substituted. The dressed-$\Ho$
+($0.74$--$0.85$) at $\sim3.2$--$7.5\sigma$ across estimators (see
+Sec.~\ref{sec:baocmb}), softening to $\sim1.2$--$2.3\sigma$ once the CMB $\fvo$
+systematic and the external cosmology-independent SN anchor are included. The dressed-$\Ho$
 numbers \emph{are} reconciled within timescape ($\approx61\kmsmpc$); what remains
 open is whether one parameter set also fits the combined SN$+$BAO$+$CMB distances.
 This last incompatibility is a rigidity of the one-parameter tracker rather than an
 irreducible shape mismatch: a free spline-parametrised smooth expansion history
 reconciles the three datasets at $\Lcdm$ quality ($\Delta\chi^2\approx10$,
-$p=0.07$, versus $\Delta\chi^2\approx67$ for the tracker; Sec.~\ref{sec:losvoids}),
+$p=0.065$, versus $\Delta\chi^2\approx67$ for the tracker; Sec.~\ref{sec:losvoids}),
 leaving open whether a non-tracker dark-energy-free history could do better---a
-question the companion analysis \cite{FreeHistory2025} pursues.
+question the companion analysis~\cite{FreeHistory2025} pursues.
 A uniform test of the wider void/backreaction family (Sec.~\ref{sec:voids}) finds
 the same SN-vs-BAO$+$CMB split in every dark-energy-free model and none reaching
 the local $\Ho$, with the LTB subclass independently excluded by the kSZ effect.
@@ -776,7 +872,10 @@ eliminating dark energy via inhomogeneity does not resolve the Hubble tension.
 \begin{acknowledgments}
 The author used the Claude large language model (Anthropic) as a
 research-assistance tool: for primary-literature retrieval, for implementing and
-running the supernova analysis of Sec.~\ref{sec:sne}, and for drafting. All
+running the analyses of this paper---the supernova reanalysis of Sec.~\ref{sec:sne},
+the BAO$+$CMB calibration of Sec.~\ref{sec:baocmb}, the void/backreaction family
+harness of Sec.~\ref{sec:voids}, and the line-of-sight test of
+Sec.~\ref{sec:losvoids}---and for drafting. All
 sources, equations, code, and numerical results were verified by the author, who
 takes full responsibility for the content and any errors. This work received no
 funding.
@@ -784,11 +883,11 @@ funding.
 
 \section*{Data and code availability}
 \label{sec:avail}
-This work uses the public Pantheon$+$ release \cite{Scolnic2022,Brout2022}
+This work uses the public Pantheon$+$ release~\cite{Scolnic2022,Brout2022}
 (\url{https://github.com/PantheonPlusSH0ES/DataRelease}). The analysis code
 (timescape and $\Lcdm$ distance modules, the magnitude$\times$covariance
-decomposition, the validation tests, and the figure scripts) is available from
-the author and will be deposited publicly on publication. The DR2 BAO$+$CMB
+decomposition, the validation tests, and the figure scripts) is public at
+\url{https://github.com/szhygulin/timescape-hubble-tension}. The DR2 BAO$+$CMB
 headline ($\chi^2/\mathrm{dof}=6.7$ versus $0.89$ for $\Lcdm$; the
 $4.8$--$6.6\sigma$ SN-versus-BAO$+$CMB split) is backed by
 \texttt{probes\_out/dr2.json}; \texttt{results\_baocmb\_dr1.json} is the DR1
@@ -838,7 +937,28 @@ cross-validation/sensitivity check.
 \bibitem{Williams2024} M.~J.~Williams, H.~J.~Macpherson, D.~L.~Wiltshire, C.~Stevens, Mon.\ Not.\ R.\ Astron.\ Soc.\ \textbf{536}, 2645 (2025), arXiv:2403.15134.
 \bibitem{Galoppo2026} M.~Galoppo, T.~Buchert, P.~Mourier, ``Backreaction and the role of spatial curvature in the cosmic neighborhood'', Astrophys.\ J.\ Lett.\ \textbf{1002}, L39 (2026), arXiv:2605.05454.
 \bibitem{Carrick2015} J.~Carrick, S.~J.~Turnbull, G.~Lavaux, M.~J.~Hudson, Mon.\ Not.\ R.\ Astron.\ Soc.\ \textbf{450}, 317 (2015), arXiv:1504.04627.
-\bibitem{FreeHistory2025} V.~Zhygulin, ``Free-history timescape: freeing the void-fraction history from the one-parameter tracker'', companion paper (in preparation), \url{https://github.com/szhygulin/free-history-timescape}.
+\bibitem{FreeHistory2025} V.~Zhygulin, ``Free-history timescape: a data-driven void history reconciles the supernova--BAO--CMB geometry but does not resolve the Hubble tension'', companion paper (submitted concurrently), \url{https://github.com/szhygulin/free-history-timescape}.
+\bibitem{Wiltshire2024GRF} D.~L.~Wiltshire, ``Solution to the cosmological constant problem'', Gravity Research Foundation essay (2024), arXiv:2404.02129.
+\bibitem{CosmoVerse2025} E.~Di~Valentino \emph{et al.} (CosmoVerse Network), ``The CosmoVerse White Paper: Addressing observational tensions in cosmology with systematics and fundamental physics'' (2025), arXiv:2504.01669.
+\bibitem{GreenWald2015} S.~R.~Green, R.~M.~Wald, ``Comments on Backreaction'' (2015), arXiv:1506.06452.
+\bibitem{OstrowskiRoukema2015} J.~J.~Ostrowski, B.~F.~Roukema, ``On the Green and Wald formalism'' (2015), arXiv:1512.02947.
+\bibitem{Verweg2023} D.~B.~H.~Verweg, B.~J.~T.~Jones, R.~van de Weygaert, ``Averaging over cosmic structure: Cosmological backreaction and the gauge problem'' (2023), arXiv:2310.19451.
+\bibitem{Oestreicher2024} A.~Oestreicher \emph{et al.}, ``Backreaction in Numerical Relativity: Averaging on Newtonian gauge-like hypersurfaces in Einstein Toolkit cosmological simulations'' (2024), arXiv:2408.03049.
+\bibitem{Koksbang2026} S.~M.~Koksbang \emph{et al.}, ``A First Observational Assessment of Cosmic Backreaction Over an Extended Redshift Range'' (2026), arXiv:2604.11249.
+\bibitem{Desgrange2019} C.~Desgrange, A.~Heinesen, T.~Buchert, ``Dynamical spatial curvature as a fit to type Ia supernovae'' (2019), arXiv:1902.07915.
+\bibitem{Castello2022} S.~Castello, M.~H\"ogas, E.~M\"ortsell, ``A Cosmological Underdensity Does Not Solve the Hubble Tension'', J.\ Cosmol.\ Astropart.\ Phys.\ \textbf{07}, 003 (2022), arXiv:2110.04226.
+\bibitem{Huterer2023} D.~Huterer, H.-Y.~Wu, ``Not empty enough: a local void cannot solve the $H_0$ tension'' (2023), arXiv:2309.05749.
+\bibitem{Stiskalek2025} R.~Stiskalek \emph{et al.}, ``Testing the local supervoid solution to the Hubble tension with direct distance tracers'' (2025), arXiv:2506.10518.
+\bibitem{BanikBAO2025} I.~Banik, V.~Kalaitzidis, ``Testing the local void hypothesis using baryon acoustic oscillation measurements over the last twenty years'' (2025), arXiv:2501.17934.
+\bibitem{BanikDESI2026} I.~Banik \emph{et al.}, ``Constraints on the gravitational potential from DESI DR2 BAO and its implications for the local void scenario'' (2026), arXiv:2606.02712.
+\bibitem{Mazurenko2025} S.~Mazurenko, I.~Banik, P.~Kroupa, ``The redshift dependence of the inferred $H_0$ in a local void solution to the Hubble tension'' (2025), arXiv:2412.12245.
+\bibitem{Lapi2025} A.~Lapi \emph{et al.}, ``Little ado about everything II: an `emergent' dark energy from structure formation to rule cosmic tensions'' (2025), arXiv:2502.05823.
+\bibitem{GaloppoSzekeres2025} M.~Galoppo \emph{et al.}, ``An effective $\Lambda$-Szekeres modelling of the local Universe with Cosmicflows-4'' (2025), arXiv:2512.16591.
+\bibitem{SahAniso2024} A.~Sah, M.~Rameez, S.~Sarkar, C.~G.~Tsagas, ``Anisotropy in Pantheon$+$ supernovae'' (2024), arXiv:2411.10838.
+\bibitem{SahAge2026} A.~Sah \emph{et al.}, ``Pantheon$+$ supernovae corrected for progenitor age indicate the universe is decelerating'' (2026), arXiv:2606.09650.
+\bibitem{Zhou2026} Z.~Zhou \emph{et al.}, ``Geometric obstruction to resolving the Hubble tension: orthogonality of scale and shape in distance measurements'' (2026), arXiv:2606.12822.
+\bibitem{Saulder2019} C.~Saulder, S.~Mieske, E.~van Kampen, W.~W.~Zeilinger, Astron.\ Astrophys.\ \textbf{622}, A83 (2019), arXiv:1811.11976.
+\bibitem{Wiltshire2019comment} D.~L.~Wiltshire, ``Comment on `Hubble flow variations as a test for inhomogeneous cosmology'\,'', Astron.\ Astrophys.\ \textbf{624}, A12 (2019), arXiv:1812.01586.
 \end{thebibliography}
 
 \end{document}
