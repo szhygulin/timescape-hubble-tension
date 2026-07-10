@@ -443,10 +443,10 @@ DR1 ladder; DR2 only raises it) locates the softenings precisely. Including the
 $\sim\!13\%$ CMB $\fvo$ systematic~\cite{Nazer2015} on the BAO$+$CMB side, a systematic
 that the $r_d$-independent BAO-only fit does not carry, drops the split to
 $\sim1.8$--$2.3\sigma$ whichever of the paper's own SN reductions is used, and to
-$\sim1.2\sigma$ if the external cosmology-independent anchor $\fvo=0.737$ is also
+$1.19\sigma$ if the external cosmology-independent anchor $\fvo=0.737$ is also
 substituted (this last adopts an assumed $\pm0.02$ uncertainty on the anchored SN void
-fraction; the published $\pm0.029$ is larger and lowers the figure slightly further, to
-$\sim1.1$--$1.2\sigma$). Across the CMB-systematic-free, non-anchor subgrid (the paper's
+fraction; the published $\pm0.029$~\cite{Seifert2024} is larger and lowers the figure
+slightly further, to $1.16\sigma$). Across the CMB-systematic-free, non-anchor subgrid (the paper's
 own SN reductions against the BAO-only fit) the split retains a $3.1\sigma$ floor. The
 BAO$+$CMB-alone
 model comparison gives $\dBIC(\mathrm{TS}-\Lcdm)=+69.3$ ($+23.3$ on DR1). We
@@ -532,7 +532,7 @@ marginalised as before.
 The outcome is uniform. (i) The LTB giant-void model (constrained GBH
 \cite{GBH2008}) reproduces SN acceleration with a deep central void but, like
 timescape, prefers a \emph{deeper} void for SNe than for BAO$+$CMB (joint
-$\dBIC\approx+717$); its central $\Ho$ reaches only $\sim\!55$--$59$, and it is
+$\dBIC\approx+715$); its central $\Ho$ reaches only $\sim\!55$--$59$, and it is
 independently excluded by the kinetic Sunyaev--Zel'dovich effect
 \cite{ZhangStebbins2011,Camarena2022}. (ii) The R\"as\"anen peak/backreaction model
 \cite{Rasanen2008,Rasanen2009} is parameter-free and, by its authors' own
@@ -591,7 +591,7 @@ Model & DE-free & joint $\dBIC$ & verdict \\
 $\Lcdm$ (ref.)   & no  & $0$              & --- \\
 $w_0w_a$CDM      & no  & $+11$            & no (mild DESI-direction hint) \\
 Timescape        & yes & $\sim\!+67$      & no \\
-LTB void (GBH)   & yes & $\sim\!+717$     & no ($+$kSZ-excluded) \\
+LTB void (GBH)   & yes & $\sim\!+715$     & no ($+$kSZ-excluded) \\
 R\"as\"anen peak & yes & $\sim\!+72$      & no (predicts no acceleration) \\
 Buchert morphon  & yes & $\sim\!+1600$    & no \\
 Szekeres         & yes & intractable      & no (literature $+$ kSZ) \\
@@ -891,7 +891,11 @@ decomposition, the validation tests, and the figure scripts) is public at
 headline ($\chi^2/\mathrm{dof}=6.7$ versus $0.89$ for $\Lcdm$; the
 $\sim3.2$--$7.5\sigma$ SN-versus-BAO$+$CMB split, across estimators) is backed by
 \texttt{probes\_out/dr2.json}; \texttt{results\_baocmb\_dr1.json} is the DR1
-cross-validation/sensitivity check.
+cross-validation/sensitivity check. Each void/backreaction row of
+Table~\ref{tab:voids} is backed by a committed result file from its generating
+model script---\texttt{probes\_out/\{ltb,rasanen,kbc,buchert\}\_family\_fit.json}
+(and \texttt{results\_buchert.json})---and the anchor-substituted softening of the
+void-fraction split is recorded in \texttt{probes\_out/fvsplit.json}.
 
 \begin{thebibliography}{99}
 \bibitem{Riess2022} A.~G.~Riess \emph{et al.}, Astrophys.\ J.\ Lett.\ \textbf{934}, L7 (2022), arXiv:2112.04510.

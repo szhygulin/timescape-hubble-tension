@@ -23,7 +23,7 @@ Joint SN + BAO + CMB fit, ΔBIC relative to ΛCDM (larger = more disfavoured):
 | ΛCDM (reference) | no | 0 | — |
 | w₀wₐCDM (evolving DE) | no | +11 | mild DESI-direction hint, not significant |
 | Timescape | yes | ~+67 | does not resolve |
-| LTB giant void (GBH) | yes | ~+717 | does not resolve (+ kSZ-excluded) |
+| LTB giant void (GBH) | yes | ~+715 | does not resolve (+ kSZ-excluded) |
 | Räsänen peak / backreaction | yes | ~+72 | predicts no acceleration |
 | Buchert "morphon" | yes | ~+1600 | fails BAO+CMB |
 | Szekeres | yes | intractable | does not resolve (literature + kSZ) |
@@ -45,6 +45,8 @@ Joint SN + BAO + CMB fit, ΔBIC relative to ΛCDM (larger = more disfavoured):
 | `results_*.json`, `fig_*.{pdf,png}` | numerical outputs and figures |
 
 > **BAO+CMB artifacts:** the DR2 BAO+CMB headline (χ²/dof = 6.7 vs ΛCDM 0.89; the 4.8–6.6σ SN-vs-BAO+CMB split) is backed by `probes_out/dr2.json`; `results_baocmb_dr1.json` is the DR1 cross-validation / sensitivity check.
+>
+> **Model-comparison (ΔBIC) artifacts:** each void/backreaction row of the table above is backed by a committed result file from its `src/model_*.py` script — `probes_out/{ltb,rasanen,kbc,buchert}_family_fit.json` (Buchert also writes `results_buchert.json`). The joint SN-vs-BAO+CMB fit is `results_joint.json`, and the anchor-substituted softening of the void-fraction split is in `probes_out/fvsplit.json`.
 
 ## Reproducing the results
 
