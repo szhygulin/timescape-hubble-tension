@@ -419,7 +419,7 @@ if __name__ == "__main__":
                   "same convention as joint_w0wa.py and model_rasanen.py",
         central_H0_range="SN-best and BAO+CMB-best central H0 both ~55-59 (below local 73)",
         command="cd src && python model_ltbvoid.py",
-        verdict_of_verification="Reproduced from src/model_ltbvoid.py: joint dBIC~+717 (SN prefer a deeper "
+        verdict_of_verification="Reproduced from src/model_ltbvoid.py: joint dBIC~+715 (SN prefer a deeper "
                                 "void than BAO+CMB, same split as timescape); LTB does not reach local H0 and "
                                 "is independently kSZ-excluded. Row of tab:voids now backed by this artifact.",
     )
