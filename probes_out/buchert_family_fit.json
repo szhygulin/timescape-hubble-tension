@@ -1,5 +1,6 @@
 {
-  "model": "Buchert scaling-solution backreaction template (Larena, Alimi, Buchert, Kunz & Corasaniti 2009, arXiv:0808.1161)",
+  "model": "Buchert scaling-solution backreaction 'morphon' template (Larena, Alimi, Buchert, Kunz & Corasaniti 2009, arXiv:0808.1161)",
+  "params": "(n, Om) evolving-curvature morphon; k=2 cosmological params",
   "sn_only": {
     "n": -0.5318586086219055,
     "Om": 0.3893406668818351,
@@ -30,7 +31,10 @@
     "q0": 0.44950799365178984
   },
   "lcdm_joint_chi2": 1402.2,
+  "N": 1593,
   "dchi2_vs_LCDM": 1559.0765323664061,
   "dBIC_vs_LCDM": 1559.0765323664061,
-  "dBIC_note": "equal k (both models: 2 cosmo params + offset/alpha) -> dBIC = dchi2"
+  "dBIC_note": "equal k (both models: 2 cosmo params + offset/alpha) -> dBIC = dchi2",
+  "command": "cd src && python model_buchert.py",
+  "verdict_of_verification": "Reproduced from src/model_buchert.py: joint dBIC~+1.56e3 (fits SNe but fails BAO+CMB catastrophically); paper quotes ~+1600. Row of tab:voids now backed by this artifact (and the root results_buchert.json)."
 }

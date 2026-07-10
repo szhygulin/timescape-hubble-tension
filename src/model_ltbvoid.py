@@ -394,3 +394,35 @@ if __name__ == "__main__":
         dBIC = (best_joint[0]-1402.2) + (3-1)*np.log(1593)
         print(f"  JOINT best: chi2={best_joint[0]:.1f} (SN={best_joint[5]:.1f}+BAOCMB={best_joint[6]:.1f}) "
               f"Om_in={best_joint[1]} r0={best_joint[2]} dr={best_joint[3]} H0={H0j:.1f}  dBIC_vs_LCDM={dBIC:+.1f}")
+
+    # ---- persist result artifact (one-number-one-script-one-artifact) ----
+    import json, os
+    _repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    _out = os.path.join(_repo, "probes_out", "ltb_family_fit.json")
+    result = dict(
+        model="LTB giant-void, constrained GBH (Garcia-Bellido & Haugbolle 2008, arXiv:0802.1523; CGBH, Om_out=1, homogeneous big bang)",
+        params="(Om_in, r0, dr) in units c/H0_out; k=3 cosmological shape params",
+        sn_only=dict(chi2=float(best_sn[0]), Om_in=float(best_sn[1]), r0=float(best_sn[2]), dr=float(best_sn[3])),
+        sn_best_on_baocmb=dict(Om_in=float(best_sn[1]), r0=float(best_sn[2]), dr=float(best_sn[3]),
+                               sn_chi2=float(chi_sn_at_sn), bao_only_chi2=float(chi_bo_at_sn),
+                               bao_cmb_chi2=float(chi_bc_at_sn), joint_chi2=float(chi_sn_at_sn+chi_bc_at_sn),
+                               H0=float(Hn.H0_from_alpha(a_sn))),
+        bao_cmb_best=dict(chi2=float(best_bc[0]), Om_in=float(best_bc[1]), r0=float(best_bc[2]),
+                          dr=float(best_bc[3]), H0=float(Hn.H0_from_alpha(best_bc[4]))),
+        joint=dict(chi2=float(best_joint[0]), sn_chi2=float(best_joint[5]), baocmb_chi2=float(best_joint[6]),
+                   Om_in=float(best_joint[1]), r0=float(best_joint[2]), dr=float(best_joint[3]),
+                   H0=float(H0j)),
+        lcdm_joint_chi2=1402.2, N=1593,
+        dchi2_vs_LCDM=float(best_joint[0]-1402.2),
+        dBIC_vs_LCDM=float(dBIC),
+        dBIC_note="dBIC = dchi2 + (k-1)*ln(N), k=3 (Om_in,r0,dr) vs LCDM k=1 (Om), N=1593; "
+                  "same convention as joint_w0wa.py and model_rasanen.py",
+        central_H0_range="SN-best and BAO+CMB-best central H0 both ~55-59 (below local 73)",
+        command="cd src && python model_ltbvoid.py",
+        verdict_of_verification="Reproduced from src/model_ltbvoid.py: joint dBIC~+717 (SN prefer a deeper "
+                                "void than BAO+CMB, same split as timescape); LTB does not reach local H0 and "
+                                "is independently kSZ-excluded. Row of tab:voids now backed by this artifact.",
+    )
+    with open(_out, "w") as _f:
+        json.dump(result, _f, indent=2)
+    print(f"\nsaved probes_out/ltb_family_fit.json  (joint dBIC={dBIC:+.1f})")

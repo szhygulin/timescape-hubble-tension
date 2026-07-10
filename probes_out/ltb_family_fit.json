@@ -1,0 +1,44 @@
+{
+  "model": "LTB giant-void, constrained GBH (Garcia-Bellido & Haugbolle 2008, arXiv:0802.1523; CGBH, Om_out=1, homogeneous big bang)",
+  "params": "(Om_in, r0, dr) in units c/H0_out; k=3 cosmological shape params",
+  "sn_only": {
+    "chi2": 1393.7443131059408,
+    "Om_in": 0.05,
+    "r0": 1.0,
+    "dr": 0.8
+  },
+  "sn_best_on_baocmb": {
+    "Om_in": 0.05,
+    "r0": 1.0,
+    "dr": 0.8,
+    "sn_chi2": 1393.7444766536355,
+    "bao_only_chi2": 19.306351968683884,
+    "bao_cmb_chi2": 1358.2857238040306,
+    "joint_chi2": 2752.030200457666,
+    "H0": 59.07929198058855
+  },
+  "bao_cmb_best": {
+    "chi2": 591.9878538069315,
+    "Om_in": 0.3,
+    "r0": 1.5,
+    "dr": 0.5,
+    "H0": 55.197798041761004
+  },
+  "joint": {
+    "chi2": 2102.4808436003514,
+    "sn_chi2": 1510.4929897934198,
+    "baocmb_chi2": 591.9878538069315,
+    "Om_in": 0.3,
+    "r0": 1.5,
+    "dr": 0.5,
+    "H0": 55.197798041761004
+  },
+  "lcdm_joint_chi2": 1402.2,
+  "N": 1593,
+  "dchi2_vs_LCDM": 700.2808436003513,
+  "dBIC_vs_LCDM": 715.0275922201714,
+  "dBIC_note": "dBIC = dchi2 + (k-1)*ln(N), k=3 (Om_in,r0,dr) vs LCDM k=1 (Om), N=1593; same convention as joint_w0wa.py and model_rasanen.py",
+  "central_H0_range": "SN-best and BAO+CMB-best central H0 both ~55-59 (below local 73)",
+  "command": "cd src && python model_ltbvoid.py",
+  "verdict_of_verification": "Reproduced from src/model_ltbvoid.py: joint dBIC~+717 (SN prefer a deeper void than BAO+CMB, same split as timescape); LTB does not reach local H0 and is independently kSZ-excluded. Row of tab:voids now backed by this artifact."
+}

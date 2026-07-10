@@ -268,3 +268,36 @@ if __name__ == "__main__":
     print("resolves the tension thus hinges on (a) external SH0ES calibration and")
     print("(b) whether a delta_m~-0.5, R~300Mpc void is allowed -- Camarena+2022 say")
     print("the number-counts void is too shallow (delta_m~-0.2..-0.3 -> only ~70-71).")
+
+    # ---- persist result artifact (one-number-one-script-one-artifact) ----
+    import json, os
+    _repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    _out = os.path.join(_repo, "probes_out", "kbc_family_fit.json")
+    result = dict(
+        model="Local KBC void ('Hubble bubble') on a global LCDM background (Keenan+2013, Haslbauer+2020); RETAINS dark energy",
+        void="fixed literature-depth void delta0=%.2f, Rv=%.0f Mpc (NOT jointly fitted -- no free joint fit was run)" % (d0_bridge, Rv_bridge),
+        lcdm_ref=dict(Om=float(Om_j), joint_chi2=float(chi_j), H0=float(H0_j), q0=float(q0(Om_j))),
+        sn_only_noVoid=dict(Om=float(Om_sn), chi2=float(chi_sn)),
+        bao_only=dict(Om=float(Om_bo), chi2=float(chi_bo), H0=float(H0_bo)),
+        bao_cmb=dict(Om=float(Om_bc), chi2=float(chi_bc), H0=float(H0_bc), q0=float(q0(Om_bc))),
+        joint_fixed_void=dict(Om=float(Om_jv), chi2=float(chi_jv), H0_glob=float(H0_jv),
+                              H0_local=float(H0_local), q0=float(q0(Om_jv)), dH_over_H0=float(dh0)),
+        sn_only_withVoid=dict(Om=float(Om_snv), chi2=float(chi_snv)),
+        N=int(N), lcdm_joint_chi2=float(chi_lcdm_joint),
+        dchi2_vs_LCDM=float(dchi),
+        dBIC_vs_LCDM_fixedVoid_k2=float(dBIC_samek),
+        dBIC_vs_LCDM_fittedVoid_k4=float(dBIC_2extra),
+        dBIC_note="fixed literature-depth void, void params NOT fitted (k=2 == LCDM) -> dBIC = dchi2; "
+                  "the k=4 framing is shown only for completeness. NO free joint fit driving the void "
+                  "depth was ever run (deliberate scoping).",
+        monotonic_with_depth="dBIC grows monotonically with void depth; the no-void (delta0=0) limit is preferred",
+        command="cd src && python model_kbcvoid.py",
+        verdict_of_verification="Reproduced from src/model_kbcvoid.py: a fixed literature-depth KBC void "
+                                "worsens the joint SN+BAO+CMB fit by dBIC~+165 (void params fixed, not fitted), "
+                                "growing monotonically with depth, so the no-void LCDM limit is preferred. "
+                                "The void's H0 boost acts only through an external SH0ES zero-point the harness "
+                                "marginalises. Row of tab:voids now backed by this artifact.",
+    )
+    with open(_out, "w") as _f:
+        json.dump(result, _f, indent=2)
+    print(f"\nsaved probes_out/kbc_family_fit.json  (fixed-void dBIC={dBIC_samek:+.2f})")

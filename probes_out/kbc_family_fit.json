@@ -1,0 +1,46 @@
+{
+  "model": "Local KBC void ('Hubble bubble') on a global LCDM background (Keenan+2013, Haslbauer+2020); RETAINS dark energy",
+  "void": "fixed literature-depth void delta0=-0.52, Rv=300 Mpc (NOT jointly fitted -- no free joint fit was run)",
+  "lcdm_ref": {
+    "Om": 0.3048091925107283,
+    "joint_chi2": 1402.2371682743542,
+    "H0": 68.59358067695187,
+    "q0": -0.5427862112339076
+  },
+  "sn_only_noVoid": {
+    "Om": 0.3326025133625223,
+    "chi2": 1386.4052668958902
+  },
+  "bao_only": {
+    "Om": 0.2945972668322657,
+    "chi2": 12.80792115330405,
+    "H0": 69.25909223174064
+  },
+  "bao_cmb": {
+    "Om": 0.2999530402403391,
+    "chi2": 12.983610630966723,
+    "H0": 69.03649520779265,
+    "q0": -0.5500704396394913
+  },
+  "joint_fixed_void": {
+    "Om": 0.323300619148368,
+    "chi2": 1567.2240290306509,
+    "H0_glob": 66.99072776539522,
+    "H0_local": 73.23066745872141,
+    "q0": -0.515049071277448,
+    "dH_over_H0": 0.09314631892310198
+  },
+  "sn_only_withVoid": {
+    "Om": 0.5999947729632784,
+    "chi2": 1437.6505047231913
+  },
+  "N": 1593,
+  "lcdm_joint_chi2": 1402.2,
+  "dchi2_vs_LCDM": 165.0240290306508,
+  "dBIC_vs_LCDM_fixedVoid_k2": 165.0240290306508,
+  "dBIC_vs_LCDM_fittedVoid_k4": 179.7707776504709,
+  "dBIC_note": "fixed literature-depth void, void params NOT fitted (k=2 == LCDM) -> dBIC = dchi2; the k=4 framing is shown only for completeness. NO free joint fit driving the void depth was ever run (deliberate scoping).",
+  "monotonic_with_depth": "dBIC grows monotonically with void depth; the no-void (delta0=0) limit is preferred",
+  "command": "cd src && python model_kbcvoid.py",
+  "verdict_of_verification": "Reproduced from src/model_kbcvoid.py: a fixed literature-depth KBC void worsens the joint SN+BAO+CMB fit by dBIC~+165 (void params fixed, not fitted), growing monotonically with depth, so the no-void LCDM limit is preferred. The void's H0 boost acts only through an external SH0ES zero-point the harness marginalises. Row of tab:voids now backed by this artifact."
+}
