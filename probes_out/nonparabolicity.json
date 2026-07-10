@@ -1,0 +1,69 @@
+{
+ "name": "nonparabolicity",
+ "definition": "multiplier = dchi2_join / gaussian_sigma^2 = (sigma_profile/sigma_gauss)^2; parabolic profiles give exactly 1.0 (cf. the Gaussian Seifert-anchor pairings)",
+ "pairings": {
+  "DR1 BAO+CMB vs SN (fvsplit S1xB1)": {
+   "dchi2_join": 41.654,
+   "sn_dchi2_at_joint": 39.912,
+   "sigma_profile": 6.454,
+   "sigma_gauss": 4.685,
+   "multiplier": 1.898
+  },
+  "DR1 BAO-only vs SN (fvsplit S1xB4)": {
+   "dchi2_join": 19.545,
+   "sn_dchi2_at_joint": 15.02,
+   "sigma_profile": 4.421,
+   "sigma_gauss": 3.597,
+   "multiplier": 1.511
+  },
+  "dr2.json dr1_bao_only_vs_SN": {
+   "dchi2_join": 19.54495147722627,
+   "sigma_profile": 4.4209672558419015,
+   "sigma_gauss": 3.5966803204822444,
+   "multiplier": 1.511
+  },
+  "dr2.json dr1_bao_only_vs_seifert737": {
+   "dchi2_join": 3.2587888260895213,
+   "sigma_profile": 1.8052115737745316,
+   "sigma_gauss": 1.7995221086619784,
+   "multiplier": 1.006
+  },
+  "dr2.json dr1_bao_cmb_vs_SN": {
+   "dchi2_join": 41.65432301210223,
+   "sigma_profile": 6.454016037484121,
+   "sigma_gauss": 4.684921840183049,
+   "multiplier": 1.898
+  },
+  "dr2.json dr1_bao_cmb_vs_seifert737": {
+   "dchi2_join": 11.774372429047268,
+   "sigma_profile": 3.431380542733095,
+   "sigma_gauss": 3.4362505272247983,
+   "multiplier": 0.997
+  },
+  "dr2.json dr2_bao_only_vs_SN": {
+   "dchi2_join": 22.963022988129325,
+   "sigma_profile": 4.791974852618629,
+   "sigma_gauss": 3.7353727416244515,
+   "multiplier": 1.646
+  },
+  "dr2.json dr2_bao_only_vs_seifert737": {
+   "dchi2_join": 3.811324571783409,
+   "sigma_profile": 1.9522613994502398,
+   "sigma_gauss": 1.9599194128835808,
+   "multiplier": 0.992
+  },
+  "dr2.json dr2_bao_cmb_vs_SN": {
+   "dchi2_join": 42.995812767185825,
+   "sigma_profile": 6.557119243020201,
+   "sigma_gauss": 4.707267120421599,
+   "multiplier": 1.94
+  },
+  "dr2.json dr2_bao_cmb_vs_seifert737": {
+   "dchi2_join": 12.136873003726919,
+   "sigma_profile": 3.4838015161209914,
+   "sigma_gauss": 3.477169535895462,
+   "multiplier": 1.004
+  }
+ },
+ "conclusion": "BAO+CMB-vs-SN multiplier: 1.898 (DR1), 1.940 (DR2) -> quote ~1.9x (one decimal). Supersedes the earlier ~1.8x. Seifert-anchor pairings sit at ~1.0, confirming the excess is the SN profile's non-parabolicity."
+}
