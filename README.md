@@ -23,17 +23,17 @@ Joint SN + BAO + CMB fit, ΔBIC relative to ΛCDM (larger = more disfavoured):
 | ΛCDM (reference) | no | 0 | — |
 | w₀wₐCDM (evolving DE) | no | +11 | mild DESI-direction hint, not significant |
 | Timescape | yes | ~+67 | does not resolve |
-| LTB giant void (GBH) | yes | ~+57 | does not resolve (+ kSZ-excluded) |
-| Räsänen peak / backreaction | yes | ~+65 | predicts no acceleration |
+| LTB giant void (GBH) | yes | ~+717 | does not resolve (+ kSZ-excluded) |
+| Räsänen peak / backreaction | yes | ~+72 | predicts no acceleration |
 | Buchert "morphon" | yes | ~+1600 | fails BAO+CMB |
 | Szekeres | yes | intractable | does not resolve (literature + kSZ) |
-| KBC local void | no (keeps DE) | ~0 | needs an unobserved deep void |
+| KBC local void | no (keeps DE) | 0 (no-void limit) | needs an unobserved deep void |
 
 ## Repository contents
 
 | Path | What |
 |---|---|
-| `timescape-hubble-tension.tex` / `.pdf` | the paper (RevTeX, 7 pp.) |
+| `timescape-hubble-tension.tex` / `.pdf` | the paper (RevTeX, 11 pp.) |
 | `REPORT.md` | extended research notes |
 | `src/harness.py` | shared SN+BAO+CMB fitting harness (run its self-test first) |
 | `src/fit_timescape.py`, `src/timescape_baocmb.py` | timescape distance model + BAO/CMB calibration |
@@ -70,7 +70,7 @@ pdflatex timescape-hubble-tension.tex   # run twice for cross-references
 
 ## Data
 
-The supernova inputs are the public **Pantheon+** release (Scolnic et al. 2022; Brout et al. 2022), redistributed here under `src/data/` for convenience. BAO are from **DESI DR1** (2024) and the CMB enters through the **Planck 2018** acoustic scale. Full references are in the paper's bibliography.
+The supernova inputs are the public **Pantheon+** release (Scolnic et al. 2022; Brout et al. 2022), redistributed here under `src/data/` for convenience. BAO are from **DESI DR2** (2025) as the primary dataset, with **DESI DR1** (2024) retained as a sensitivity check, and the CMB enters through the **Planck 2018** acoustic scale. Full references are in the paper's bibliography.
 
 ## Citation
 
